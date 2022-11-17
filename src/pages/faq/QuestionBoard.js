@@ -1,6 +1,6 @@
-import './QuestionBoard.css;
+import './QuestionBoard.css';
 import React from 'react';
-import Question from './question';
+import Question from './Question.js';
 
 function QuestionBoard() {
 
