@@ -1,0 +1,6 @@
+.component{
+    height: 500px;
+    overflow-y: scroll;
+    border: 10px black;
+    border-radius: 10px;
+}

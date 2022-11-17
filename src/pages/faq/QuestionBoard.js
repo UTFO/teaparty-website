@@ -1,8 +1,8 @@
-import './faqPage.css';
+import './QuestionBoard.css;
 import React from 'react';
 import Question from './question';
 
-function FAQ() {
+function QuestionBoard() {
 
     return( 
         <div className='questions'>
@@ -15,4 +15,4 @@ function FAQ() {
     );
 }
 
-export default FAQ;
+export default QuestionBoard;
