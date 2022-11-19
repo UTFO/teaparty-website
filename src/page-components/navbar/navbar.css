@@ -1,0 +1,54 @@
+
+
+.navbar-menu {
+    grid-column: 1 / 20;
+    background-color: gray;
+    
+    min-height: var(--menu-height);
+    max-height: var(--menu-height); 
+
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar-menu .club-icon {
+
+}
+
+.navbar-menu img {
+    transform: translateY(-50%);
+    margin-left: var(--column-width);
+    padding-right: var(--column-width);
+    
+}
+
+.navbar-menu a {
+    margin: auto 2vw;
+    
+}
+
+.navbar-contact {
+    grid-column: 1 / calc(var(--column-num) * 1/20);
+    background-color: lightgray;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: var(--contact-height);
+    max-height: var(--contact-height);
+
+    max-width: calc(var(--column-width) * 2);  
+}
+
+.navbar-contact button {
+    position: relative;
+    border: none;
+    background-color: transparent;
+    margin: 5vh auto;
+    padding: 0;
+}
+
+.navbar-contact button img {
+    position: relative;
+    max-width: 2.5vw;
+}

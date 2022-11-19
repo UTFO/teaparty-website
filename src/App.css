@@ -1,0 +1,22 @@
+:root {
+    --menu-height: 13vh;
+    --contact-height: calc(100vh - var(--menu-height));
+
+    --column-num: 20;
+    --column-width: calc(100vw / var(--column-num));
+}
+
+body {
+    margin: 0;
+}
+
+.main-container {
+    display: grid;
+    padding: 0;
+}
+
+#page-component {
+    grid-area: 'page';
+    grid-column: calc(var(--column-num) * 8 / 20) / var(--column-num);
+    max-width: calc(var(--column-width) * 12);
+}

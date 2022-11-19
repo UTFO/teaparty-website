@@ -1,0 +1,6 @@
+.page-introduction {
+    grid-column: calc(var(--column-num) * 2 / 20) / calc(var(--column-num) * 8 / 20);
+    background-color: rgb(193, 193, 193);
+    /* How to have fixed column width */
+
+}
