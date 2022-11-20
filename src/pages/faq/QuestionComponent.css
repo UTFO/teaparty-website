@@ -1,6 +1,11 @@
 .component{
-    height: 500px;
+    max-height: 600px;
+    max-width: 400px;
     overflow-y: scroll;
-    border: 10px black;
+    border: 5px solid black;
     border-radius: 10px;
+    margin-left: 65%;
+    margin-top: 10%;
+    
+    
 }
