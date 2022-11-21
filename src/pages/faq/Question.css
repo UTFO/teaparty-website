@@ -2,11 +2,8 @@
     display: flex;
     justify-content: space-around;
     flex-direction: column;
-    border: 5px black;
+    border: 5px solid black;
     border-radius: 5px;
-    
-
-
 }
 
 .question .header {
