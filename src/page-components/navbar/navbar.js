@@ -23,14 +23,22 @@ function Navbar() {
     return <>
         <div className="navbar-menu">
             <section className="club-icon">
-                <img src="" alt="Club Icon"/>
+                <a href="/">
+                    <img src="" alt="Club Icon"/>
+                </a>
             </section>
+
+            <svg>
+                <rect/>
+            </svg>
 
             <MenuButton text="About" path="/about"/>
             <MenuButton text="Team" path="/team"/>
-            <MenuButton text="Events" path="/about"/>
-            <MenuButton text="FAQ" path="/about"/>
-
+            <MenuButton text="Events" path="/events"/>
+            <MenuButton text="FAQ" path="/faq"/>
+            <a className="navbar-join" href="/join">
+                Join Us
+            </a>
         </div>
 
 

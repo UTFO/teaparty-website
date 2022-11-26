@@ -12,19 +12,38 @@
 }
 
 .navbar-menu .club-icon {
+    margin: auto 0;
+}
 
+.navbar-menu .club-icon a {
+    margin: 0;
 }
 
 .navbar-menu img {
-    transform: translateY(-50%);
     margin-left: var(--column-width);
     padding-right: var(--column-width);
     
 }
 
+.navbar-menu rect {
+    width: 0.1vw;
+    height: 100vh;
+}
+
+.navbar-menu svg {
+    width: 0.2vw;
+    height: 9vh;
+    margin: auto 1vw;
+}
+
 .navbar-menu a {
     margin: auto 2vw;
-    
+}
+
+.navbar-menu .navbar-join {
+    background-color: var(--join-color);
+    padding: 1vw 2vw;
+    border-radius: 10vw;
 }
 
 .navbar-contact {
@@ -37,7 +56,7 @@
     min-height: var(--contact-height);
     max-height: var(--contact-height);
 
-    max-width: calc(var(--column-width) * 2);  
+    width: calc(var(--column-width) * 1);  
 }
 
 .navbar-contact button {
