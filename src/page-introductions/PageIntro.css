@@ -2,6 +2,11 @@
     grid-column: calc(var(--column-num) * 2 / 20) / calc(var(--column-num) * 9 / 20);
     background-color: rgb(193, 193, 193);
     /* How to have fixed column width */
+<<<<<<< HEAD
     
     width: calc(var(--column-width) * 7);
+=======
+    width: calc(var(--column-width) * 7);
+
+>>>>>>> df6cbcf787811b0d6c7177e9b3404204f504ea00
 }

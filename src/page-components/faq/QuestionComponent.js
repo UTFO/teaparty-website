@@ -1,11 +1,11 @@
 import React from "react";
-import Questions from "./QuestionBoard.js";
+import QuestionBoard from "./QuestionBoard.js";
 import "./QuestionComponent.css";
 
 function QuestionComponent(){
     return(
         <div className="component">
-            <Questions/>
+            <QuestionBoard/>
         </div>
     );
 }
