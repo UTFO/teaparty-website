@@ -28,7 +28,7 @@
     margin-left: var(--column-width);
     padding-right: calc(var(--column-width)/2);
     
-    height: 7vh;
+    height: var(--navbar-menu-font-size);
 }
 
 .navbar-menu rect {
