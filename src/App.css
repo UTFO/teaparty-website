@@ -8,6 +8,8 @@
 
 body {
     margin: 0;
+    height: 100vh;
+    overflow: hidden;
 }
 
 .main-container {
@@ -16,7 +18,6 @@ body {
 }
 
 #page-component {
-    grid-area: 'page';
-    grid-column: calc(var(--column-num) * 8 / 20) / var(--column-num);
-    max-width: calc(var(--column-width) * 12);
+    grid-column: calc(var(--column-num) * 9 / 20) / var(--column-num);
+    width: calc(var(--column-width) * 11);
 }

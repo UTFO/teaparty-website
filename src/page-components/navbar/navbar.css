@@ -37,7 +37,9 @@
     min-height: var(--contact-height);
     max-height: var(--contact-height);
 
-    max-width: calc(var(--column-width) * 2);  
+    
+    min-width: calc(var(--column-width));
+    width: calc(var(--column-width));
 }
 
 .navbar-contact button {

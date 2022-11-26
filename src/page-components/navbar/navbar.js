@@ -28,8 +28,8 @@ function Navbar() {
 
             <MenuButton text="About" path="/about"/>
             <MenuButton text="Team" path="/team"/>
-            <MenuButton text="Events" path="/about"/>
-            <MenuButton text="FAQ" path="/about"/>
+            <MenuButton text="Events" path="/events"/>
+            <MenuButton text="FAQ" path="/faq"/>
 
         </div>
 
