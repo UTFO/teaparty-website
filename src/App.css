@@ -1,3 +1,18 @@
+@font-face {
+    font-family: 'navbar-menu-font';
+    src: url('./fonts/LemonRolls-2OGol.otf');
+}
+
+@font-face {
+    font-family: 'regular-text';
+    src: url('https://fonts.googleapis.com/css2?family=Kanit&family=Montserrat&display=swap');
+}
+
+@font-face {
+    font-family: 'page-intro-title-font';
+    src: url('./fonts/Lobster-Regular.ttf');
+}
+
 :root {
     --menu-height: 13vh;
     --contact-height: calc(100vh - var(--menu-height));
@@ -5,7 +20,12 @@
     --column-num: 20;
     --column-width: calc(100vw / var(--column-num));
 
-    --join-color: #000000;
+    --join-color: #c4df9b;
+    --navbar-menu-color: #FFFFFF;
+    --navbar-contact-color: #FFFFFF;
+    --page-intro-color: #FFFFFF;
+
+    --navbar-menu-font-size: 2em;
 }
 
 body {
@@ -20,12 +40,7 @@ body {
 }
 
 #page-component {
-<<<<<<< HEAD
+    grid-area: 'page';
     grid-column: calc(var(--column-num) * 9 / 20) / var(--column-num);
     width: calc(var(--column-width) * 11);
-=======
-    grid-area: 'page';
-    grid-column: calc(var(--column-num) * 8 / 20) / var(--column-num);
-    width: calc(var(--column-width) * 12);
->>>>>>> df6cbcf787811b0d6c7177e9b3404204f504ea00
 }

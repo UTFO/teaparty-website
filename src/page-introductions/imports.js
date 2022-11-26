@@ -1,5 +1,5 @@
 var HomeText = {
-    title: "Welcome to Tea Party",
+    title: "Welcome To Tea Party",
     text: "Lopem stuff"
 }
 

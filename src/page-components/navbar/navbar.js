@@ -1,5 +1,9 @@
 import './navbar.css';
 
+import {
+    club_logo, email_logo, instagram_logo, instagram_path
+} from './images/import.js';
+
 function MenuButton(props) {
     return (
         <a href={props.path}>
@@ -10,9 +14,9 @@ function MenuButton(props) {
 
 function ContactButton(props) {
     return (
-        <button>
+        <a href={props.path} target="_blank" rel="noopener noreferrer">
             <img src={props.image} alt={props.text}/>
-        </button>
+        </a>
     )
 }
 
@@ -24,7 +28,7 @@ function Navbar() {
         <div className="navbar-menu">
             <section className="club-icon">
                 <a href="/">
-                    <img src="" alt="Club Icon"/>
+                    <img src={club_logo} alt="Club Icon"/>
                 </a>
             </section>
 
@@ -36,19 +40,15 @@ function Navbar() {
             <MenuButton text="Team" path="/team"/>
             <MenuButton text="Events" path="/events"/>
             <MenuButton text="FAQ" path="/faq"/>
-<<<<<<< HEAD
-
-=======
             <a className="navbar-join" href="/join">
                 Join Us
             </a>
->>>>>>> df6cbcf787811b0d6c7177e9b3404204f504ea00
         </div>
 
 
         <div className="navbar-contact">
-            <ContactButton text="Email"/>
-            <ContactButton text="Instagram"/>
+            <ContactButton image={email_logo} text="Email"/>
+            <ContactButton image={instagram_logo} text="Instagram" path={instagram_path}/>
         </div>
 
     </>

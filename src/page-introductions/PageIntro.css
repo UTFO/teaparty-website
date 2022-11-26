@@ -1,12 +1,27 @@
 .page-introduction {
     grid-column: calc(var(--column-num) * 2 / 20) / calc(var(--column-num) * 9 / 20);
-    background-color: rgb(193, 193, 193);
-    /* How to have fixed column width */
-<<<<<<< HEAD
-    
-    width: calc(var(--column-width) * 7);
-=======
-    width: calc(var(--column-width) * 7);
+    background-color: var(--page-intro-color);
 
->>>>>>> df6cbcf787811b0d6c7177e9b3404204f504ea00
+    width: calc(var(--column-width) * 8);
+
+}
+
+.page-introduction .page-intro-container {
+    position: relative;
+
+    width: fit-content;
+    height: fit-content;
+
+    top: 10%;
+    margin: 0 10vw;
+}
+
+.page-introduction .page-intro-container h2 {
+    font-family: page-intro-title-font;
+    font-size: 3em;
+}
+
+.page-introduction .page-intro-container p {
+    font-family: regular-text;
+    font-size: 1.5em;
 }

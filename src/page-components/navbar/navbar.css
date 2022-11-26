@@ -2,27 +2,33 @@
 
 .navbar-menu {
     grid-column: 1 / 20;
-    background-color: gray;
+    background-color: var(--navbar-menu-color);
     
     min-height: var(--menu-height);
     max-height: var(--menu-height); 
 
     display: flex;
     flex-direction: row;
+
+    font-family: 'navbar-menu-font';
 }
 
 .navbar-menu .club-icon {
     margin: auto 0;
+    margin-bottom: 4vh;
 }
 
 .navbar-menu .club-icon a {
     margin: 0;
+    margin-left: 2vw;
+
 }
 
 .navbar-menu img {
     margin-left: var(--column-width);
-    padding-right: var(--column-width);
+    padding-right: calc(var(--column-width)/2);
     
+    height: 7vh;
 }
 
 .navbar-menu rect {
@@ -32,23 +38,28 @@
 
 .navbar-menu svg {
     width: 0.2vw;
-    height: 9vh;
+    height: 6vh;
     margin: auto 1vw;
+    fill: rgb(0, 0, 0, 0.3);
 }
 
 .navbar-menu a {
     margin: auto 2vw;
+    font-size: var(--navbar-menu-font-size);
+    text-decoration: none;
+    color: black;
 }
 
 .navbar-menu .navbar-join {
     background-color: var(--join-color);
-    padding: 1vw 2vw;
+    padding: 0.75vw 1.5vw;
     border-radius: 10vw;
+    
 }
 
 .navbar-contact {
     grid-column: 1 / calc(var(--column-num) * 1/20);
-    background-color: lightgray;
+    background-color: var(--navbar-contact-color);
     
     display: flex;
     flex-direction: column;
@@ -56,16 +67,10 @@
     min-height: var(--contact-height);
     max-height: var(--contact-height);
 
-<<<<<<< HEAD
-    
-    min-width: calc(var(--column-width));
-    width: calc(var(--column-width));
-=======
     width: calc(var(--column-width) * 1);  
->>>>>>> df6cbcf787811b0d6c7177e9b3404204f504ea00
 }
 
-.navbar-contact button {
+.navbar-contact a {
     position: relative;
     border: none;
     background-color: transparent;
@@ -73,7 +78,7 @@
     padding: 0;
 }
 
-.navbar-contact button img {
+.navbar-contact a img {
     position: relative;
-    max-width: 2.5vw;
+    width: 3vw;
 }
