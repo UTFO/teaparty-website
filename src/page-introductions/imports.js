@@ -4,7 +4,7 @@ var HomeText = {
 }
 
 var AboutText = {
-    title: "N/A",
+    title: "Hear About Us!",
     text: "N/A"
 }
 
@@ -14,7 +14,7 @@ var TeamText = {
 }
 
 var EventsText = {
-    title: "N/A",
+    title: "Check Our Events!",
     text: "N/A"
 }
 

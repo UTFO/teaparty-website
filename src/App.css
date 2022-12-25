@@ -25,7 +25,7 @@
     --navbar-contact-color: #FFFFFF;
     --page-intro-color: #FFFFFF;
 
-    --navbar-menu-font-size: 2em;
+    --navbar-menu-font-size: 1.3em;
 }
 
 body {
@@ -41,6 +41,6 @@ body {
 
 #page-component {
     grid-area: 'page';
-    grid-column: calc(var(--column-num) * 9 / 20) / var(--column-num);
+    grid-column: calc(var(--column-num) * 10 / 20) / var(--column-num);
     width: calc(var(--column-width) * 11);
 }
