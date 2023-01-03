@@ -13,6 +13,8 @@
     src: url('./fonts/Lobster-Regular.ttf');
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Sorts+Mill+Goudy&display=swap');
+
 :root {
     --menu-height: 13vh;
     --contact-height: calc(100vh - var(--menu-height));

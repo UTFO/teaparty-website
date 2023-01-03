@@ -9,7 +9,7 @@ var AboutText = {
 }
 
 var TeamText = {
-    title: "N/A",
+    title: "Check Our Team!",
     text: "N/A"
 }
 

@@ -1,8 +1,8 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+.About {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
   
   .box {
     width: 558px;
@@ -39,7 +39,7 @@
     text-align: center;
     padding-top: 70px;
     align-content: center;
-    background-image: url(paper.png);
+    background-image: url(images/paper.png);
     height: 803px;
     width: 558px;
     font-family: 'page-about-font';  
@@ -53,7 +53,7 @@
   
   @font-face {
     font-family: 'page-about-font';
-    src: url(Lobster-Regular.ttf);
+    src: url('../../fonts/Lobster-Regular.ttf');
   }
   
   .footer {
