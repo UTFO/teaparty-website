@@ -1,9 +1,4 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
+
   .box {
     width: 558px;
     margin: auto;
@@ -25,13 +20,13 @@
     font-style: italic;
     font-weight: bold;
     font-size: x-large;
-    z-index: -100;  
+    z-index: 0;  
   }
   
   .active-tab {
     background-color: greenyellow;
-    top: -38px;
-    z-index: 1;
+    
+    z-index: 0;
   }
   
   .page-about-boardpage {
