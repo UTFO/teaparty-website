@@ -3,15 +3,15 @@
     src: url('./fonts/LemonRolls-2OGol.otf');
 }
 
-@font-face {
-    font-family: 'regular-text';
-    src: url('https://fonts.googleapis.com/css2?family=Kanit&family=Montserrat&display=swap');
-}
+@import url('https://fonts.googleapis.com/css2?family=Kanit&family=Montserrat&display=swap');
+
 
 @font-face {
     font-family: 'page-intro-title-font';
     src: url('./fonts/Lobster-Regular.ttf');
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Sorts+Mill+Goudy&display=swap');
 
 :root {
     --menu-height: 13vh;
