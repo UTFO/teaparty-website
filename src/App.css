@@ -3,10 +3,8 @@
     src: url('./fonts/LemonRolls-2OGol.otf');
 }
 
-@font-face {
-    font-family: 'regular-text';
-    src: url('https://fonts.googleapis.com/css2?family=Kanit&family=Montserrat&display=swap');
-}
+@import url('https://fonts.googleapis.com/css2?family=Kanit&family=Montserrat&display=swap');
+
 
 @font-face {
     font-family: 'page-intro-title-font';
