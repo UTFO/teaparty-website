@@ -6,7 +6,7 @@ const members = [
         role: "Co-Founder",
         image: MatthewYang,
         linkedin: "",
-        instagram: "",
+        instagram: "https://www.instagram.com/",
         twitter: "",
         message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquam nulla facilisi"
     },
@@ -15,7 +15,7 @@ const members = [
         role: "Co-Founder",
         image: MatthewYang,
         linkedin: "",
-        instagram: "",
+        instagram: "https://www.instagram.com/",
         twitter: "",
         message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquam nulla facilisi "
     },
@@ -24,7 +24,7 @@ const members = [
         role: "Co-Founder",
         image: MatthewYang,
         linkedin: "",
-        instagram: "",
+        instagram: "https://www.instagram.com/",
         twitter: "",
         message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquam nulla facilisi "
     }

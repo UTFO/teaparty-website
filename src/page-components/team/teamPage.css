@@ -39,6 +39,8 @@
 
     transition-duration: 1s, 0.2s;
     transition-property: transform, opacity;
+
+    cursor: pointer;
 }
 
 .page-team-card-container .page-team-card-rotate-self {
@@ -72,6 +74,10 @@
                             column-gap, 
                             margin,
                             transform;
+}
+
+.page-team-card-rotate-self .page-team-card-second-container:hover {
+    background-color: var(--inactiveColor);
 }
 
 .page-team-card-second-container h1 {
@@ -162,7 +168,12 @@
 .page-team-card-socials img {
     width: calc(var(--size) * 4.2vh);
     margin: calc(var(--size) * 0.42vh) 0;
-    transform: rotate(calc(360deg / -200 * var(--i)))
+    transform: rotate(calc(360deg / -200 * var(--i)));
+    transition: width 0.2s;
+}
+
+.page-team-card-socials a:hover img {
+    width: calc(var(--size) * 4.8vh);
 }
 
 @keyframes social-icon {
