@@ -80,10 +80,10 @@ function TeamCard(props) {
         "cursor": "pointer"
     }
 
-    return (<div style={{"--size": props.size, "--x": props.position, "--sizeScale": sizeScale, "opacity": 0 + !props.hide}} className="page-team-card-container" onClick={() => {getClickedCard()}}>
+    return (<div style={{"--size": props.size, "--x": props.position, "--sizeScale": sizeScale, "opacity": 0 + !props.hide}} className="page-team-card-container">
 
         <div className="page-team-card-rotate-self">
-            <div style={props.current ? activeStyle : inactiveStyle} className="page-team-card-second-container">
+            <div style={props.current ? activeStyle : inactiveStyle} className="page-team-card-second-container"  onClick={() => {getClickedCard()}}>
                 <h1 style={{"opacity": 0.5 + props.active}}>{props.member.name}</h1>
                 <h2 style={{"opacity": 0.5 + props.active}}>{props.member.role}</h2>
                 <img style={{"--borderColor": borderColor}} src={props.member.image} alt={props.name + "'s Picture"}/>

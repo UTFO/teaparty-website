@@ -48,18 +48,21 @@
     display: flex;
     flex-direction: row;
     height: calc(var(--size) * 25vh);
+    
 }
 
+
 .page-team-card-rotate-self .page-team-card-second-container {
-    position: relative;
+    position: absolute;
     display: grid;
     height: fit-content;
+    z-index: 2;
 
     font-family: 'Sorts Mill Goudy', serif;
     column-gap: calc(var(--size) * 1.7vh);
     margin: 0 calc(var(--size) * 1.7vh);
 
-    padding: calc(var(--size) * 1.7vh) calc(var(--size) * 1.7vh) calc(var(--size) * 1.7vh) calc(var(--size) * 3.4vh);
+    padding: calc(var(--size) * 1.3vh) calc(var(--size) * 1.7vh) calc(var(--size) * 1.3vh) calc(var(--size) * 3.4vh);
     border-radius: calc(var(--size) * 5.8vh) calc(var(--size) * 9.2vh) calc(var(--size) * 9.2vh) calc(var(--size) * 5.8vh);
     --cardColor: #e1ffda;
     top: 50%;
