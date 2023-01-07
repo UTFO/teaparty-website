@@ -47,13 +47,13 @@
     position: relative;
     display: flex;
     flex-direction: row;
-    height: calc(var(--size) * 25vh);
-    
+    height: 0;
+    z-index: -1;
 }
 
 
 .page-team-card-rotate-self .page-team-card-second-container {
-    position: absolute;
+    position: relative;
     display: grid;
     height: fit-content;
     z-index: 2;
