@@ -70,8 +70,8 @@ function TeaCard(props) {
             <div id="teabag">
                     <img style={{transform: ("rotateY(" + (currentRotate) + "deg)")}} id="teabag-img" src={Teabag}/>
                     <div>
-                        <section><p className="prev">Nice to meet you! {memberArray[prev]["message"]}</p></section>
-                        <section><p className="current">Nice to meet you! {memberArray[current]["message"]}</p></section>
+                        <section><p className="prev">{memberArray[prev]["message"]}</p></section>
+                        <section><p className="current">{memberArray[current]["message"]}</p></section>
                     </div>
             </div>
         </div>
