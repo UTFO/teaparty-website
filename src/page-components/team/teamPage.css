@@ -31,15 +31,11 @@
     --size: 1;
 
     white-space: nowrap;
-
     --rotateAmount: calc(360deg/ ((2 - var(--sizeScale)) * 25) * var(--x) + 180deg);
     transform: rotate(var(--rotateAmount));
     left: var(--leftTransition);
     transform-origin: -30em;
-
-    transition-duration: 1s, 0.2s;
-    transition-property: transform, opacity;
-
+    transition: transform 1s, opacity 0.5s;
     cursor: pointer;
 }
 
@@ -76,7 +72,8 @@
                             border-radius, 
                             column-gap, 
                             margin,
-                            transform;
+                            transform,
+                            opacity;
 }
 
 .page-team-card-rotate-self .page-team-card-second-container:hover {
