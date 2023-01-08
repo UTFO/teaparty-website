@@ -19,10 +19,10 @@ var borderActiveColor = '#b3ffc3';
 var cardActiveColor = '#e1ffda';
 
 var borderInactiveColor = '#ececec';
-var cardInactiveColor = 'rgba(0, 0, 0, 0)';
+var cardInactiveColor = 'rgba(0, 0, 0, 0.05)';
 
 var sizeScale = 0.9;
-let displaySide = 2+1; 
+let displaySide = 2+2; 
 let memberArray = [];
 
 let prev = 0;
@@ -32,27 +32,68 @@ while(memberArray.length < 3 * (displaySide * 2 + 1))
 
 function TeamCard(props) {
 
-    var cardColor = props.active ? cardActiveColor : cardInactiveColor;
-    var borderColor = props.active ? borderActiveColor : borderInactiveColor;
+    var cardColor = props.current ? cardActiveColor : cardInactiveColor;
+    var borderColor = props.current ? borderActiveColor : borderInactiveColor;
 
-    return (<div style={{"--size": props.size, "--x": props.index, "--sizeScale": sizeScale, "opacity": 0 + !props.hide}} className="page-team-card-container">
+    var rotation = props.current ? 18 : 0;
+    const waitFor = (delay) => new Promise(resolve => setTimeout(resolve, delay));
+
+    const getClickedCard = async () => {
+        
+        props.setPreventClick(true);
+        
+        prev = props.active;
+        props.setActive(props.index);
+
+        if(currentRotate==180)
+            currentRotate = 0;
+        else
+            currentRotate = 180;
+
+        
+        document.getElementsByClassName('prev')[0].classList.add('spinPrev-animation');
+        document.getElementsByClassName('current')[0].classList.add('spinCurrent-animation');
+
+        await waitFor(500).then();
+
+        document.getElementsByClassName('prev')[0].classList.remove('spinPrev-animation');
+        document.getElementsByClassName('current')[0].classList.remove('spinCurrent-animation');
+
+        props.setPreventClick(false);
+
+
+    }
+
+    var activeStyle = {
+        "--cardColor": cardActiveColor,
+        "--inactiveColor": cardActiveColor,
+        "--sizeScale": sizeScale,
+        "opacity": 0 + !props.hide,
+        "cursor": "initial"
+    }
+
+    var inactiveStyle = {
+        "--cardColor": "rgba(0, 0, 0, 0)",
+        "--inactiveColor": cardInactiveColor,
+        "--sizeScale": sizeScale,
+        "opacity": 0 + !props.hide,
+        "cursor": "pointer"
+    }
+
+    return (<div style={{"--size": props.size, "--x": props.position, "--sizeScale": sizeScale, "opacity": 0 + !props.hide}} className="page-team-card-container">
 
         <div className="page-team-card-rotate-self">
-            <div style={{"--cardColor": cardColor}} className="page-team-card-second-container">
-                <h1 style={{"opacity": 0.5 + props.active}}>{props.name}</h1>
-                <h2 style={{"opacity": 0.5 + props.active}}>{props.role}</h2>
-                <img style={{"--borderColor": borderColor}} src={props.image} alt={props.name + "'s Picture"}/>
+            <div style={props.current ? activeStyle : inactiveStyle} className="page-team-card-second-container"  onClick={() => {getClickedCard()}}>
+                <h1 style={{"opacity": 0.5 + props.active}}>{props.member.name}</h1>
+                <h2 style={{"opacity": 0.5 + props.active}}>{props.member.role}</h2>
+                <img style={{"--borderColor": borderColor}} src={props.member.image} alt={props.name + "'s Picture"}/>
             </div>
-            { props.active ? <div style={{"opacity": 1}} className="page-team-card-socials">
-                <div style={{"--i": 0}}><img  src={Instagram_Icon}/></div>
-                <div style={{"--i": -18}}><img  src={Twitter_Icon}/></div>
-                <div style={{"--i": 18}}><img  src={Linkedin_Icon}/></div>
+            
+            <div style={{"opacity": props.current ? 1 : 0}} className="page-team-card-socials">
+                <div style={{"--i": 0}}><a style={{"pointer-events": props.current ? "initial" : "none"}} href={props.member.instagram} target="_blank"><img  src={Instagram_Icon}/></a></div>
+                <div style={{"--i": -rotation}}><a style={{"pointer-events": props.current ? "initial" : "none"}} href={props.member.twitter} target="_blank"><img  src={Twitter_Icon}/></a></div>
+                <div style={{"--i": rotation}}><a style={{"pointer-events": props.current ? "initial" : "none"}} href={props.member.linkedin} target="_blank"><img  src={Linkedin_Icon}/></a></div>
             </div>
-            : <div style={{"opacity": 0}} className="page-team-card-socials">
-            <div style={{"--i": 0}}><img  src={Instagram_Icon}/></div>
-            <div style={{"--i": 0}}><img  src={Twitter_Icon}/></div>
-            <div style={{"--i": 0}}><img  src={Linkedin_Icon}/></div>
-        </div>}
             
             
         </div>
@@ -70,22 +111,20 @@ function TeaCard(props) {
             <div id="teabag">
                     <img style={{transform: ("rotateY(" + (currentRotate) + "deg)")}} id="teabag-img" src={Teabag}/>
                     <div>
-                        <section><p className="prev">Nice to meet you! {memberArray[prev]["message"]}</p></section>
-                        <section><p className="current">Nice to meet you! {memberArray[current]["message"]}</p></section>
+                        <section><p className="prev">{memberArray[prev]["message"]}</p></section>
+                        <section><p className="current">{memberArray[current]["message"]}</p></section>
                     </div>
             </div>
         </div>
     )
 }
 
-
 function Arrow(props) {
 
-    const [preventClick, setPreventClick] = useState(false);
     const waitFor = (delay) => new Promise(resolve => setTimeout(resolve, delay));
 
     const slide = async (up) => {
-        setPreventClick(true);
+        props.setPreventClick(true);
         
         prev = props.active;
         if(currentRotate==180)
@@ -113,12 +152,12 @@ function Arrow(props) {
         document.getElementsByClassName('prev')[0].classList.remove('spinPrev-animation')
         document.getElementsByClassName('current')[0].classList.remove('spinCurrent-animation')
 
-        setPreventClick(false)
+        props.setPreventClick(false)
     }
 
     return (
     <div style={{"--x": props.index + (props.up ? -1 : 1), "--sizeScale": sizeScale}} id="arrow">
-        <button disabled={preventClick} style={{"--up": props.up ? 1 : -1}} onClick={props.up ? () => {slide(true)} : () => {slide(false)}}>
+        <button disabled={props.preventClick} style={{"--up": props.up ? 1 : -1}} onClick={props.up ? () => {slide(true)} : () => {slide(false)}}>
             <img src={Arrow_Icon}/>
         </button>
     </div>
@@ -128,10 +167,10 @@ function Arrow(props) {
 function Team() {
      //Number of displayed people above or below center;
     const [active, setActive] = useState(Math.round((memberArray.length-1)/2));
-
+    const [preventClick, setPreventClick] = useState(false);
 
     
-    var TeamCards = [<Arrow index={displaySide+1} up={true} active={active} setActive={setActive}/>, ...memberArray.map((member, index)=> {
+    var TeamCards = [<Arrow preventClick={preventClick} setPreventClick={setPreventClick} index={displaySide} up={true} active={active} setActive={setActive}/>, ...memberArray.map((member, index)=> {
         let position = Math.abs(active-index);
         let above = 1;
         if(active > index)
@@ -151,18 +190,19 @@ function Team() {
             }
         }
 
-        if(position <= displaySide)
             return <TeamCard 
-                    name={member.name} 
-                    role={member.role} 
-                    image={member.image} 
-                    active={active - index == 0} 
+                    member={member}
+                    index={index}
+                    current={active - index == 0} 
                     size={sizeScale * (1 - 1*position/(displaySide * 2 + 1))}
-                    index={above * position}
-                    hide={position == displaySide}/>
-        else
-            return <></>
-    }), <Arrow index={-displaySide-1} up={false} active={active} setActive={setActive}/>];
+                    position={above * position}
+                    hide={position > displaySide-2}
+                    active={active}
+                    setActive={setActive}
+                    preventClick={preventClick} 
+                    setPreventClick={setPreventClick} 
+                    />
+    }), <Arrow preventClick={preventClick} setPreventClick={setPreventClick} index={-displaySide} up={false} active={active} setActive={setActive}/>];
 
 
     return <div className="page-team">

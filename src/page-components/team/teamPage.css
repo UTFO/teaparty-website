@@ -23,6 +23,7 @@
     flex-direction: column;
     justify-content: center;
     height: 100%;
+    width: 60vh;
 }
 
 .page-team-card-container {
@@ -30,34 +31,35 @@
     --size: 1;
 
     white-space: nowrap;
-
     --rotateAmount: calc(360deg/ ((2 - var(--sizeScale)) * 25) * var(--x) + 180deg);
     transform: rotate(var(--rotateAmount));
     left: var(--leftTransition);
     transform-origin: -30em;
-
-    transition-duration: 1s, 0.2s;
-    transition-property: transform, opacity;
+    transition: transform 1s, opacity 0.5s;
+    cursor: pointer;
 }
 
 .page-team-card-container .page-team-card-rotate-self {
     position: relative;
     display: flex;
     flex-direction: row;
-    height: calc(var(--size) * 25vh);
+    height: 0;
+    z-index: -1;
 }
+
 
 .page-team-card-rotate-self .page-team-card-second-container {
     position: relative;
     display: grid;
     height: fit-content;
+    z-index: 2;
 
     font-family: 'Sorts Mill Goudy', serif;
-    column-gap: calc(var(--size) * 1em);
-    margin: 0 calc(var(--size) * 1em);
+    column-gap: calc(var(--size) * 1.7vh);
+    margin: 0 calc(var(--size) * 1.7vh);
 
-    padding: calc(var(--size) * 1em) calc(var(--size) * 1em) calc(var(--size) * 1em) calc(var(--size) * 2em);
-    border-radius: calc(var(--size) * 3.5em) calc(var(--size) * 5.5em) calc(var(--size) * 5.5em) calc(var(--size) * 3.5em);
+    padding: calc(var(--size) * 1.3vh) calc(var(--size) * 1.7vh) calc(var(--size) * 1.3vh) calc(var(--size) * 3.4vh);
+    border-radius: calc(var(--size) * 5.8vh) calc(var(--size) * 9.2vh) calc(var(--size) * 9.2vh) calc(var(--size) * 5.8vh);
     --cardColor: #e1ffda;
     top: 50%;
     background-color: var(--cardColor);
@@ -70,7 +72,12 @@
                             border-radius, 
                             column-gap, 
                             margin,
-                            transform;
+                            transform,
+                            opacity;
+}
+
+.page-team-card-rotate-self .page-team-card-second-container:hover {
+    background-color: var(--inactiveColor);
 }
 
 .page-team-card-second-container h1 {
@@ -81,7 +88,7 @@
     margin: 0;
     text-align: right;
 
-    font-size: calc(var(--size) * 1.5em);
+    font-size: calc(var(--size) * 2.5vh);
     height: fit-content;
 
     top: 100%;
@@ -99,7 +106,7 @@
     margin: 0;
     text-align: right;
 
-    font-size: calc(var(--size) * 1.1em);
+    font-size: calc(var(--size) * 1.8vh);
     color: #bdbdbd;
     height: fit-content;
 
@@ -117,8 +124,8 @@
     grid-column: 2/3;
     grid-row: 1/3;
 
-    width: calc(var(--size) * 7.5em);
-    height: calc(var(--size) * 7.5em);
+    width: calc(var(--size) * 12.5vh);
+    height: calc(var(--size) * 12.5vh);
     object-fit: cover;
 
     border-radius: 100%;
@@ -126,7 +133,7 @@
     --borderColor: #b3ffc3;
 
     border-color: var(--borderColor);
-    border-width: calc(var(--size) * 0.5em);
+    border-width: calc(var(--size) * 0.8vh);
 
     transition-duration: var(--transitionTime);
     transition-property: border-color, width, height, border-width;
@@ -142,7 +149,7 @@
     align-items: center;
 
     transform: rotate(calc(-360deg/50 * var(--x) - 180deg));
-    transform-origin: calc(var(--size)*-12.5em);
+    transform-origin: calc(var(--size)*-20.8vh);
 
     transition-duration: var(--transitionTime);
     transition-property: opacity, transform;
@@ -151,7 +158,7 @@
 .page-team-card-socials div {
     position: absolute;
     left: 0em;
-    transform-origin: calc(var(--size) * -5.5em);
+    transform-origin: calc(var(--size) * -9.2vh);
     transform: rotate(calc(360deg / 200 * var(--i)));
     transition-duration: var(--transitionTime);
     transition-property: transform;
@@ -159,9 +166,14 @@
 }
 
 .page-team-card-socials img {
-    width: calc(var(--size) * 2.5em);
-    margin: calc(var(--size) * 0.25em) 0;
-    transform: rotate(calc(360deg / -200 * var(--i)))
+    width: calc(var(--size) * 4.2vh);
+    margin: calc(var(--size) * 0.42vh) 0;
+    transform: rotate(calc(360deg / -200 * var(--i)));
+    transition: width 0.2s;
+}
+
+.page-team-card-socials a:hover img {
+    width: calc(var(--size) * 4.8vh);
 }
 
 @keyframes social-icon {
@@ -205,7 +217,6 @@
     display: flex;
     flex-direction: column;
     justify-content: top;
-    left: calc(var(--leftTransition) - 45em);
     top: 5vh;
     filter: drop-shadow(0.5vw 0.5vh 0.2em rgba(0, 0, 0, 0.2));
 }
@@ -229,6 +240,7 @@
 
 .page-team-teabag #teabag #teabag-img {
     transition: transform var(--transitionTime);
+    width: 25vh;
 }
 
 .page-team-teabag #teabag div {
@@ -236,7 +248,7 @@
     align-self: center;
     backface-visibility: hidden;
     width: 100%;
-    top: 7em;
+    height: 100%;
 }
 
 
@@ -246,11 +258,14 @@
     flex-direction: row;
     justify-content: center;
     width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .page-team-teabag #teabag div p {
     margin: 2em;
     font-family: Kanit;
+    font-size: 1.75vh;
 }
 
 .page-team-teabag #teabag div section .prev {

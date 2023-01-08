@@ -38,6 +38,6 @@
     position: relative;
     z-index: 0;
     margin: 0;
-    width: calc(var(--column-width)*4);
-    left: calc(var(--column-width)*2);
+    width: 38vh;
+    left: 22.5vh;
 }
