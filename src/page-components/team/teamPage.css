@@ -1,6 +1,7 @@
 :root {
     --transitionTime: 0.5s;
     --leftTransition: 80em;
+    --rotationScale: 0;
 }
 
 .page-team {
@@ -31,7 +32,7 @@
     --size: 1;
 
     white-space: nowrap;
-    --rotateAmount: calc(360deg/ ((2 - var(--sizeScale)) * 25) * var(--x) + 180deg);
+    --rotateAmount: calc(360deg/ ((2 - var(--sizeScale)) * (25 + var(--rotationScale))) * var(--x) + 180deg);
     transform: rotate(var(--rotateAmount));
     left: var(--leftTransition);
     transform-origin: -30em;
@@ -191,7 +192,7 @@
     position: absolute;
     width: fit-content;
     height: fit-content;
-    --rotateAmount: calc(360deg/ ((2 - var(--sizeScale)) * 24) * (var(--x)) + 180deg);
+    --rotateAmount: calc(360deg/ ((2 - var(--sizeScale)) * (24 + var(--rotationScale))) * (var(--x)) + 180deg);
     transform: rotate(var(--rotateAmount));
     left: calc(var(--leftTransition) - 2em);
     transform-origin: -30em;
@@ -304,5 +305,11 @@
 
     100% {
         transform: rotateY(0deg);
+    }
+}
+
+@media screen and (max-height: 1220px) {
+    :root { 
+        --rotationScale: 5;
     }
 }
