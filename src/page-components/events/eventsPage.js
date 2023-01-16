@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './eventsPage.css';
 
 var socialColor = '#74cdef';
@@ -42,15 +43,23 @@ function EventGenerate() {
         return <EventForm name={event.name}  date={event.date} time={event.time} address={event.address} type={event.type}/> //Format subject to change
     });
 }
-
+const NoEvents = () => {
+    return (
+        <div className="page-events-no-events">
+            No events planned...
+            <br></br>
+            Check back later!
+        </div>
+    )
+}
 //The main event section
 function Events() {
-    
+    const eventsNotEmpty = events.length === 0 ? false : true
     return <>
     
         <div className="page-events-board">
             <div className="page-events-board-container">
-                {EventGenerate()}
+                {eventsNotEmpty ? EventGenerate() : <NoEvents/>}
             </div>
         </div>
 
