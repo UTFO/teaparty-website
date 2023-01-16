@@ -1,6 +1,12 @@
 import { useState } from 'react';
 import './eventsPage.css';
 
+import {
+    HomeText, AboutText, TeamText, EventsText, FAQText, JoinText
+  } from '../page-introductions/imports.js'
+
+import PageIntro from '../page-introductions/PageIntro.js';
+
 var socialColor = '#74cdef';
 var teaColor = '#62ff8b';
 var gameColor = '#f26c4f';
@@ -56,14 +62,20 @@ const NoEvents = () => {
 function Events() {
     const eventsNotEmpty = events.length === 0 ? false : true
     return <>
-    
+    <div className="page-introduction">
+        <PageIntro title={EventsText.title} text={EventsText.text}/>
+    </div>
+    <div className="page-components">
         <div className="page-events-board">
             <div className="page-events-board-container">
                 {eventsNotEmpty ? EventGenerate() : <NoEvents/>}
             </div>
         </div>
-
+    </div>
+    
     </>
+
+    
 }
 
 export default Events;

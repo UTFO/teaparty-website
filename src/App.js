@@ -8,11 +8,7 @@ import {
   Home, About, Team, Events, FAQ, Join, Navbar
 } from './page-components/imports.js';
 
-import {
-  HomeText, AboutText, TeamText, EventsText, FAQText, JoinText
-} from './page-introductions/imports.js'
 
-import PageIntro from './page-introductions/PageIntro.js';
 
 function App() {
   return (
@@ -20,26 +16,7 @@ function App() {
       <BrowserRouter >
       
         <Navbar/>
-
-        <div className="page-introduction">
-          <Routes>
-
-            <Route path="/" element={<PageIntro title={HomeText.title} text={HomeText.text}/>}/>
-
-            <Route path="/about" element={<PageIntro title={AboutText.title} text={AboutText.text}/>}/>
-            
-            <Route path="/team" element={<PageIntro title={TeamText.title} text={TeamText.text}/>}/>
-            
-            <Route path="/events" element={<PageIntro title={EventsText.title} text={EventsText.text}/>}/>
-
-            <Route path="/faq" element={<PageIntro title={FAQText.title} text={FAQText.text}/>}/>
-          
-            <Route path="/join" element={<PageIntro title={JoinText.title} text={JoinText.text}/>}/>
-
-          </Routes>
-        </div>
         
-        <div id="page-component">
           <Routes>
 
             <Route path="/" element={<Home/>}/>
@@ -55,7 +32,6 @@ function App() {
             <Route path="/join" element={<Join/>}/>
 
           </Routes>
-        </div>
       </BrowserRouter>
     </div>
   );

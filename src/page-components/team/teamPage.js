@@ -15,6 +15,12 @@ import './teamPage.css';
 import React from 'react';
 import { waitFor } from '@testing-library/react';
 
+import PageIntro from '../page-introductions/PageIntro.js';
+
+import {
+    HomeText, AboutText, TeamText, EventsText, FAQText, JoinText
+  } from '../page-introductions/imports.js'
+
 var borderActiveColor = '#b3ffc3';
 var cardActiveColor = '#e1ffda';
 
@@ -205,18 +211,27 @@ function Team() {
     }), <Arrow preventClick={preventClick} setPreventClick={setPreventClick} index={-displaySide} up={false} active={active} setActive={setActive}/>];
 
 
-    return <div className="page-team">
-        <div className="page-team-container">
-            <div className="page-team-second">
-                {TeamCards}
+    return <>
+    <div className='page-introduction'>
+        <PageIntro title={TeamText.title} text={TeamText.text}/>
+    </div>
+    <div className='page-components'>
+    
+        <div className="page-team">
+            <div className="page-team-container">
+                <div className="page-team-second">
+                    {TeamCards}
+                </div>
+                {<TeaCard index={active}/>}
+
             </div>
-            {<TeaCard index={active}/>}
+        
+        
 
         </div>
-        
-        
-
     </div>
+    
+    </>
 }
 
 export default Team;
