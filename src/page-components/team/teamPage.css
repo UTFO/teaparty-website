@@ -54,6 +54,9 @@
     display: grid;
     height: fit-content;
     z-index: 2;
+    justify-content: right;
+
+    width: 13em;
 
     font-family: 'Sorts Mill Goudy', serif;
     column-gap: calc(var(--size) * 1.7vh);
@@ -120,6 +123,7 @@
 
 .page-team-card-second-container img {
     position: relative;
+    
     top: 50%;
     transform: translateY(-50%);
     grid-column: 2/3;
