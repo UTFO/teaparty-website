@@ -89,7 +89,7 @@ function TeamCard(props) {
     return (props.disable ? <></> : <div style={{"--size": props.size, "--x": props.position, "--sizeScale": sizeScale, "opacity": 0 + !props.hide}} className="page-team-card-container">
 
         <div className="page-team-card-rotate-self">
-            <div style={{...(props.current ? activeStyle : inactiveStyle), "cursor": (props.hide ? "initial" : "pointer")}} className="page-team-card-second-container"  onClick={props.hide ? "" : () => {getClickedCard()}}>
+            <div style={{...(props.current ? activeStyle : inactiveStyle), "cursor": (props.hide ? "initial" : "pointer")}} className="page-team-card-second-container"  onClick={props.hide  || props.preventClick ? "" : () => {getClickedCard()}}>
                 <h1 style={{"opacity": 0.5 + props.active}}>{props.member.name}</h1>
                 <h2 style={{"opacity": 0.5 + props.active}}>{props.member.role}</h2>
                 <img style={{"--borderColor": borderColor}} src={props.member.image} alt={props.name + "'s Picture"}/>
