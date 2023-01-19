@@ -56,7 +56,7 @@ function Events() {
     <div className="page-introduction">
         <PageIntro title={EventsText.title} text={EventsText.text}/>
     </div>
-    <div className="page-components">
+    <div className="page-component">
         <div className="page-events-board">
             <div className="page-events-board-container">
                 {EventGenerate()}

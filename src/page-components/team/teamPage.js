@@ -215,7 +215,7 @@ function Team() {
     <div className='page-introduction'>
         <PageIntro title={TeamText.title} text={TeamText.text}/>
     </div>
-    <div className='page-components'>
+    <div className='page-component'>
     
         <div className="page-team">
             <div className="page-team-container">

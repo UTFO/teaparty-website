@@ -16,7 +16,7 @@ function FAQ() {
     <div className='page-introduction'>
         <PageIntro title={FAQText.title} text={FAQText.text}/>
     </div>
-    <div className='page-components'>
+    <div className='page-component'>
             <div className='page'>
                 <Socials/>
                 <FaqIntro/>

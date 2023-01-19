@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom'
 import './App.css';
 
 import {
-  Home, About, Team, Events, FAQ, Join, Navbar
+  Home, About, Team, Events, FAQ, Join, Navbar, Footer
 } from './page-components/imports.js';
 
 
@@ -32,6 +32,8 @@ function App() {
             <Route path="/join" element={<Join/>}/>
 
           </Routes>
+
+        <Footer/>
       </BrowserRouter>
     </div>
   );
