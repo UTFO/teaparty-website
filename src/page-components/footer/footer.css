@@ -1,0 +1,35 @@
+.footer-section {
+    grid-column: 1/var(--column-num);
+    grid-row: 3/4;
+    background-color: green;
+    height: 25vh;
+    border-top: 2vh;
+    border-style: solid;
+    border-color: rgb(0, 54, 2);
+
+    
+}
+
+.footer-section-info {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+
+    justify-content: center;
+    flex-direction: row;
+}
+
+.footer-section-info img {
+    height: 20vh;
+}
+
+.footer-section-info section {
+    margin: auto 0;
+    margin-left: 5vw;
+    color: rgb(200, 200, 200);
+}
+
+.footer-section-info section p {
+    margin: 10px;
+}

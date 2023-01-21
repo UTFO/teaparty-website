@@ -25,10 +25,11 @@
 }
 
 .navbar-menu img {
-    margin-left: var(--column-width);
+    margin-left: calc(var(--column-width)/2);
+    padding-top: 2vh;
     padding-right: calc(var(--column-width)/2);
     
-    height: var(--navbar-menu-font-size);
+    height: calc(var(--navbar-menu-font-size)*1.5);
 }
 
 .navbar-menu rect {
@@ -44,7 +45,7 @@
 }
 
 .navbar-menu a {
-    margin: auto 2vw;
+    margin: auto 1.5vw;
     font-size: var(--navbar-menu-font-size);
     text-decoration: none;
     color: black;
