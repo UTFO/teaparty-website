@@ -5,6 +5,7 @@ import Cup2 from './images/cup (1).png';
 import Email from './images/email.png';
 import Insta from './images/instagram.png';
 import ImageSlider from './ImageSlider';
+import slide2 from './images/slide2.jpg';
 import { SliderData } from './SliderData';
 
 
@@ -16,11 +17,19 @@ function Home() {
             </svg>
 
             <h1 className="event-header">
-                Check out our event highlights!
+                Check Our Event Highlights!
             </h1>
             
             <div className="image-gallery">
-                
+                <div className="image-area">
+                    <img className="internal-image" src={slide2}></img>
+                </div>
+                <div className='image-text-area'>
+                    
+                </div>
+                <div>
+
+                </div>
             </div>
            <svg viewBox="0 0 450 25"> 
              <path d="M-100,70 C2,-22 450,-22 550,70" fill="white"/>
