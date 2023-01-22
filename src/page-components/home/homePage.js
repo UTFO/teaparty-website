@@ -7,7 +7,8 @@ import Insta from './images/instagram.png';
 import ImageSlider from './ImageSlider';
 import slide2 from './images/slide1.png'
 import { SliderData } from './SliderData';
-
+import Carousel from 'react-material-ui-carousel';
+import Arrow_Icon from './images/Arrow.png'
 
 function Home() {
     return (<>
@@ -19,21 +20,24 @@ function Home() {
             <h1 className="event-header">
                 Check out our event highlights!
             </h1>
-            
-            <div className="image-gallery">
-                <div className="image-area">
-                    <img className="internal-image" src={slide2}></img>
-                </div>
-                <div className='image-text-area'>
-                    <h1>Eichi Chai Shop Event</h1>
-                    <p>Students socializing on the patio for their first club event! (Add more information such as date, purpose of event, feedbacks, etc.)
-                    </p>
-                </div>
-                
-            </div>
-            <div className='slider'>
-
-                </div>
+            <Carousel
+                fullHeightHover={false}
+                navButtonsProps={{
+                    style: {
+                        backgroundColor: 'transparent',
+                        borderRadius: 0,
+                        
+                    }
+                }}
+                animation={"slide"}
+                navButtonsAlwaysVisible={true}
+                NextIcon={<img src={Arrow_Icon} className='next'/>}
+                PrevIcon={<img src={Arrow_Icon} className="prev"/>}>
+                {
+                    SliderData.map((item,index) => <ImageSlider data={item}/>)
+                }
+            </Carousel>
+            <div className="slider"></div>
            <svg viewBox="0 0 450 25"> 
              <path d="M-100,70 C2,-22 450,-22 550,70" fill="white"/>
             </svg> 
