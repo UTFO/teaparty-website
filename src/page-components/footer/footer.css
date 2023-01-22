@@ -1,6 +1,6 @@
 .footer-section {
-    grid-column: 1/var(--column-num);
-    grid-row: 3/4;
+    grid-column: 1/21;
+    grid-row: 4/5;
     background-color: green;
     height: 25vh;
     border-top: 2vh;

@@ -1,54 +1,26 @@
-.slider {
-    position: relative;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+ .content-container{
+    display: grid;
+    place-items: center stretch;
+    grid-column: 1/21;
+    grid-row: 3/4;
+    background-color: #c4df9b;
   }
-  
-  .image {
-    height: 600px;
-    border-radius: 10px;
-    display: inline-block;
+
+  .navbar-contact{
+    --contact-height: calc()
+    grid-column: 1/2;
+    grid-row: 2/3;
   }
+
   
-  .text {
-    position: absolute;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: x-large;
-    display: inline-block;
-    z-index: 100;
+  .event-header{
+    text-align: center;
+    font-family: 'page-intro-title-font';
+    color: #0CEDC0;
+    margin-top: 10px;
+    margin-bottom: 0;
   }
-  
-  .right-arrow {
-    position: absolute;
-    top: 50%;
-    right: 32px;
-    font-size: 3rem;
-    color: #000;
-    z-index: 10;
-    cursor: pointer;
-    user-select: none;
-  }
-  
-  .left-arrow {
-    position: absolute;
-    top: 50%;
-    left: 32px;
-    font-size: 3rem;
-    color: #000;
-    z-index: 10;
-    cursor: pointer;
-    user-select: none;
-  }
-  
-  .slide {
-    opacity: 0;
-    transition-duration: 1s ease;
-  }
-  
-  .slide.active {
-    opacity: 1;
-    transition-duration: 1s;
-    transform: scale(1.08);
+
+  .image-gallery{
+    height: 40vh;
   }
