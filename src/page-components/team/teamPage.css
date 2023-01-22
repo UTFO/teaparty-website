@@ -15,7 +15,9 @@
     position: relative;
     height: 100%;
     flex-direction: row;
+    justify-content: space-evenly;
     top: -5%;
+    padding-right: 5vw;
 }
 
 .page-team-second {

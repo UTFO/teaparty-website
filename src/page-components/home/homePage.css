@@ -2,8 +2,8 @@
     display: grid;
     place-items: center stretch;
     grid-column: 1/21;
-    grid-row: 4/5;
-    background-color: #DAF7A6;
+    grid-row: 3/4;
+    background-color: #c4df9b;
   }
 
   .navbar-contact{
@@ -22,35 +22,24 @@
   }
 
   .image-gallery{
-    height: fit-content;
+    height: 40vh;
   }
 
-  .image-area{
-    display: inline-block;
-    height: 35vh;
-    width: 25vw;
-    margin-left: 20vw;
-    margin-top: 8vh;
-    margin-right: 0;
-    margin-bottom: 0;
-    transform: rotate(10deg);
-    border-color:#0CEDC0;
-    border-style: solid;
-    border-width: 4px;
-  }
-
-  .image-area .internal-image{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-  }
-
-  .image-gallery .image-text-area{
-    display: inline-block;
-    background-color: #c4df9b;
+  .page-home-hyperlinks {
+    grid-row: 4/5;
+    display: flex;
+    width: 100vw;
     height: 30vh;
-    width: 25vw;
-    border-radius: 10%;
-    margin-left: 10vw;
-    margin-top: 8vh;
+    margin-top: 10vh;
+    justify-content: space-evenly;
+  }
+
+  .page-home-join h2, .page-home-sponsor h2 {
+    font-family: page-intro-title-font;
+    font-size: 2em;
+    text-align: center;
+  }
+
+  .page-home-join p, .page-home-sponsor p {
+    font-family: Montserrat;
   }
