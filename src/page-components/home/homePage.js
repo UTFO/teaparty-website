@@ -25,12 +25,15 @@ function Home() {
                     <img className="internal-image" src={slide2}></img>
                 </div>
                 <div className='image-text-area'>
-                    
+                    <h1>Eichi Chai Shop Event</h1>
+                    <p>Students socializing on the patio for their first club event! (Add more information such as date, purpose of event, feedbacks, etc.)
+                    </p>
                 </div>
-                <div>
+                
+            </div>
+            <div className='slider'>
 
                 </div>
-            </div>
            <svg viewBox="0 0 450 25"> 
              <path d="M-100,70 C2,-22 450,-22 550,70" fill="white"/>
             </svg> 

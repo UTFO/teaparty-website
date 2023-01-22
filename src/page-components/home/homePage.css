@@ -17,18 +17,20 @@
     text-align: center;
     font-family: 'page-intro-title-font';
     color: #0CEDC0;
-    margin-top: 10px;
+    margin-top: 5vh;
     margin-bottom: 0;
   }
 
   .image-gallery{
+    display: flex;
     height: fit-content;
+    align-items: center;
   }
 
   .image-area{
     display: inline-block;
     height: 35vh;
-    width: 25vw;
+    width: 23vw;
     margin-left: 20vw;
     margin-top: 8vh;
     margin-right: 0;
@@ -48,9 +50,28 @@
   .image-gallery .image-text-area{
     display: inline-block;
     background-color: #c4df9b;
-    height: 30vh;
-    width: 25vw;
+    height: fit-content;
+    width: 30vw;
     border-radius: 10%;
-    margin-left: 10vw;
-    margin-top: 8vh;
+    margin-top: 10vh;
+    margin-left: 8vw;
+
+  }
+
+  .image-gallery .image-text-area h1{
+    color: #0CEDC0;
+    font-family: navbar-menu-font;
+    text-align: center;
+  }
+
+  .image-gallery .image-text-area p{
+    color: grey;
+    font-family: 'Montserrat';
+    margin: 5% 5%;
+    margin-bottom: 7%;
+  }
+  
+  .slider {
+    height: 20vh;
+    
   }
