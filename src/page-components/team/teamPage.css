@@ -154,7 +154,7 @@
     align-items: center;
 
     transform: rotate(calc(-360deg/50 * var(--x) - 180deg));
-    transform-origin: calc(var(--size)*-20.8vh);
+    transform-origin: calc(var(--size)*-9em);
 
     transition-duration: var(--transitionTime);
     transition-property: opacity, transform;

@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom'
 import './App.css';
 
 import {
-  Home, About, Team, Events, FAQ, Join, Navbar, Footer
+  Home, About, Team, Events, FAQ, Navbar, Footer
 } from './page-components/imports.js';
 
 
@@ -28,8 +28,6 @@ function App() {
             <Route path="/events" element={<Events/>}/>
 
             <Route path="/faq" element={<FAQ/>}/>
-          
-            <Route path="/join" element={<Join/>}/>
 
           </Routes>
 

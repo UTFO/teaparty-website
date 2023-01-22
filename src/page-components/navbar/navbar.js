@@ -40,7 +40,7 @@ function Navbar() {
             <MenuButton text="Team" path="/team"/>
             <MenuButton text="Events" path="/events"/>
             <MenuButton text="FAQ" path="/faq"/>
-            <a className="navbar-join" href="/join">
+            <a className="navbar-join" href="https://forms.gle/StZ1cLbSVPw7hsT67" target="_blank">
                 Join Us
             </a>
         </div>

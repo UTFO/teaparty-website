@@ -3,8 +3,7 @@ import About from './about/aboutPage.js';
 import Team from './team/teamPage.js';
 import Events from './events/eventsPage.js';
 import FAQ from './faq/faqPage.js';
-import Join from './join/joinPage.js';
 import Navbar from './navbar/navbar.js'
 import Footer from './footer/footer.js';
 
-export { Home, About, Team, Events, Join, Navbar, FAQ, Footer };
+export { Home, About, Team, Events, Navbar, FAQ, Footer };
