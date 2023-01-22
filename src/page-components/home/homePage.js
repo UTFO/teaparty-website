@@ -10,32 +10,23 @@ import { SliderData } from './SliderData';
 
 function Home() {
     return (<>
-     <div>
-            <div className="page-intro-container">
-                <div className="page-intro-container-text">
-                    <h2>Welcome to Tea Party</h2>
-                    <p>Lopem stuff</p>   
-                </div>  
-                <div className='image-cup'></div>       
-            </div>
+     <div className="content-container" >
+            <svg viewBox="0 0 450 35">
+                <path d="M-100,-37 C2,55 450,55 550,-37" fill="white"/>
+            </svg>
 
-            <div className='page-home-higlights'>
-                    <ImageSlider slides={SliderData} />
+            <h1 className="event-header">
+                Check out our event highlights!
+            </h1>
+            
+            <div className="image-gallery">
+                
             </div>
-
-            <div className='page-home-hyperlinks'>
-                <div className='join'>
-                    <h2>Want to join <a href="https://google.com" target="_blank" rel="noreferrer">
-                    <img src={Form} height={30}></img></a></h2>
-                    <p>Fill out the google form <a href="http://google.com">here</a></p>
-                </div>
-                <div className='sponsor'>
-                    <h2>Interested in Sponsoring? <img src={Cup2} height={30}></img></h2>
-                    <p>Send us an email <a href="https://google.com" target="_blank" rel="noreferrer">
-                    <img src={Email} height={20}></img></a> or message us on instagram!<a href="https://instagram.com" target="_blank" rel="noreferrer">
-                    <img src={Insta} height={20}></img></a></p>
-                </div>
-            </div>
+           <svg viewBox="0 0 450 25"> 
+             <path d="M-100,70 C2,-22 450,-22 550,70" fill="white"/>
+            </svg> 
+            
+            
     </div>
     </>);
 }

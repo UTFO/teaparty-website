@@ -1,8 +1,17 @@
 .footer-section {
     grid-column: 1/21;
+<<<<<<< HEAD
     grid-row: 3/4;
     height: 25vh;    
 }
+=======
+    grid-row: 4/5;
+    background-color: green;
+    height: 25vh;
+    border-top: 2vh;
+    border-style: solid;
+    border-color: rgb(0, 54, 2);
+>>>>>>> 6ac753461c2126fca5f3d79010aa1c75c399dc63
 
 .footer-section svg {
     display: block;
