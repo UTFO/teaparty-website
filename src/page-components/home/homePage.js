@@ -5,7 +5,7 @@ import Cup2 from './images/cup (1).png';
 import Email from './images/email.png';
 import Insta from './images/instagram.png';
 import ImageSlider from './ImageSlider';
-import slide2 from './images/slide2.jpg';
+import slide2 from './images/slide1.png'
 import { SliderData } from './SliderData';
 
 
@@ -17,7 +17,7 @@ function Home() {
             </svg>
 
             <h1 className="event-header">
-                Check Our Event Highlights!
+                Check out our event highlights!
             </h1>
             
             <div className="image-gallery">
@@ -39,6 +39,20 @@ function Home() {
             </svg> 
             
             
+    </div>
+
+    <div className='page-home-hyperlinks'>
+        <div className='page-home-join'>
+            <h2>Want to join? <a href="https://google.com" target="_blank" rel="noreferrer">
+            <img src={Form} height={30}></img></a></h2>
+            <p>Fill out the google form <a href="https://forms.gle/StZ1cLbSVPw7hsT67">here</a></p>
+        </div>
+        <div className='page-home-sponsor'>
+            <h2>Interested in Sponsoring? <img src={Cup2} height={30}></img></h2>
+            <p>Send us an email &nbsp; <a href="https://google.com" target="_blank" rel="noreferrer">
+            <img src={Email} height={20}></img></a> &nbsp; or message us on instagram! &nbsp;<a href="https://instagram.com" target="_blank" rel="noreferrer">
+            <img src={Insta} height={20}></img></a></p>
+        </div>
     </div>
     </>);
 }
