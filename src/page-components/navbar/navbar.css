@@ -59,7 +59,7 @@
 }
 
 .navbar-contact {
-    grid-column: 1 / calc(var(--column-num) * 1/20);
+    grid-column: 1 / 2;
     background-color: var(--navbar-contact-color);
     
     display: flex;
