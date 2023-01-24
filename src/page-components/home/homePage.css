@@ -1,3 +1,10 @@
+ .welcome-container{
+    display: inline-block;
+    align-self: left;
+    grid-column: 2/21;
+    grid-row: 2/3;
+}
+ 
  .content-container{
     display: grid;
     place-items: center stretch;
@@ -6,12 +13,11 @@
     background-color: #c4df9b;
   }
 
-  .navbar-contact{
-    --contact-height: calc()
-    grid-column: 1/2;
-    grid-row: 2/3;
-  }
+.navbar-contact{
+  display: inline-flex !important;
+}
 
+  
   
   .event-header{
     text-align: center;
@@ -49,3 +55,5 @@
   .prev{
     transform: rotate(180deg);
   }
+
+  

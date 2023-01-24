@@ -12,6 +12,13 @@ import Arrow_Icon from './images/Arrow.png'
 
 function Home() {
     return (<>
+    <div className="welcome-container">
+        <h1>
+            Hi
+        </h1>
+    </div>
+
+
      <div className="content-container" >
             <svg viewBox="0 0 450 35">
                 <path d="M-100,-37 C2,55 450,55 550,-37" fill="white"/>
