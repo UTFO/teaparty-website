@@ -18,8 +18,6 @@ function FAQ() {
     </div>
     <div className='page-component'>
             <div className='page'>
-                <Socials/>
-                <FaqIntro/>
                 <QuestionComponent/>
             </div>
         </div>
