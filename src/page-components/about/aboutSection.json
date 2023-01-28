@@ -1,0 +1,20 @@
+[
+    {
+        "name": "History",
+        "id": 0,
+        "text": "This here is our history! {imageOne}",
+        "imageOne": "insertLinkHere"
+    },
+    {
+        "name": "Values",
+        "id": 1,
+        "text": "These here are our values! {imageOne}",
+        "imageOne": "insertLinkHere"
+    },
+    {
+        "name": "Vision",
+        "id": 2,
+        "text": "This here is our vision for the club! {imageOne}",
+        "imageOne": "insertLinkHere"
+    }
+]

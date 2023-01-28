@@ -19,8 +19,8 @@ var EventsText = {
 }
 
 var FAQText = {
-    title: "N/A",
-    text: "N/A"
+    title: "WELCOME TO OUR FAQ PAGE",
+    text: "This page contains the answers to our frequently answered questions. These will be regularly updated with time. We suggest you to check this page before asking your own question."
 }
 
 var JoinText = {
