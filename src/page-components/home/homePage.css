@@ -1,8 +1,10 @@
  .welcome-container{
-    display: inline-block;
-    align-self: left;
-    grid-column: 2/21;
-    grid-row: 2/3;
+    position: block;
+    height: 100vh;
+    grid-column-start: 2;
+    background-color: red;
+    top: 0;
+    left: 0;
 }
  
  .content-container{

@@ -1,101 +1,58 @@
-.About {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.page-about {
+  --height: 80vh;
+  --width: 30vw;
+  width: fit-content;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
-  
-  .box {
-    width: 558px;
-    margin: auto;
-    margin-top: 50px;
-  }
-  
-  .tab {
-    flex: 1;
-    float: left;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    width: 100px;
-    height: 40px;
-    background-color: green;
-    text-align: center;
-    cursor: pointer ;
-    position: relative;
-    top: -28px;
-    font-style: italic;
-    font-weight: bold;
-    font-size: x-large;
-    z-index: 0;  
-  }
-  
-  .active-tab {
-    background-color: greenyellow;
-    top: -38px;
-    z-index: 2;
-  }
-  
-  .page-about-boardpage {
-    display: none;
-    text-align: center;
-    padding-top: 70px;
-    align-content: center;
-    background-image: url(images/paper.png);
-    height: 803px;
-    width: 558px;
-    font-family: 'page-about-font';  
-    font-size: larger;
-    font-weight: lighter;
-    z-index: 1;
-  }
-  
-  .active-page {
-    display: block;
-  }
-  
-  @font-face {
-    font-family: 'page-about-font';
-    src: url('../../fonts/Lobster-Regular.ttf');
-  }
-  
-  .footer {
-    display: flex;
-    justify-content: center;
-  }
-  .forward {
-    margin-top: 550px;
-    border: none;
-    position: absolute;
-    box-shadow: none;
-    background-color: transparent;
-    margin-left: 100px;
-    font-size: larger;
-    cursor: pointer;
-    font-style: italic;
-    font-weight: 500;
-    color: grey;
-    display: inline-flex;
-  }
-  
-  .backward {
-    margin-top: 550px;
-    border: none;
-    position: absolute;
-    box-shadow: none;
-    background-color: transparent;
-    font-size: larger;
-    cursor: pointer;
-    margin-left: -100px;
-    font-style: italic;
-    font-weight: 500;
-    color: grey;
-  }
-  
-  .page-no-display {
-    margin-top: 550px;
-    position: center;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: smaller;
-    font-style: italic;
-    font-weight: 500;
-    color: grey;
-  }
+
+.page-about-menu {
+  width: var(--width);
+  height: var(--height);
+  z-index: 1;
+}
+
+.page-about-tabs {
+  display: flex;
+  z-index: -1;
+  margin-left: 30px;
+}
+
+.about-tab {
+  position: relative;
+  margin-left: 5px;
+  background-color: green;
+  border-radius: 1em 1em 0 0;
+  padding: 5px 10px;
+  padding-bottom: 10px;
+  top: 20px;
+  transition: top;
+  transition-duration: 0.3s;
+}
+
+.about-tab p {
+  font-family: navbar-menu-font;
+  font-size: 1.5em;
+  margin: 0;
+}
+
+#active {
+  position: relative;
+  top: 5px;
+  background-color: greenyellow;
+}
+
+#not-active:hover {
+  top: 10px;
+}
+
+#not-active {
+  cursor: pointer;
+}
+
+.page-about-menu img {
+  position: absolute;
+  width: var(--width);
+  height: var(--height);
+}

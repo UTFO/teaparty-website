@@ -16,7 +16,7 @@
     height: 100%;
     flex-direction: row;
     justify-content: space-evenly;
-    top: -5%;
+    top: 0;
     padding-right: 5vw;
 }
 

@@ -14,7 +14,7 @@ function Home() {
     return (<>
     <div className="welcome-container">
         <h1>
-            Hi
+            Test
         </h1>
     </div>
 
