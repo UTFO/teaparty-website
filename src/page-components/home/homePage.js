@@ -9,13 +9,17 @@ import slide2 from './images/slide1.png'
 import { SliderData } from './SliderData';
 import Carousel from 'react-material-ui-carousel';
 import Arrow_Icon from './images/Arrow.png'
-
+import {ContactBar, TopBar} from '../navbar/navbar';
+import WelcomeMessage from './components/WelcomeMessage';
 function Home() {
     return (<>
+     
     <div className="welcome-container">
-        <h1>
-            Hi
-        </h1>
+        <ContactBar />
+        <WelcomeMessage />
+        <button className="highlights">
+            click me
+            </button>
     </div>
 
 

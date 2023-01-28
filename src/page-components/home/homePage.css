@@ -1,10 +1,32 @@
  .welcome-container{
-    display: inline-block;
-    align-self: left;
-    grid-column: 2/21;
     grid-row: 2/3;
+    display: grid;
+    grid-template-columns: 1fr 2fr 10fr 4fr;
 }
- 
+
+.navbar-contact {
+  display: none !important;
+}
+
+ .welcome-container .navbar-contact{
+    display: inline-flex !important;
+    grid-column: 1/2;
+ }
+
+ .welcome-container .welcome-cup{
+    grid-column: 3/4;
+ }
+
+ .highlights{
+    clip-path: circle(60px at center);
+    margin-right: 5vw;
+    margin-top: 5vh;
+    background-image: url('images/slide1.png');
+    border:#c4df9b;
+    border-width: 2px;
+ }
+
+
  .content-container{
     display: grid;
     place-items: center stretch;
@@ -13,10 +35,7 @@
     background-color: #c4df9b;
   }
 
-.navbar-contact{
-  display: inline-flex !important;
-}
-
+  
   
   
   .event-header{
