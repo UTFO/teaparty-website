@@ -58,7 +58,7 @@
     z-index: 2;
     justify-content: right;
 
-    width: 13em;
+    width: fit-content;
 
     font-family: 'Sorts Mill Goudy', serif;
     column-gap: calc(var(--size) * 1.7vh);
@@ -148,8 +148,9 @@
 }
 
 .page-team-card-socials {
-    position: relative;
+    position: absolute;
     display: flex;
+    left: 15em;
     flex-direction: column;
 
     justify-content: center;
@@ -164,7 +165,6 @@
 
 .page-team-card-socials div {
     position: absolute;
-    left: 0em;
     transform-origin: calc(var(--size) * -9.2vh);
     transform: rotate(calc(360deg / 200 * var(--i)));
     transition-duration: var(--transitionTime);
@@ -314,7 +314,7 @@
     }
 }
 
-@media screen and (max-height: 1220px) {
+@media all and (max-height: 900px) {
     :root { 
         --rotationScale: 5;
     }
