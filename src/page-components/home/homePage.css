@@ -17,13 +17,8 @@
     grid-column: 3/4;
  }
 
- .highlights{
-    clip-path: circle(60px at center);
-    margin-right: 5vw;
-    margin-top: 5vh;
-    background-image: url('images/slide1.png');
-    border:#c4df9b;
-    border-width: 2px;
+ .welcome-container .highlights-container{
+    grid-column: 4/5;
  }
 
 

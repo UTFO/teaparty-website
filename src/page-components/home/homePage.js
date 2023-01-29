@@ -11,19 +11,18 @@ import Carousel from 'react-material-ui-carousel';
 import Arrow_Icon from './images/Arrow.png'
 import {ContactBar, TopBar} from '../navbar/navbar';
 import WelcomeMessage from './components/WelcomeMessage';
+import HighlightsButton from './components/HighlightsButton';
 function Home() {
     return (<>
      
     <div className="welcome-container">
         <ContactBar />
         <WelcomeMessage />
-        <button className="highlights">
-            click me
-            </button>
+        <HighlightsButton />
     </div>
 
 
-     <div className="content-container" >
+     <div className="content-container" id="highlights" >
             <svg viewBox="0 0 450 35">
                 <path d="M-100,-37 C2,55 450,55 550,-37" fill="white"/>
             </svg>

@@ -1,7 +1,7 @@
 import React from 'react';
 import Cup from './cup.png';
 import './WelcomeMessage.css';
-import Smoke from './smoke.mp4';
+import Smoke from './Smoke.js';
 const WelcomeMessage = () => {
   return (
     <div className='welcome-cup'>
@@ -10,7 +10,7 @@ const WelcomeMessage = () => {
             <div className='smoke-space'>
               
             </div>
-            <video src={Smoke} muted autoPlay loop/>
+            <Smoke />
             <svg width="100%" height='45' xmlns="http://www.w3.org/2000/svg" className="top-drawing">
               <line x1="0" x2="0" y1="0" y2="100%" stroke="black" stroke-width="2"/>
               <line x1="0" x2="8%" y1="0" y2="0" stroke="black" stroke-width="2"/>
