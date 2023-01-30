@@ -2,119 +2,36 @@ ul{
     position: absolute;
     bottom: 0;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-60%);
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap-reverse;
 }
 
 li{
-    position: absolute;
     list-style: none;
-    width: 3vw;
-    height: 5vw;
+    height: 0.5vw;
+    min-width: 0.3vw;
     background: #262626;
     border-radius: 40%;
+    animation: animate 8s linear infinite;
+    filter: blur(8px);
+    animation-delay: calc(var(--i) * -0.5s );
 }
 
-@keyframes animate1{
+@keyframes animate{
     0%{
-        transform: translate(3vw,-10vh) scale(1);
-        opacity: 0.7;
-        filter: blur(5px);
+        transform: translateY(-5px) scaleX(1);
+        opacity: 0;
+    }
+    5%{
+        opacity: 1;
     }
     100%{
-        transform: translate(3vw, -50vh) scale(3);
+        transform: translateY(-300px) scaleX(15);
         opacity: 0;
-        filter: blur(5px);
     }
-}
-
-@keyframes animate2{
-    0%{
-        transform: translate(0,-10vh) scale(1);
-        opacity: 0.7;
-        filter: blur(5px);
-    }
-    100%{
-        transform: translate(0, -50vh) scale(3);
-        opacity: 0;
-        filter: blur(5px);
-    }
-}
-
-@keyframes animate3{
-    0%{
-        transform: translate(-5vw,-10vh) scale(1);
-        opacity: 0.7;
-        filter: blur(5px);
-    }
-    100%{
-        transform: translate(-5vw, -50vh) scale(3);
-        opacity: 0;
-        filter: blur(5px);
-    }
-}
-
-@keyframes animate4{
-    0%{
-        transform: translate(-2vw,-10vh) scale(1);
-        opacity: 0.7;
-        filter: blur(5px);
-    }
-    100%{
-        transform: translate(-2vw, -50vh) scale(3);
-        opacity: 0;
-        filter: blur(5px);
-    }
-}
-
-@keyframes animate5{
-    0%{
-        transform: translate(-8vw,-10vh) scale(1);
-        opacity: 0.7;
-        filter: blur(5px);
-    }
-    100%{
-        transform: translate(-8vw, -50vh) scale(3);
-        opacity: 0;
-        filter: blur(5px);
-    }
-}
-
-@keyframes animate6{
-    0%{
-        transform: translate(6vw,-10vh) scale(1);
-        opacity: 0.7;
-        filter: blur(5px);
-    }
-    100%{
-        transform: translate(6vw, -50vh) scale(3);
-        opacity: 0;
-        filter: blur(5px);
-    }
-}
-
-li:nth-child(1){
-    animation: animate1 2s linear infinite;
-    animation-delay: 0.2s;
-}
-li:nth-child(2){
-    animation: animate2 2s linear infinite;
-    animation-delay: 0.4s;
-}
-li:nth-child(3){
-    animation: animate3 2s linear infinite;
-    animation-delay: 0.2s;
-}
-li:nth-child(4){
-    animation: animate4 2s linear infinite;
-    animation-delay: 0.4s;
-}
-li:nth-child(5){
-    animation: animate5 2s linear infinite;
-    animation-delay: 0s;
-}
-li:nth-child(6){
-    animation: animate6 2s linear infinite;
-    animation-delay: 0s;
 }
