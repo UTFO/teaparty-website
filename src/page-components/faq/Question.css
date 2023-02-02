@@ -1,17 +1,21 @@
-.question{
+.title{
     display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    border: 5px solid black;
-    border-radius: 5px;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
 }
 
-.question .header {
-    font-size: medium;
-    font-family: "https://fonts.google.com/specimen/Sono";
+.expand{
+    height: auto;
+    max-height: 9999px;
+    transition: all 0.3s ;
 }
 
-.question .answer{
-    font-size: small;
-    font-family: "https://fonts.google.com/specimen/Sono";
+.collapse{
+    max-height: 0px;
+    transition: all 0.3s;
+}
+
+.question{
+    cursor: grab;
 }
