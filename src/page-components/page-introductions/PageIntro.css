@@ -14,9 +14,6 @@
     height: 55vh;
     margin-top: 5%;
     left: var(--column-width);
-    background-image: url('./images/smoke.png');
-    background-size: contain;
-    background-repeat: no-repeat;
 }
 
 .page-introduction .page-intro-container .page-intro-container-text {

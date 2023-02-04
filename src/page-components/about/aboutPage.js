@@ -11,31 +11,7 @@ import PageIntro from '../page-introductions/PageIntro.js';
 var height = 80;
 var width = 30;
 
-function getTextDimensions(text) {
-    var tag = document.createElement('p')
-    tag.classList.add("page-about-text")
-    tag.style.position = 'absolute'
-    tag.style.left = '-99in'
-    tag.style.whiteSpace = 'nowrap'
-    tag.innerHTML = text
-    document.body.appendChild(tag)
-    var width = tag.clientWidth
-    var height = tag.clientHeight;
-    document.body.removeChild(tag)
-    return {"width": width, "height": height};
-}
-
-function getTextLines(textWidth) {
-    return textWidth / (window.innerWidth * width / 100);
-}
-
-function getPageLines(textHeight) {
-    return window.innerHeight * height * 0.6 / 100 / textHeight;
-}
-
 function Tab(props) {
-    
-    
 
     return <div className="about-tab" id={props.active ? "active" : "not-active"} onClick={() => {props.setSectionActive(props.section["id"])}}>
         <p>{props.section["name"]}</p>
@@ -44,18 +20,34 @@ function Tab(props) {
 }
 
 function Page(props) {
-    const [currentPage, setCurrentPage] = useState(0);
+    var string = props.section["text"].split(/(\n)|({+.*}+)/);
 
-    var string = props.section["text"].split('\n');
+    var imageMatch = /{(.*)}/
+
+    var htmlString = [];
+    console.log(string);
+
+    for(let i = 0; i < string.length; i++) {
+        if(string[i] == null)
+            continue
+        var imageMatches = string[i].match(imageMatch);
+        console.log(imageMatches);
+
+        if(imageMatches != null) {
+            htmlString[i] = <img id="page-about-page-image" src={props.section[imageMatches[1]]}/>
+        } else {
+            htmlString[i] = <p>{string[i]}</p>
+        }
+    }
+
+    console.log(htmlString);
 
     return <>
             <h2>{props.section["name"]}</h2>
             <div className="page-about-text">
-            {string.map((text) => {
-                return <p>
-                    {text}
-                </p>
-            })}
+                {htmlString.map((text) => {
+                    return text;
+                })}
             </div>
             
 

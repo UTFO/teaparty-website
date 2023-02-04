@@ -68,11 +68,23 @@
   text-align: center;
 }
 
+#page-about-page-image {
+  position: relative;
+  width: 80%;
+  height: auto;
+  left: 50%;
+  transform: translateX(-50%)
+}
+
 .page-about-page {
   position: relative;
-  padding: 4em;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 4em 3em;
   z-index: 2;
   height: 80%;
+  max-height: 80%;
 }
 
 .page-about-button-container {

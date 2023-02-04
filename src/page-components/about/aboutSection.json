@@ -3,18 +3,18 @@
         "name": "History",
         "id": 0,
         "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id aliquet lectus proin nibh. Enim praesent elementum facilisis leo. Tristique senectus et netus et malesuada fames ac. \n Donec et odio pellentesque diam volutpat commodo. Sit amet commodo nulla facilisi nullam. Sed cras ornare arcu dui vivamus. Amet dictum sit amet justo donec enim diam. Maecenas ultricies mi eget mauris. Diam donec adipiscing tristique risus nec feugiat in fermentum posuere. Et malesuada fames ac turpis egestas sed tempus. \nId eu nisl nunc mi ipsum faucibus vitae aliquet. Massa placerat duis ultricies lacus sed turpis tincidunt id. Pellentesque sit amet porttitor eget dolor. Donec pretium vulputate sapien nec sagittis aliquam malesuada bibendum arcu. \nArcu ac tortor dignissim convallis aenean et tortor at. Et netus et malesuada fames. Velit euismod in pellentesque massa placerat duis. Ut tortor pretium viverra suspendisse potenti nullam. A diam maecenas sed enim ut. Gravida in fermentum et sollicitudin ac orci phasellus egestas. Tortor posuere ac ut consequat semper viverra. Tempor orci eu lobortis elementum nibh tellus molestie. Ut diam quam nulla porttitor massa id.",
-        "imageOne": "insertLinkHere"
+        "imageOne": "https://i.ytimg.com/vi/3nyPLUlJCZg/hq720.jpg?sqp=-oaymwEXCNAFEJQDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLDwnIk1AeNmmR-MNS7UKzAEhLNCxw"
     },
     {
         "name": "Values",
         "id": 1,
         "text": "These here are our values! {imageOne}",
-        "imageOne": "insertLinkHere"
+        "imageOne": "https://i.ytimg.com/vi/3nyPLUlJCZg/hq720.jpg?sqp=-oaymwEXCNAFEJQDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLDwnIk1AeNmmR-MNS7UKzAEhLNCxw"
     },
     {
         "name": "Vision",
         "id": 2,
         "text": "This here is our vision for the club! {imageOne}",
-        "imageOne": "insertLinkHere"
+        "imageOne": "https://i.ytimg.com/vi/3nyPLUlJCZg/hq720.jpg?sqp=-oaymwEXCNAFEJQDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLDwnIk1AeNmmR-MNS7UKzAEhLNCxw"
     }
 ]
