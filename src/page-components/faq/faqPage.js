@@ -1,8 +1,8 @@
 import React from 'react';
-import QuestionComponent from './QuestionComponent';
-import FaqIntro from './faqPageIntro';
 import "./faqPage.css";
 import Socials from './socials';
+import ColumnOne from './questionColumnOne';
+import ColumnTwo from './questionColumnTwo';
 
 import {
     HomeText, AboutText, TeamText, EventsText, FAQText, JoinText
@@ -18,7 +18,8 @@ function FAQ() {
     </div>
     <div className='page-component'>
             <div className='page'>
-                <QuestionComponent/>
+                <ColumnOne></ColumnOne>
+                <ColumnTwo></ColumnTwo>
             </div>
         </div>
     </>
