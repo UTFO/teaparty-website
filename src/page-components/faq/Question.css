@@ -1,21 +1,31 @@
 .title{
     display: flex;
-    justify-content: space-between;
     flex-direction: row;
+    justify-content: space-between;
     align-items: center;
+    cursor: grab;
+    background-color: #c4df9b;
+    font-size: small;
 }
+
 
 .expand{
     height: auto;
     max-height: 9999px;
-    transition: all 0.3s ;
+    transition: all 0.2s cubic-bezier(0, 1, 0, 1);
+    border: 2px solid rgb(96, 111, 105);
+    font-size: small;
+    background-color: rgb(200, 216, 216);
 }
 
 .collapse{
+    height: 0px;
     max-height: 0px;
-    transition: all 0.3s;
+    transition: all 0.2s cubic-bezier(0, 1, 0, 1);
 }
 
 .question{
-    cursor: grab;
+    width: 70%;
+    padding-left: 90px;
 }
+
