@@ -1,8 +1,6 @@
 import React from 'react';
 import "./faqPage.css";
-import Socials from './socials';
-import ColumnOne from './questionColumnOne';
-import ColumnTwo from './questionColumnTwo';
+import Column from './questionColumn';
 
 import {
     HomeText, AboutText, TeamText, EventsText, FAQText, JoinText
@@ -18,8 +16,7 @@ function FAQ() {
     </div>
     <div className='page-component'>
             <div className='page'>
-                <ColumnOne></ColumnOne>
-                <ColumnTwo></ColumnTwo>
+                <Column></Column>
             </div>
         </div>
     </>
