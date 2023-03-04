@@ -18,6 +18,9 @@
 
 .page-introduction .page-intro-container .page-intro-container-text {
     padding: 5vh 10vh;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .page-introduction .page-intro-container h2 {

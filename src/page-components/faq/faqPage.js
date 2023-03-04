@@ -16,7 +16,7 @@ function FAQ() {
     </div>
     <div className='page-component'>
             <div className='page'>
-                <Column></Column>
+                <Column/>
             </div>
         </div>
     </>

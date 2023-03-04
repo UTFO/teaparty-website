@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {memo} from 'react'
 import './Smoke.css';
 const Smoke = () => {
   
@@ -13,6 +13,6 @@ const Smoke = () => {
         {list}     
     </ul>
   )
-}
+};
 
-export default Smoke
+export default memo(Smoke)

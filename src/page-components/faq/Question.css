@@ -6,31 +6,36 @@
     cursor: grab;
     background-color: #c4df9b;
     font-size: small;
-}
-
-.title span{
-    font-size: medium;
+    border-radius: 3em 3em 0 0;
+    padding-left: 5%;
+    padding-right: 5%;
+    font-family: 'Comic Neue';
+    font-size: 0.7em;
 }
 
 .expand{
-    height: auto;
-    max-height: 9999px;
-    transition: all 0.2s cubic-bezier(0, 1, 0, 1);
     border: 2px solid rgb(156, 180, 170);
+    height: var(--heightVal);
     font-size: small;
     background-color: rgb(180, 232, 207);
+    overflow: var(--overflowVal);
+    transition: height 0.4s;
+    border-radius: 0 0 1em 1em;
+    padding: 10px;
+    padding-left: 2em;
+    font-size: 1em;
+    font-family:'Sorts Mill Goudy';
 }
 
-.collapse{
-    height: 0px;
-    max-height: 0px;
-    transition: all 0.2s cubic-bezier(0, 1, 0, 1);
-    overflow: hidden;
+.expand p {
+    word-wrap: break-word;
+    width: 100%;
+    max-width: 100%;
 }
 
 .question{
-    
-    width: 70%;
+    width: calc(var(--column-width) * 8);
     padding-left: 90px;
+    transition: height 0.4s;
 }
 
