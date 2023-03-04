@@ -1,9 +1,36 @@
 import React from 'react';
 import './PageIntro.css';
-import Cup from './images/cup.png';
+
+import CupFAQ from './images/cupFAQ.png';
+
+import CupAbout from './images/cupAbout.png';
+
+import CupEvent from './images/cupEvent.png';
+
+import CupTeam from './images/cupTeam.png';
+
 import Smoke from '../home/components/Smoke'
 
 function PageIntro(props) {
+    var Cup;
+
+    switch(props.page) {
+        case 'about': 
+            Cup = CupAbout;
+            break;
+        case 'events':
+            Cup = CupEvent;
+            break;
+        case 'team':
+            Cup = CupTeam;
+            break;
+        case 'faq':
+            Cup = CupFAQ;
+            break;
+        default:
+            Cup = CupAbout;
+    }
+
     return (
     <>
         <div className="page-intro-container">

@@ -6,7 +6,7 @@ import {
 
 function MenuButton(props) {
     return (
-        <a href={props.path}>
+        <a className="navbarText" href={props.path}>
             <p>{props.text}</p>
         </a>
     )
@@ -45,19 +45,13 @@ export function Navbar() {
             </a>
         </div>
 
-
-        <div className="navbar-contact">
-            <ContactButton image={email_logo} text="Email"/>
-            <ContactButton image={instagram_logo} text="Instagram" path={instagram_path}/>
-        </div>
-
     </>
 }
 
 export const ContactBar = () => {
     return (
         <div className="navbar-contact">
-            <ContactButton image={email_logo} text="Email"/>
+            <ContactButton image={email_logo} text="Email" path='mailto:irwinngo@gmail.com'/>
             <ContactButton image={instagram_logo} text="Instagram" path={instagram_path}/>
         </div>
     )

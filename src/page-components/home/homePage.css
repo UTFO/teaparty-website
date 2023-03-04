@@ -27,10 +27,16 @@
     place-items: center stretch;
     grid-column: 1/21;
     grid-row: 3/4;
-    background-color: #c4df9b;
+    /*background-color: #c4df9b;*/
   }
 
-  
+  .homeSvg {
+    width: 100vw;
+  }
+
+  .colorFill {
+    background-color: #c4df9b;
+  }
   
   
   .event-header{
@@ -68,6 +74,12 @@
 
   .prev{
     transform: rotate(180deg);
+    margin-left: 4em;
+  }
+
+  .next {
+    
+    margin-right: 4em;
   }
 
   

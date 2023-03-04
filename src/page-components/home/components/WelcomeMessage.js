@@ -1,5 +1,5 @@
 import React from 'react';
-import Cup from './cup.png';
+import Cup from './cupHome.png';
 import './WelcomeMessage.css';
 import Smoke from './Smoke.js';
 const WelcomeMessage = () => {
