@@ -2,7 +2,6 @@
 
 .navbar-menu {
     grid-column: 1 / 20;
-    background-color: var(--navbar-menu-color);
     
     min-height: var(--menu-height);
     max-height: var(--menu-height); 
@@ -55,12 +54,16 @@
     background-color: var(--join-color);
     padding: 0.75vw 1.5vw;
     border-radius: 10vw;
+    transition: color 0.3s ease-out;
     
+}
+
+.navbar-menu .navbar-join:hover {
+    color:rgb(0, 136, 41);
 }
 
 .navbar-contact {
     grid-column: 1 / 2;
-    background-color: var(--navbar-contact-color);
     
     display: flex;
     flex-direction: column;
@@ -83,3 +86,12 @@
     position: relative;
     width: 3vw;
 }
+
+.navbarText:hover {
+    color: rgb(17, 230, 113);
+}
+
+.navbarText {
+    transition: color 0.3s ease-out;
+}
+

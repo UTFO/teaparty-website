@@ -63,7 +63,7 @@ function About() {
     
     return <>
     <div className='page-introduction'>
-        <PageIntro title={AboutText.title} text={AboutText.text}/>
+        <PageIntro title={AboutText.title} text={AboutText.text} page="about"/>
     </div>
     <div className='page-component'>
         

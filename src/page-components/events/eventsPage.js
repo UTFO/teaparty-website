@@ -63,7 +63,7 @@ function Events() {
     const eventsNotEmpty = events.length === 0 ? false : true
     return <>
     <div className="page-introduction">
-        <PageIntro title={EventsText.title} text={EventsText.text}/>
+        <PageIntro title={EventsText.title} text={EventsText.text} page="events"/>
     </div>
     <div className="page-component">
         <div className="page-events-board">

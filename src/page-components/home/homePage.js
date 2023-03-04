@@ -24,9 +24,9 @@ function Home() {
 
      <div className="content-container" id="highlights" >
             <svg viewBox="0 0 450 35">
-                <path d="M-100,-37 C2,55 450,55 550,-37" fill="white"/>
+                <path d="M-100,-37 C2,55 450,55 550,-37 L550,55 L-100,55" fill="#c4df9b"/>
             </svg>
-
+            <div className="colorFill">
             <h1 className="event-header">
                 Check out our event highlights!
             </h1>
@@ -48,8 +48,9 @@ function Home() {
                 }
             </Carousel>
             <div className="slider"></div>
+            </div>
            <svg viewBox="0 0 450 25"> 
-             <path d="M-100,70 C2,-22 450,-22 550,70" fill="white"/>
+             <path d="M-100,70 C2,-22 450,-22 550,70 L 550,-22 L -100, -22" fill="#c4df9b"/>
             </svg> 
             
             
@@ -63,7 +64,7 @@ function Home() {
         </div>
         <div className='page-home-sponsor'>
             <h2>Interested in Sponsoring? <img src={Cup2} height={30}></img></h2>
-            <p>Send us an email &nbsp; <a href="https://google.com" target="_blank" rel="noreferrer">
+            <p>Send us an email &nbsp; <a href="mailto:irwinngo@gmail.com" target="_blank" rel="noreferrer">
             <img src={Email} height={20}></img></a> &nbsp; or message us on instagram! &nbsp;<a href="https://instagram.com" target="_blank" rel="noreferrer">
             <img src={Insta} height={20}></img></a></p>
         </div>
