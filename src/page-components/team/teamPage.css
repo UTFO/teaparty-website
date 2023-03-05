@@ -34,7 +34,7 @@
     --size: 1;
 
     white-space: nowrap;
-    --rotateAmount: calc(360deg/ ((2 - var(--sizeScale)) * (25 + var(--rotationScale))) * var(--x) + 180deg);
+    --rotateAmount: calc(180deg + 15deg * var(--x));
     transform: rotate(var(--rotateAmount));
     left: var(--leftTransition);
     transform-origin: -30em;
@@ -198,7 +198,7 @@
     position: absolute;
     width: fit-content;
     height: fit-content;
-    --rotateAmount: calc(360deg/ ((2 - var(--sizeScale)) * (24 + var(--rotationScale))) * (var(--x)) + 180deg);
+    --rotateAmount: calc(180deg + 15deg * var(--x));
     transform: rotate(var(--rotateAmount));
     left: calc(var(--leftTransition) - 2em);
     transform-origin: -30em;
