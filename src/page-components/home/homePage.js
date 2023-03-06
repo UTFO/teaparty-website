@@ -68,7 +68,7 @@ function Home() {
         </div>
         <div className='page-home-sponsor'>
             <h2>Interested in Sponsoring? <img src={Cup2} height={30}></img></h2>
-            <p>Send us an email &nbsp; <a href="mailto:irwinngo@gmail.com" target="_blank" rel="noreferrer">
+            <p>Send us an email &nbsp; <a href={"mailto:"+email} target="_blank" rel="noreferrer">
             <img src={Email} height={20}></img></a> &nbsp; or message us on instagram! &nbsp;<a href={email} target="_blank" rel="noreferrer">
             <img src={Insta} height={20}></img></a></p>
         </div>

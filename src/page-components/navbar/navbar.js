@@ -23,6 +23,7 @@ function ContactButton(props) {
 
 export function Navbar() {
     
+    
 
     return <>
         <div className="navbar-menu">
@@ -49,9 +50,12 @@ export function Navbar() {
 }
 
 export const ContactBar = () => {
+    
+    var email = require('../../data/texts/Links.json').email;
+    
     return (
         <div className="navbar-contact">
-            <ContactButton image={email_logo} text="Email" path='mailto:irwinngo@gmail.com'/>
+            <ContactButton image={email_logo} text="Email" path={"mailto:"+email}/>
             <ContactButton image={instagram_logo} text="Instagram" path={instagram_path}/>
         </div>
     )
