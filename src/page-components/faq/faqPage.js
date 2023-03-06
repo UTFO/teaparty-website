@@ -2,9 +2,7 @@ import React from 'react';
 import "./faqPage.css";
 import Column from './questionColumn';
 
-import {
-    HomeText, AboutText, TeamText, EventsText, FAQText, JoinText
-} from '../page-introductions/imports.js'
+import { FAQText } from '../page-introductions/imports.js'
 
 import PageIntro from '../page-introductions/PageIntro.js';
 

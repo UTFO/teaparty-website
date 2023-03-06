@@ -1,9 +1,7 @@
 import './aboutPage.css';
 import { useState } from 'react';
 
-import {
-    HomeText, AboutText, TeamText, EventsText, FAQText, JoinText
-  } from '../page-introductions/imports.js'
+import { AboutText } from '../page-introductions/imports.js'
 
 import Paper from './images/paper.png';
 import PageIntro from '../page-introductions/PageIntro.js';
@@ -34,7 +32,7 @@ function Page(props) {
         console.log(imageMatches);
 
         if(imageMatches != null) {
-            htmlString[i] = <img id="page-about-page-image" src={props.section[imageMatches[1]]}/>
+            htmlString[i] = <img id="page-about-page-image" src={require('../../data/' + props.section[imageMatches[1]])}/>
         } else {
             htmlString[i] = <p>{string[i]}</p>
         }
@@ -58,7 +56,7 @@ function Page(props) {
 function About() {
     const [sectionActive, setSectionActive] = useState(0);
 
-    var sectionInfo = require('./aboutSection.json');
+    var sectionInfo = require('../../data/texts/About.json');
 
     
     return <>
