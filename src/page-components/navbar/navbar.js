@@ -6,7 +6,7 @@ import {
 
 function MenuButton(props) {
     return (
-        <a href={props.path}>
+        <a className="navbarText" href={props.path}>
             <p>{props.text}</p>
         </a>
     )
@@ -22,6 +22,7 @@ function ContactButton(props) {
 
 
 export function Navbar() {
+    
     
 
     return <>
@@ -45,19 +46,16 @@ export function Navbar() {
             </a>
         </div>
 
-
-        <div className="navbar-contact">
-            <ContactButton image={email_logo} text="Email"/>
-            <ContactButton image={instagram_logo} text="Instagram" path={instagram_path}/>
-        </div>
-
     </>
 }
 
 export const ContactBar = () => {
+    
+    var email = require('../../data/texts/Links.json').email;
+    
     return (
         <div className="navbar-contact">
-            <ContactButton image={email_logo} text="Email"/>
+            <ContactButton image={email_logo} text="Email" path={"mailto:"+email}/>
             <ContactButton image={instagram_logo} text="Instagram" path={instagram_path}/>
         </div>
     )

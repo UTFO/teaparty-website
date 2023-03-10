@@ -1,6 +1,7 @@
 ul{
     position: absolute;
-    bottom: 0;
+    bottom: -40px;
+    z-index: 3;
     left: 50%;
     transform: translateX(-60%);
     margin: 0;

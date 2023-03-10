@@ -1,31 +1,14 @@
-var HomeText = {
-    title: "Welcome To Tea Party",
-    text: "Lopem stuff"
-}
+var pageIntroList = require('../../data/texts/PageIntro.json');
 
-var AboutText = {
-    title: "Hear About Us!",
-    text: "N/A"
-}
+var HomeText = pageIntroList["Home"]
 
-var TeamText = {
-    title: "Check Our Team!",
-    text: "N/A"
-}
+var AboutText = pageIntroList["About"]
 
-var EventsText = {
-    title: "Check Our Events!",
-    text: "N/A"
-}
+var TeamText = pageIntroList["Team"]
 
-var FAQText = {
-    title: "WELCOME TO OUR FAQ PAGE",
-    text: "This page contains the answers to our frequently answered questions. These will be regularly updated with time. We suggest you to check this page before asking your own question."
-}
+var EventsText = pageIntroList["Events"]
 
-var JoinText = {
-    title: "N/A",
-    text: "N/A"
-}
+var FAQText = pageIntroList["FAQ"]
 
-export {HomeText, AboutText, TeamText, EventsText, FAQText, JoinText};
+
+export {HomeText, AboutText, TeamText, EventsText, FAQText};

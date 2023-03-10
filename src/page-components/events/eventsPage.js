@@ -1,9 +1,7 @@
 import { useState } from 'react';
 import './eventsPage.css';
 
-import {
-    HomeText, AboutText, TeamText, EventsText, FAQText, JoinText
-  } from '../page-introductions/imports.js'
+import { EventsText } from '../page-introductions/imports.js'
 
 import PageIntro from '../page-introductions/PageIntro.js';
 
@@ -12,7 +10,7 @@ var teaColor = '#62ff8b';
 var gameColor = '#f26c4f';
 var speakerColor = '#f7941d';
 
-var events = require('./toDeprecate/events.json').events; //To replace with the actual database
+var events = require('../../data/texts/Event.json'); //To replace with the actual database
 
 //Returns a color based on type of event
 function ColorSelect(type) {
@@ -63,7 +61,7 @@ function Events() {
     const eventsNotEmpty = events.length === 0 ? false : true
     return <>
     <div className="page-introduction">
-        <PageIntro title={EventsText.title} text={EventsText.text}/>
+        <PageIntro title={EventsText.title} text={EventsText.text} page="events"/>
     </div>
     <div className="page-component">
         <div className="page-events-board">
