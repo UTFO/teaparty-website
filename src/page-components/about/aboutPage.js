@@ -5,6 +5,7 @@ import { AboutText } from '../page-introductions/imports.js'
 
 import Paper from './images/paper.png';
 import PageIntro from '../page-introductions/PageIntro.js';
+import { Navbar, Footer } from '../imports.js';
 
 var height = 80;
 var width = 30;
@@ -60,6 +61,7 @@ function About() {
 
     
     return <>
+    <Navbar/>
     <div className='page-introduction'>
         <PageIntro title={AboutText.title} text={AboutText.text} page="about"/>
     </div>
@@ -84,7 +86,7 @@ function About() {
         </div>
         
     </div>
-    
+    <Footer/>
     </>
 }
 

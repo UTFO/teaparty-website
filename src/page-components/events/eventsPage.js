@@ -4,6 +4,7 @@ import './eventsPage.css';
 import { EventsText } from '../page-introductions/imports.js'
 
 import PageIntro from '../page-introductions/PageIntro.js';
+import { Navbar, Footer } from '../imports.js';
 
 var socialColor = '#74cdef';
 var teaColor = '#62ff8b';
@@ -60,6 +61,7 @@ const NoEvents = () => {
 function Events() {
     const eventsNotEmpty = events.length === 0 ? false : true
     return <>
+    <Navbar/>
     <div className="page-introduction">
         <PageIntro title={EventsText.title} text={EventsText.text} page="events"/>
     </div>
@@ -70,7 +72,7 @@ function Events() {
             </div>
         </div>
     </div>
-    
+    <Footer/>
     </>
 
     

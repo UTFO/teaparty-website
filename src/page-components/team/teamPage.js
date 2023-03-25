@@ -15,6 +15,7 @@ import React from 'react';
 import PageIntro from '../page-introductions/PageIntro.js';
 
 import { TeamText } from '../page-introductions/imports.js'
+import { Navbar, Footer } from '../imports.js';
 
 var borderActiveColor = '#b3ffc3';
 var cardActiveColor = '#e1ffda';
@@ -216,6 +217,7 @@ function Team() {
 
 
     return <>
+    <Navbar/>
     <div className='page-introduction'>
         <PageIntro title={TeamText.title} text={TeamText.text} page="team"/>
     </div>
@@ -234,7 +236,7 @@ function Team() {
 
         </div>
     </div>
-    
+    <Footer/>
     </>
 }
 
