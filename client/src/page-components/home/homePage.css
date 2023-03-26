@@ -1,0 +1,85 @@
+ .welcome-container{
+    grid-row: 2/3;
+    display: grid;
+    grid-template-columns: 1fr 2fr 10fr 4fr;
+}
+
+.navbar-contact {
+  display: none !important;
+}
+
+ .welcome-container .navbar-contact{
+    display: inline-flex !important;
+    grid-column: 1/2;
+ }
+
+ .welcome-container .welcome-cup{
+    grid-column: 3/4;
+ }
+
+ .welcome-container .highlights-container{
+    grid-column: 4/5;
+ }
+
+
+ .content-container{
+    display: grid;
+    place-items: center stretch;
+    grid-column: 1/21;
+    grid-row: 3/4;
+    /*background-color: #c4df9b;*/
+  }
+
+  .homeSvg {
+    width: 100vw;
+  }
+
+  .colorFill {
+    background-color: #c4df9b;
+  }
+  
+  
+  .event-header{
+    text-align: center;
+    font-family: 'page-intro-title-font';
+    color: #0CEDC0;
+    margin-top: 5vh;
+    margin-bottom: 0;
+  }
+
+
+  
+  .slider {
+     height: 10vh;
+  }
+
+  .page-home-hyperlinks {
+    grid-row: 4/5;
+    display: flex;
+    width: 100vw;
+    height: 30vh;
+    margin-top: 10vh;
+    justify-content: space-evenly;
+  }
+
+  .page-home-join h2, .page-home-sponsor h2 {
+    font-family: page-intro-title-font;
+    font-size: 2em;
+    text-align: center;
+  }
+
+  .page-home-join p, .page-home-sponsor p {
+    font-family: Montserrat;
+  }
+
+  .prev{
+    transform: rotate(180deg);
+    margin-left: 4em;
+  }
+
+  .next {
+    
+    margin-right: 4em;
+  }
+
+  

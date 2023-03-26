@@ -1,0 +1,97 @@
+
+
+.navbar-menu {
+    grid-column: 1 / 20;
+    
+    min-height: var(--menu-height);
+    max-height: var(--menu-height); 
+
+    display: flex;
+    flex-direction: row;
+
+    font-family: 'navbar-menu-font';
+}
+
+.navbar-menu .club-icon {
+    margin: auto 0;
+    margin-bottom: 4vh;
+}
+
+.navbar-menu .club-icon a {
+    margin: 0;
+    margin-left: 2vw;
+
+}
+
+.navbar-menu img {
+    margin-left: calc(var(--column-width)/2);
+    padding-top: 2vh;
+    padding-right: calc(var(--column-width)/2);
+    
+    height: calc(var(--navbar-menu-font-size)*1.5);
+}
+
+.navbar-menu rect {
+    width: 0.1vw;
+    height: 100vh;
+}
+
+.navbar-menu svg {
+    width: 0.2vw;
+    height: 6vh;
+    margin: auto 1vw;
+    fill: rgb(0, 0, 0, 0.3);
+}
+
+.navbar-menu a {
+    margin: auto 1.5vw;
+    font-size: var(--navbar-menu-font-size);
+    text-decoration: none;
+    color: black;
+}
+
+.navbar-menu .navbar-join {
+    background-color: var(--join-color);
+    padding: 0.75vw 1.5vw;
+    border-radius: 10vw;
+    transition: color 0.3s ease-out;
+    
+}
+
+.navbar-menu .navbar-join:hover {
+    color:rgb(0, 136, 41);
+}
+
+.navbar-contact {
+    grid-column: 1 / 2;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: var(--contact-height);
+    max-height: var(--contact-height);
+
+    width: calc(var(--column-width) * 1);  
+}
+
+.navbar-contact a {
+    position: relative;
+    border: none;
+    background-color: transparent;
+    margin: 5vh auto;
+    padding: 0;
+}
+
+.navbar-contact a img {
+    position: relative;
+    width: 3vw;
+}
+
+.navbarText:hover {
+    color: rgb(17, 230, 113);
+}
+
+.navbarText {
+    transition: color 0.3s ease-out;
+}
+
