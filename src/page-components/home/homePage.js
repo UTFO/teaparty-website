@@ -12,13 +12,14 @@ import Arrow_Icon from './images/Arrow.png'
 import {ContactBar, TopBar} from '../navbar/navbar';
 import WelcomeMessage from './components/WelcomeMessage';
 import HighlightsButton from './components/HighlightsButton';
+import { Navbar, Footer } from '../imports.js';
 function Home() {
 
     var email = require('../../data/texts/Links.json').email;
 
 
     return (<>
-     
+    <Navbar/>
     <div className="welcome-container">
         <ContactBar />
         <WelcomeMessage />
@@ -73,6 +74,7 @@ function Home() {
             <img src={Insta} height={20}></img></a></p>
         </div>
     </div>
+    <Footer/>
     </>);
 }
     
