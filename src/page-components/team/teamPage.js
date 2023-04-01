@@ -4,8 +4,6 @@ import Linkedin_Icon from './images/icons/linkedin-icon.png';
 
 import Arrow_Icon from './images/icons/Arrow.png';
 
-import Members from './toDeprecate/members_import.js';
-
 import Rope from './images/objects/Rope.png';
 import Teabag from './images/objects/Teabag.png';
 
@@ -13,13 +11,10 @@ import { useState } from 'react';
 
 import './teamPage.css';
 import React from 'react';
-import { waitFor } from '@testing-library/react';
 
 import PageIntro from '../page-introductions/PageIntro.js';
 
-import {
-    HomeText, AboutText, TeamText, EventsText, FAQText, JoinText
-  } from '../page-introductions/imports.js'
+import { TeamText } from '../page-introductions/imports.js'
 
 var borderActiveColor = '#b3ffc3';
 var cardActiveColor = '#e1ffda';
@@ -33,6 +28,9 @@ let memberArray = [];
 
 let prev = 0;
 let currentRotate = 0;
+
+var Members = require('../../data/texts/Team.json');
+
 while(memberArray.length < 3 * (displaySide * 2 + 1)) 
     memberArray = [...memberArray, ...Members];
 
@@ -86,19 +84,24 @@ function TeamCard(props) {
         "cursor": "pointer"
     }
 
+    var instagramExist = props.member.instagram != "";
+    var twitterExist = props.member.twitter != "";
+    var linkedinExist = props.member.linkedin != "";
+    
     return (props.disable ? <></> : <div style={{"--size": props.size, "--x": props.position, "--sizeScale": sizeScale, "opacity": 0 + !props.hide}} className="page-team-card-container">
 
         <div className="page-team-card-rotate-self">
             <div style={{...(props.current ? activeStyle : inactiveStyle), "cursor": (props.hide ? "initial" : "pointer")}} className="page-team-card-second-container"  onClick={props.hide  || props.preventClick ? "" : () => {getClickedCard()}}>
                 <h1 style={{"opacity": 0.5 + props.active}}>{props.member.name}</h1>
                 <h2 style={{"opacity": 0.5 + props.active}}>{props.member.role}</h2>
-                <img style={{"--borderColor": borderColor}} src={props.member.image} alt={props.name + "'s Picture"}/>
+                <img style={{"--borderColor": borderColor}} src={require('../../data/' + props.member.image)} alt={props.name + "'s Picture"}/>
+                {console.log(props.member.image)}
             </div>
             
             <div style={{"opacity": props.current ? 1 : 0}} className="page-team-card-socials">
-                <div style={{"--i": 0}}><a style={{"pointer-events": props.current ? "initial" : "none"}} href={props.member.instagram} target="_blank"><img  src={Instagram_Icon}/></a></div>
-                <div style={{"--i": -rotation}}><a style={{"pointer-events": props.current ? "initial" : "none"}} href={props.member.twitter} target="_blank"><img  src={Twitter_Icon}/></a></div>
-                <div style={{"--i": rotation}}><a style={{"pointer-events": props.current ? "initial" : "none"}} href={props.member.linkedin} target="_blank"><img  src={Linkedin_Icon}/></a></div>
+                {instagramExist ? <div style={{"--i": 0}}><a style={{"pointer-events": props.current ? "initial" : "none"}} href={props.member.instagram} target="_blank"><img  src={Instagram_Icon}/></a></div> : <></>}
+                {twitterExist ? <div style={{"--i": -rotation}}><a style={{"pointer-events": props.current ? "initial" : "none"}} href={props.member.twitter} target="_blank"><img  src={Twitter_Icon}/></a></div> : <></>}
+                {linkedinExist ? <div style={{"--i": rotation}}><a style={{"pointer-events": props.current ? "initial" : "none"}} href={props.member.linkedin} target="_blank"><img  src={Linkedin_Icon}/></a></div> : <></>}
             </div>
             
             
@@ -214,7 +217,7 @@ function Team() {
 
     return <>
     <div className='page-introduction'>
-        <PageIntro title={TeamText.title} text={TeamText.text}/>
+        <PageIntro title={TeamText.title} text={TeamText.text} page="team"/>
     </div>
     <div className='page-component'>
     

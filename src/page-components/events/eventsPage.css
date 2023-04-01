@@ -31,10 +31,11 @@
 
 .page-events-board .page-events-board-slot {
     width: calc(var(--column-width)*6);
-    height: 9.2vh;
+    height: fit-content;
+    padding: 1vh 0vh;
     margin: 5vh 0.5vw;
     background-image: url('./images/eventback.png');
-    background-size: contain;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     
     display: flex;
@@ -46,7 +47,7 @@
 .page-events-board .page-events-no-events {
     margin: auto 0;
     margin-left: 5%;
-    
+    white-space: nowrap;
     border-radius: 30px;
     padding: 10px;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
