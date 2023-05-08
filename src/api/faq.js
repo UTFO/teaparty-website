@@ -1,0 +1,44 @@
+import API_ENDPOINT from './index'
+export const getFaq = async () => {
+    const response = await fetch(`${API_ENDPOINT}/faq`)
+    const data = await response.json()
+    return data
+}
+
+export const newFaq = async (question, answer) => {
+    const response = await fetch(`${API_ENDPOINT}/faq`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            question: question,
+            answer: answer,
+        })
+    })
+    const data = await response.json()
+    return data
+}
+
+export const updateFaq = async (id, question, answer) => {
+    const response = await fetch(`${API_ENDPOINT}/faq/${id}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            question: question,
+            answer: answer,
+        })
+    })
+    const data = await response.json()
+    return data
+}
+
+export const deleteFaq = async (id) => {
+    const response = await fetch(`${API_ENDPOINT}/faq/${id}`, {
+        method: 'DELETE',
+    })
+    const data = await response.json()
+    return data
+}

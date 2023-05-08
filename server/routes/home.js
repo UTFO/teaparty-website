@@ -27,7 +27,11 @@ router.post("/", function (req, response) {
       image: req.body.image,
     };
     db_connect.collection("home").insertOne(myobj, function (err, res) {
-      if (err) throw err;
+      if (err) {
+        res.sendStatus(400);
+        console.log(err);
+        return;
+      };
       response.json(res);
     });
    });
@@ -46,7 +50,11 @@ router.put("/:id", function (req, response) {
     db_connect
       .collection("home")
       .updateOne(myquery, newvalues, function (err, res) {
-        if (err) throw err;
+        if (err) {
+            res.sendStatus(400);
+            console.log(err);
+            return;
+        };
         console.log("1 document updated");
         response.json(res);
       });
@@ -57,7 +65,11 @@ router.delete("/:id", (req, response) => {
     let db_connect = dbo.getDb();
     let myquery = { _id: ObjectId(req.params.id) };
     db_connect.collection("home").deleteOne(myquery, function (err, obj) {
-      if (err) throw err;
+      if (err) {
+        res.sendStatus(400);
+        console.log(err);
+        return;
+      };
       console.log("1 document deleted");
       response.json(obj);
     });

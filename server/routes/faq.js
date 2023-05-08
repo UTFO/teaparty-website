@@ -26,7 +26,11 @@ router.post("/", function (req, response) {
       answer: req.body.answer,
     };
     db_connect.collection("faq").insertOne(myobj, function (err, res) {
-      if (err) throw err;
+      if (err) {
+        res.sendStatus(400);
+        console.log(err);
+        return;
+      };
       response.json(res);
     });
    });
@@ -44,7 +48,11 @@ router.put("/:id", function (req, response) {
     db_connect
       .collection("faq")
       .updateOne(myquery, newvalues, function (err, res) {
-        if (err) throw err;
+        if (err) {
+            res.sendStatus(400);
+            console.log(err);
+            return;
+        };
         console.log("1 document updated");
         response.json(res);
       });
@@ -55,7 +63,11 @@ router.delete("/:id", (req, response) => {
     let db_connect = dbo.getDb();
     let myquery = { _id: ObjectId(req.params.id) };
     db_connect.collection("faq").deleteOne(myquery, function (err, obj) {
-      if (err) throw err;
+      if (err) {
+        res.sendStatus(400);
+        console.log(err);
+        return;
+      };
       console.log("1 document deleted");
       response.json(obj);
     });
