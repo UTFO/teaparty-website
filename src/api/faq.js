@@ -1,7 +1,8 @@
-import API_ENDPOINT from './index'
+import { API_ENDPOINT } from '.'
 export const getFaq = async () => {
     const response = await fetch(`${API_ENDPOINT}/faq`)
     const data = await response.json()
+    console.log(data)
     return data
 }
 
