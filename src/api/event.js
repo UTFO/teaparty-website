@@ -1,11 +1,11 @@
-import API_ENDPOINT from '.'
+import {API_ENDPOINT} from '.'
 export const getEvent = async () => {
     const response = await fetch(`${API_ENDPOINT}/event`)
     const data = await response.json()
     return data
 }
 
-export const newEvent = async (name, location, date, time) => {
+export const newEvent = async (name, address, date, time, type) => {
     const response = await fetch(`${API_ENDPOINT}/event`, {
         method: 'POST',
         headers: {
@@ -13,16 +13,17 @@ export const newEvent = async (name, location, date, time) => {
         },
         body: JSON.stringify({
             name: name,
-            location: location,
+            address: address,
             date: date,
             time: time,
+            type: type,
         })
     })
     const data = await response.json()
     return data
 }
 
-export const updateEvent = async (id, name, location, date, time) => {
+export const updateEvent = async (id, name, address, date, time, type) => {
     const response = await fetch(`${API_ENDPOINT}/event/${id}`, {
         method: 'PUT',
         headers: {
@@ -30,9 +31,10 @@ export const updateEvent = async (id, name, location, date, time) => {
         },
         body: JSON.stringify({
             name: name,
-            location: location,
+            address: address,
             date: date,
             time: time,
+            type: type,
         })
     })
     const data = await response.json()

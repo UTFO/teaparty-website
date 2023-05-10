@@ -23,9 +23,10 @@ router.post("/", function (req, response) {
     let db_connect = dbo.getDb();
     let myobj = {
       name: req.body.name,
-      location: req.body.location,
+      address: req.body.address,
       date: req.body.date,
       time: req.body.time,
+      type: req.body.type,
     };
     db_connect.collection("event").insertOne(myobj, function (err, res) {
       if (err) {
@@ -44,9 +45,10 @@ router.put("/:id", function (req, response) {
     let newvalues = {
       $set: {
         name: req.body.name,
-        location: req.body.location,
+        address: req.body.address,
         date: req.body.date,
         time: req.body.time,
+        type: req.body.type,
       },
     };
     db_connect
