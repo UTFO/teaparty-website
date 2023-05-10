@@ -5,30 +5,30 @@ export const getAbout = async () => {
     return data
 }
 
-export const newAbout = async (title, description) => {
+export const newAbout = async (name, text) => {
     const response = await fetch(`${API_ENDPOINT}/about`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            title: title,
-            description: description,
+            name: name,
+            text: text,
         })
     })
     const data = await response.json()
     return data
 }
 
-export const updateAbout = async (id, title, description) => {
+export const updateAbout = async (id, name, text) => {
     const response = await fetch(`${API_ENDPOINT}/about/${id}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            title: title,
-            description: description,
+            name: name,
+            text: text,
         })
     })
     const data = await response.json()

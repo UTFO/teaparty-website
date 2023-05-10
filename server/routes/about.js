@@ -22,8 +22,8 @@ router.get("/", function (req, res) {
 router.post("/", function (req, response) {
     let db_connect = dbo.getDb();
     let myobj = {
-      title: req.body.title,
-      description: req.body.description,
+      name: req.body.name,
+      text: req.body.text,
     };
     db_connect.collection("about").insertOne(myobj, function (err, res) {
       if (err) {
@@ -41,8 +41,8 @@ router.put("/:id", function (req, response) {
     let myquery = { _id: ObjectId(req.params.id) };
     let newvalues = {
       $set: {
-        title: req.body.title,
-        description: req.body.description,
+        name: req.body.name,
+        text: req.body.text,
       },
     };
     db_connect
