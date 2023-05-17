@@ -1,9 +1,10 @@
 import React from 'react'
+import "./adminevents.css"
 
-const adminevents = () => {
+const AdminEvents = () => {
   return (
     <div>adminevents</div>
   )
 }
 
-export default adminevents
+export default AdminEvents

@@ -1,9 +1,10 @@
 import React from 'react'
+import "./adminfaq.css"
 
-const adminfaq = () => {
+const AdminFaq = () => {
   return (
     <div>adminfaq</div>
   )
 }
 
-export default adminfaq
+export default AdminFaq

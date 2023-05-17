@@ -1,0 +1,163 @@
+
+.bottomBack{
+    position: absolute;
+    width: 60vw;
+    height: 60vh;
+    left: 20vw;
+    top: 20vh;
+
+    background: rgba(2, 255, 12, 0.12);
+    border-radius: 8vw 0px 0px 8vw;
+}
+
+.topBack{
+    position: absolute;
+    width: 58vw;
+    height: calc(100% - 2vw);
+    left: 1vw;
+    top: 1vw;
+    background: #FFFFFF;
+    box-shadow: 4px 8px 15px 3px rgba(0, 0, 0, 0.25);
+    border-radius: 8vw 0px 0px 8vw;
+    display: flex;
+}
+
+.leftBack{
+    width: 35%;
+    height: 100%;
+    left: 0;
+    top: 0vh;
+
+    background: rgba(2, 255, 12, 0.12);
+    box-shadow: 2px 4px 7px -1px rgba(0, 0, 0, 0.34);
+    border-radius: 8vw 0px 0px 8vw;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.club_logo_condensed{
+    margin-left: 5%;
+    width: 50%;
+}
+
+.introText{
+    margin-top: 10%;
+    margin-left: 12%;
+    margin-right: 5%;
+    font-family: 'Andada Pro';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.33);
+}
+
+.inputAreaContainer{
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inputAreaTitle{
+    margin-top: 9vh;
+    font-family: 'Buda';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 40px;
+    line-height: 45px;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 5vh;
+}
+.passwordEntryContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.passwordLogo{
+    height: 6vh;
+    width: auto;
+    margin-right: 2vw;
+}
+
+.passwordEntry{
+    width: 56%;
+    height: 33px;
+    left: 745px;
+    top: 452px;
+
+    background: #FCFCFC;
+    border: 3px solid #DEDEDE;
+    border-radius: 12px;
+
+    font-family: 'Bellota';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+
+    color: #000000;
+    padding-left: 5px;
+}
+
+.passwordEntry::-webkit-input-placeholder{
+    color: #E1E1E1;
+}
+
+.loginButton{
+    width: 164px;
+    height: 33px;
+    margin-top: 5vh;
+    background: #85FFB6;
+    border-radius: 29px;
+
+    font-family: 'Bellota';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+
+    color: #000000;
+    z-index: 100;
+    transition: background 0.3s;
+}
+
+.loginButton:hover{
+    background: #02ff0c1f;
+    transition: background 0.3s;
+}
+
+.errorText{
+    font-family: 'Andada Pro';
+    font-size: 16px;
+    margin-top: 5vh;
+    color: red
+}
+
+.returnContainer{
+    align-self: flex-end;
+    text-align: bottom;
+    vertical-align: bottom;
+    flex-grow: 1;
+    display: flex;
+}
+
+.returnText{
+    position: absolute;
+    right: 0;
+    align-self: flex-end;
+    margin-bottom: 1vh;
+    margin-right: 1vw;
+    font-family: 'Andada Pro';
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.33);
+}
+

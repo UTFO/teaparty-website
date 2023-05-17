@@ -1,9 +1,10 @@
 import React from 'react'
+import "./adminteam.css"
 
-const adminteam = () => {
+const AdminTeam = () => {
   return (
     <div>adminteam</div>
   )
 }
 
-export default adminteam
+export default AdminTeam
