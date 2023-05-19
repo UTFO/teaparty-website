@@ -1,11 +1,12 @@
 import './aboutPage.css';
-import { useState } from 'react';
+import { useState , useEffect, useRef } from 'react';
 
 import { AboutText } from '../page-introductions/imports.js'
 
 import Paper from './images/paper.png';
 import PageIntro from '../page-introductions/PageIntro.js';
 import { Navbar, Footer } from '../imports.js';
+import { getAbout } from '../../api/about';
 
 var height = 80;
 var width = 30;
@@ -57,8 +58,18 @@ function Page(props) {
 function About() {
     const [sectionActive, setSectionActive] = useState(0);
 
-    var sectionInfo = require('../../data/texts/About.json');
-
+    //var sectionInfo = require('../../data/texts/About.json');
+    const [sectionInfo, setSectionInfo] = useState([])
+    const firstUpdate = useRef(true)
+    useEffect(() => {
+        if(firstUpdate.current){
+            firstUpdate.current = false
+            return;
+        }
+        getAbout().then( (data) => {
+            setSectionInfo(data)
+        })
+    },[])
     
     return <>
     <Navbar/>
