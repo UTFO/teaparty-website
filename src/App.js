@@ -5,42 +5,37 @@ import ReactDOM from 'react-dom'
 import './App.css';
 
 import {
-  Home, About, Team, Events, FAQ, Navbar, Footer, AdminAbout, AdminEvents, AdminFaq, AdminTeam, AdminHome, AdminLogin
+  Home, About, Team, Events, FAQ, Navbar, Footer, AdminAbout, AdminEvents, AdminFaq, AdminTeam, AdminHome, AdminLogin, AdminDashboard, AdminDoc
 } from './page-components/imports.js';
 
 
 
 function App() {
   return (
-    <div className="main-container">
       <BrowserRouter >
       
-
-        
+        <div className="main-container">
           <Routes>
-
             <Route path="/" element={<Home/>}/>
-
             <Route path="/about" element={<About/>}/>
-            
             <Route path="/team" element={<Team/>}/>
-            
             <Route path="/events" element={<Events/>}/>
-
             <Route path="/faq" element={<FAQ/>}/>
-
-            <Route path="/admin" element={<AdminLogin/>}/>
-            <Route path="/admin/home" element={<AdminHome/>}/>
-            <Route path="/admin/events" element={<AdminEvents/>}/>
-            <Route path="/admin/faq" element={<AdminFaq/>}/>
-            <Route path="/admin/team" element={<AdminTeam/>}/>
-            <Route path="/admin/about" element={<AdminAbout/>}/>
-
           </Routes>
+        </div>
 
+        <Routes>
+          <Route path="/admin" element={<AdminLogin/>}/>
+          <Route path="/admin/dashboard" element={<AdminDashboard/>}/>
+          <Route path="/admin/pages/home" element={<AdminHome/>}/>
+          <Route path="/admin/pages/events" element={<AdminEvents/>}/>
+          <Route path="/admin/pages/faq" element={<AdminFaq/>}/>
+          <Route path="/admin/pages/team" element={<AdminTeam/>}/>
+          <Route path="/admin/pages/about" element={<AdminAbout/>}/>
+          <Route path="/admin/doc" element={<AdminDoc/>}/>
+        </Routes>
     
       </BrowserRouter>
-    </div>
   );
 }
 

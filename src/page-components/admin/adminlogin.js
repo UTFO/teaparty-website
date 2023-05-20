@@ -12,7 +12,7 @@ const AdminLogin = () => {
       // setTimeout(() => {
       //   window.location.href = "/admin/home"
       // }, 500)
-      window.location.href = "/admin/home"
+      window.location.href = "/admin/dashboard"
     }
     else{
       setMessage("Incorrect Password, Try Again!")
