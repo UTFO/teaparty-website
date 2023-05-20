@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom'
 import './App.css';
 
 import {
-  Home, About, Team, Events, FAQ, Navbar, Footer
+  Home, About, Team, Events, FAQ, Navbar, Footer, AdminAbout, AdminEvents, AdminFaq, AdminTeam, AdminHome, AdminLogin
 } from './page-components/imports.js';
 
 
@@ -15,7 +15,7 @@ function App() {
     <div className="main-container">
       <BrowserRouter >
       
-        <Navbar/>
+
         
           <Routes>
 
@@ -29,9 +29,16 @@ function App() {
 
             <Route path="/faq" element={<FAQ/>}/>
 
+            <Route path="/admin" element={<AdminLogin/>}/>
+            <Route path="/admin/home" element={<AdminHome/>}/>
+            <Route path="/admin/events" element={<AdminEvents/>}/>
+            <Route path="/admin/faq" element={<AdminFaq/>}/>
+            <Route path="/admin/team" element={<AdminTeam/>}/>
+            <Route path="/admin/about" element={<AdminAbout/>}/>
+
           </Routes>
 
-        <Footer/>
+    
       </BrowserRouter>
     </div>
   );
