@@ -100,7 +100,7 @@
 
     font-family: 'Bellota';
     font-style: normal;
-    font-weight: 700;
+    font-weight: 300;
     font-size: 20px;
 
     color: #000000;
@@ -109,6 +109,29 @@
 
 .passwordEntry::-webkit-input-placeholder{
     color: #E1E1E1;
+}
+
+.passwordEntryWrong{
+    width: 56%;
+    height: 33px;
+    left: 745px;
+    top: 452px;
+
+    background: #FCFCFC;
+    border: 3px solid red;
+    border-radius: 12px;
+
+    font-family: 'Bellota';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+
+    color: #000000;
+    padding-left: 5px;
+}
+
+.passwordEntryWrong::-webkit-input-placeholder{
+    color: red;
 }
 
 .loginButton{
@@ -159,5 +182,6 @@
     font-family: 'Andada Pro';
     font-size: 16px;
     color: rgba(0, 0, 0, 0.33);
+    text-decoration: none;
 }
 
