@@ -16,7 +16,11 @@ const AdminLogin = () => {
     }
     else{
       setMessage("Incorrect Password, Try Again!")
+      document.getElementById("passwordEntry").style.border = "2px solid red"
     }
+  }
+  const handleBlur = () => {
+    document.getElementById("passwordEntry").style.borderColor = "#E1E1E1"
   }
 
   const returnHome = "> Back to Main Site"
@@ -36,14 +40,14 @@ const AdminLogin = () => {
             </div>
             <div className="passwordEntryContainer">
               <img src={passwordLogo} className="passwordLogo"/>
-              <input type="password" className="passwordEntry" placeholder="Enter Password" ref={passwordInput}/>
+              <input type="password" className="passwordEntry" placeholder="Enter Password" ref={passwordInput} id="passwordEntry" onBlur={handleBlur}/>
             </div>
               <input className="loginButton" type="submit" value="Login"/>
             <div className="errorText">
               {message}
             </div>
             <div className="returnContainer">
-              <a className="returnText">{returnHome}</a>
+              <a className="returnText" href="/">{returnHome}</a>
             </div>
           </form>
           
