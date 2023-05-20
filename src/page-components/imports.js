@@ -17,6 +17,6 @@ import AdminLogin from './admin/adminlogin.js';
 
 import AdminDoc from './admin/admindoc/admindoc.js';
 
-import AdminNavbar from './admin/components/nav.js';
+import AdminNavbar from './admin/components/navbar/nav.js';
 
 export { Home, About, Team, Events, Navbar, FAQ, Footer, AdminAbout, AdminEvents, AdminFaq, AdminTeam, AdminHome, AdminLogin, AdminDashboard, AdminDoc, AdminNavbar };

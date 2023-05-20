@@ -13,7 +13,7 @@ function NavButton(props) {
 export default function AdminNavbar() {
     console.log(useLocation().pathname);
     return (
-        <div >
+        <div style={{zIndex: 20}} >
             <header className="admin-nav-top"> 
                 <img src="/adminLogo.png" />
             </header>
