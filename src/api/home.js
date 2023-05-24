@@ -6,6 +6,8 @@ export const getHome = async () => {
 }
 
 export const newHome = async (header, text, image) => {
+    
+    console.log(image);
     const response = await fetch(`${API_ENDPOINT}/home`, {
         method: 'POST',
         headers: {
@@ -14,7 +16,7 @@ export const newHome = async (header, text, image) => {
         body: JSON.stringify({
             header: header,
             text: text,
-            image: image,
+            image: image
         })
     })
     const data = await response.json()

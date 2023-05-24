@@ -9,7 +9,7 @@ import { ScrollContainer, ListContainer } from '../components/scrollContainer.js
 
 import { useState, useEffect } from 'react'
 import { getLinks, updateLinks } from '../../../api/links'
-import { getHome } from '../../../api/home'
+import { getHome, newHome } from '../../../api/home'
 
 function InputField(props) {
   return (
@@ -44,25 +44,20 @@ const AdminHome = () => {
 
   };
 
-
+  
   // Function to preload event highlights
   const preloadEvents = () => {
     getHome().then((data) => {
       var tempEvents = [];
       data.map((info) => {
         // Convert the binary data to a Base64-encoded string
-        console.log(info.image);
-        var base64Data =  Buffer.from(info.image).toString('base64');
-        
-        // Create a data URL using the Base64-encoded image data
-        var dataURL = 'data:image/jpeg;base64,' + base64Data;
-        console.log(base64Data);
-        tempEvents = [...tempEvents, {header: info.header, text: info.text, image: dataURL}]
+        tempEvents = [...tempEvents, {header: info.header, text: info.text, image: info.image}]
       });
       
 
       setEvents(tempEvents);
     })
+
   };
 
   //newHome("Example One", "TESTTT", "").then();
@@ -79,6 +74,7 @@ const AdminHome = () => {
   
   return (
     <div>
+
       <AdminNavbar/>
 
       <Container text="Modify Home">
@@ -98,7 +94,7 @@ const AdminHome = () => {
           <SmallContainer title="Edit Links" subtitle="Change the sign-up link and instagram or email!" width={35}>
             <div style={{paddingLeft: 20, height: '60vh', width: '90%', display: 'flex', flexDirection: 'column', alignItems: 'center'}} >
               <InputField preload={form['formLink']} prompt="Sign-Up Form" property='formLink' function={setForm}/>
-              <InputField preload={form['instaLink']} prompt="Instagram Link" property='instaLink' function={setForm}/>
+              <InputField preload={form['instaLink']}  prompt="Instagram Link" property='instaLink' function={setForm}/>
               <InputField preload={form['email']} prompt="Email" property='email' function={setForm}/>
               <button className="admin-submit-hover" onClick={() => submitForm()}>Save</button>
             </div>
