@@ -4,16 +4,16 @@ export const getLinks = async () => {
     const data = await response.json()
     return data
 }
-export const updateLinks = async (id, header, text, image) => {
+export const updateLinks = async (id, signup, email, instagram) => {
     const response = await fetch(`${API_ENDPOINT}/links/${id}`, {
-        method: 'PUT',
+        method: 'PATCH',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            header: header,
-            text: text,
-            image: image,
+            signup: signup,
+            email: email,
+            instagram: instagram,
         })
     })
     const data = await response.json()

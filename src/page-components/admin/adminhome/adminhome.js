@@ -8,7 +8,8 @@ import SmallContainer from '../components/smallContainer/smallContainer'
 import { ScrollContainer, ListContainer } from '../components/scrollContainer.js/scrollContainer'
 
 import { useState, useEffect } from 'react'
-import { getLinks } from '../../../api/links'
+import { getLinks, updateLinks } from '../../../api/links'
+import { getHome } from '../../../api/home'
 
 function InputField(props) {
   return (
@@ -46,16 +47,36 @@ const AdminHome = () => {
 
   // Function to preload event highlights
   const preloadEvents = () => {
+    getHome().then((data) => {
+      var tempEvents = [];
+      data.map((info) => {
+        // Convert the binary data to a Base64-encoded string
+        console.log(info.image);
+        var base64Data =  Buffer.from(info.image).toString('base64');
+        
+        // Create a data URL using the Base64-encoded image data
+        var dataURL = 'data:image/jpeg;base64,' + base64Data;
+        console.log(base64Data);
+        tempEvents = [...tempEvents, {header: info.header, text: info.text, image: dataURL}]
+      });
+      
 
+      setEvents(tempEvents);
+    })
   };
+
+  //newHome("Example One", "TESTTT", "").then();
 
   // Function to save input values 
   const submitForm = async () => {
     console.log(form);
+    updateLinks(form['id'], form['formLink'], form['email'], form['instaLink']).then((res) => {
+      console.log(res);
+    })
   }
 
-  useEffect(() => {preloadForm()}, []);
-
+  useEffect(() => {preloadForm(); preloadEvents()}, []);
+  
   return (
     <div>
       <AdminNavbar/>
@@ -67,7 +88,9 @@ const AdminHome = () => {
             <ScrollContainer>
 
               {/* Insert list of event highlights here as a ListContainer */}
-              <ListContainer image="https://images.freeimages.com/images/large-previews/885/square-1-1212115.jpg" title="Event Title"/>
+              {events.map((event) => {
+                return <ListContainer image={event.image} title={event.header} editFunction={()=>{}} deleteFunction={()=>{}} />
+              })}
 
             </ScrollContainer>
           </SmallContainer>
