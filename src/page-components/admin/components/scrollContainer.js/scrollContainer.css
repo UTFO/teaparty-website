@@ -6,3 +6,24 @@
     opacity: 0.5;
     transition-duration: 0.2s;
 }
+
+.admin-scroll-container::-webkit-scrollbar-thumb {
+    background-color: #B4B2B2;
+    box-shadow: none;
+}
+
+.admin-scroll-container::-webkit-scrollbar-track {
+    background-color: transparent;
+    box-shadow: none;
+    padding: 10px 0;
+}
+
+.admin-scroll-container {
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 10px 20px 0px;
+    mask-image: linear-gradient(to bottom, transparent 0%, black 1%, black 99%, transparent 100%);
+
+}

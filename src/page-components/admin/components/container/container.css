@@ -1,8 +1,9 @@
 .admin-container {
-    height: 90vh;
     width: screen;
     padding: 40px 90px;
+    flex-grow: 1;
     background-color: #F4F4F4;
+
 }
 
 .admin-container p {

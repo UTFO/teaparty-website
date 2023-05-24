@@ -11,6 +11,7 @@ app.use("/event", require("./routes/event"));
 app.use("/faq", require("./routes/faq"));
 app.use("/team", require("./routes/team"));
 app.use("/home", require("./routes/home"));
+app.use("/links", require("./routes/links"));
 
 // get driver connection
 const dbo = require("./db/conn");

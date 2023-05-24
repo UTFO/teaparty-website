@@ -16,6 +16,7 @@ import { Navbar, Footer } from '../imports.js';
 function Home() {
 
     var email = require('../../data/texts/Links.json').email;
+    var instagram = require('../../data/texts/Links.json').instagram;
 
 
     return (<>
@@ -63,14 +64,14 @@ function Home() {
 
     <div className='page-home-hyperlinks'>
         <div className='page-home-join'>
-            <h2>Want to join? <a href="https://google.com" target="_blank" rel="noreferrer">
+            <h2>Want to join? <a href="https://forms.gle/StZ1cLbSVPw7hsT67" target="_blank" rel="noreferrer">
             <img src={Form} height={30}></img></a></h2>
             <p>Fill out the google form <a href="https://forms.gle/StZ1cLbSVPw7hsT67">here</a></p>
         </div>
         <div className='page-home-sponsor'>
             <h2>Interested in Sponsoring? <img src={Cup2} height={30}></img></h2>
             <p>Send us an email &nbsp; <a href={"mailto:"+email} target="_blank" rel="noreferrer">
-            <img src={Email} height={20}></img></a> &nbsp; or message us on instagram! &nbsp;<a href={email} target="_blank" rel="noreferrer">
+            <img src={Email} height={20}></img></a> &nbsp; or message us on instagram! &nbsp;<a href={instagram} target="_blank" rel="noreferrer">
             <img src={Insta} height={20}></img></a></p>
         </div>
     </div>

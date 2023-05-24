@@ -10,7 +10,7 @@ router.get("/", function (req, res) {
   let db_connect = dbo.getDb();
 
   db_connect
-    .collection("home")
+    .collection("links")
     .find({})
     .toArray().then(response => {
       console.log(response);
@@ -18,37 +18,19 @@ router.get("/", function (req, res) {
     })
 });
 
-//post a new record
-router.post("/", function (req, response) {
-    let db_connect = dbo.getDb();
-    let myobj = {
-      header: req.body.header,
-      text: req.body.text,
-      image: req.body.image,
-    };
-    db_connect.collection("home").insertOne(myobj, function (err, res) {
-      if (err) {
-        res.sendStatus(400);
-        console.log(err);
-        return;
-      };
-      response.json(res);w
-    });
-   });
-
 //update a record
 router.put("/:id", function (req, response) {
     let db_connect = dbo.getDb();
     let myquery = { _id: ObjectId(req.params.id) };
     let newvalues = {
       $set: {
-        header: req.body.header,
-        text: req.body.text,
-        image: req.body.image,
+        signup: req.body.signup,
+        email: req.body.email,
+        instagram: req.body.instagram,
       },
     };
     db_connect
-      .collection("home")
+      .collection("links")
       .updateOne(myquery, newvalues, function (err, res) {
         if (err) {
             res.sendStatus(400);
@@ -60,19 +42,5 @@ router.put("/:id", function (req, response) {
       });
    });
 
-//delete a record
-router.delete("/:id", (req, response) => {
-    let db_connect = dbo.getDb();
-    let myquery = { _id: ObjectId(req.params.id) };
-    db_connect.collection("home").deleteOne(myquery, function (err, obj) {
-      if (err) {
-        res.sendStatus(400);
-        console.log(err);
-        return;
-      };
-      console.log("1 document deleted");
-      response.json(obj);
-    });
-   });
 
 module.exports = router;

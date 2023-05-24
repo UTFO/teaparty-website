@@ -20,7 +20,7 @@ function AdminDashboardButton(props) {
 
 const AdminDashboard = () => {
   return (
-    <div>
+    <div style={{display: 'flex', flexDirection: 'column'}}>
       <AdminNavbar/>
 
       <Container text="Dashboard">
