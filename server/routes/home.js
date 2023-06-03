@@ -4,6 +4,7 @@ const dbo = require("../db/conn");
  
 // This help convert the id from string to ObjectId for the _id.
 const ObjectId = require("mongodb").ObjectId;
+const Binary = require('mongodb').Binary;
 
 // This section will help you get a list of all the records.
 router.get("/", function (req, res) {
@@ -24,7 +25,7 @@ router.post("/", function (req, response) {
     let myobj = {
       header: req.body.header,
       text: req.body.text,
-      image: req.body.image,
+      image: new Binary(req.body.image),
     };
     db_connect.collection("home").insertOne(myobj, function (err, res) {
       if (err) {

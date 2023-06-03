@@ -60,6 +60,24 @@ const AdminHome = () => {
 
   };
 
+  const handleImageUpload = (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+
+    reader.onloadend = () => {
+      const arrayBuffer = reader.result;
+      const binaryData = new Uint8Array(arrayBuffer);
+      newHome("Head", "HEADER TEXT", binaryData).then((res) => {
+        console.log(res);
+      })
+    };
+
+    if(file) {
+      reader.readAsArrayBuffer(file);
+    }
+    // newHome("Head", "HEADER TEXT", );
+  }
+
   //newHome("Example One", "TESTTT", "").then();
 
   // Function to save input values 
@@ -77,7 +95,10 @@ const AdminHome = () => {
 
       <AdminNavbar/>
 
+
       <Container text="Modify Home">
+
+        <input type="file" onCHange={handleImageUpload}/>
         
         <div style={{display: 'flex', justifyContent: 'space-between', width: '100%', paddingBottom: 80}}>
           <SmallContainer title="Manage Event Highlights" subtitle="Click on the pencil icon to edit, plus icon to add, and trash icon to delete" width={50}>
