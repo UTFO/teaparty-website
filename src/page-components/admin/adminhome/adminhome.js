@@ -4,7 +4,7 @@ import "./adminhome.css";
 import AdminNavbar from "../components/navbar/nav";
 import Container from "../components/container/container";
 import SmallContainer from "../components/smallContainer/smallContainer";
-import AWS from 'aws-sdk'
+import AWS from "aws-sdk";
 
 import {
   ScrollContainer,
@@ -54,7 +54,7 @@ const AdminHome = () => {
 
   const [file, setFile] = useState(null);
 
-  const uploadFile = async (file) => {
+  const uploadFile = async () => {
     // S3 Bucket Name
     const S3_BUCKET = process.env.REACT_APP_S3_BUCKET_NAME;
 
@@ -70,7 +70,7 @@ const AdminHome = () => {
     const s3 = new AWS.S3({
       params: { Bucket: S3_BUCKET },
       region: REGION,
-      credentials: creds
+      credentials: creds,
     });
 
     // Files Parameters
@@ -117,8 +117,8 @@ const AdminHome = () => {
     });
   };
 
-   // Function to preload form values
-   const preloadForm = () => {
+  // Function to preload form values
+  const preloadForm = () => {
     getLinks().then((data) => {
       console.log(data[0]);
       setForm({
@@ -146,7 +146,6 @@ const AdminHome = () => {
     });
   };
 
-
   useEffect(() => {
     preloadForm();
     preloadEvents();
@@ -157,7 +156,6 @@ const AdminHome = () => {
       <AdminNavbar />
 
       <Container text="Modify Home">
-
         {/* To Remove, showing how to upload images. The URL produced is https://tea-party-images.s3.ca-central-1.amazonaws.com/(file_name.extension) */}
         <input type="file" onChange={handleFileChange} />
         <button onClick={uploadFile}>Upload</button>
