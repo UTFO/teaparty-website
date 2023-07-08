@@ -1,14 +1,13 @@
-var pageIntroList = require('../../data/texts/PageIntro.json');
+var pageIntroList = require("../../data/texts/PageIntro.json");
 
-var HomeText = pageIntroList["Home"]
+var HomeText = pageIntroList["Home"];
 
-var AboutText = pageIntroList["About"]
+var AboutText = pageIntroList["About"];
 
-var TeamText = pageIntroList["Team"]
+var TeamText = pageIntroList["Team"];
 
-var EventsText = pageIntroList["Events"]
+var EventsText = pageIntroList["Events"];
 
-var FAQText = pageIntroList["FAQ"]
+var FAQText = pageIntroList["FAQ"];
 
-
-export {HomeText, AboutText, TeamText, EventsText, FAQText};
+export { HomeText, AboutText, TeamText, EventsText, FAQText };

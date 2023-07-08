@@ -1,21 +1,21 @@
 .admin-small-container {
-    background-color: white;
-    height: fit-content;
-    padding: 40px;
-    border-radius: 25px;
+  background-color: white;
+  height: fit-content;
+  padding: 40px;
+  border-radius: 25px;
 }
 
 .admin-small-container h1 {
-    font-family: 'Oxygen', sans-serif;
-    font-size: 30px;
-    color: #676767;
-    font-weight: 200;
+  font-family: "Oxygen", sans-serif;
+  font-size: 30px;
+  color: #676767;
+  font-weight: 200;
 }
 
 .admin-small-container h2 {
-    font-family: 'Oxygen', sans-serif;
-    font-size: 20px;
-    color: #898989;
-    font-weight: 100;
-    padding-left: 40px;
+  font-family: "Oxygen", sans-serif;
+  font-size: 20px;
+  color: #898989;
+  font-weight: 100;
+  padding-left: 40px;
 }

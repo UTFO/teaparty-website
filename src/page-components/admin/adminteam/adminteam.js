@@ -1,10 +1,8 @@
-import React from 'react'
-import "./adminteam.css"
+import React from "react";
+import "./adminteam.css";
 
 const AdminTeam = () => {
-  return (
-    <div>adminteam</div>
-  )
-}
+  return <div>adminteam</div>;
+};
 
-export default AdminTeam
+export default AdminTeam;

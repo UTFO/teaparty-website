@@ -1,10 +1,8 @@
-import React from 'react'
-import "./adminfaq.css"
+import React from "react";
+import "./adminfaq.css";
 
 const AdminFaq = () => {
-  return (
-    <div>adminfaq</div>
-  )
-}
+  return <div>adminfaq</div>;
+};
 
-export default AdminFaq
+export default AdminFaq;

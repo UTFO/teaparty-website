@@ -1,50 +1,48 @@
-.image-gallery{
-    display: flex;
-    height: fit-content;
-    align-items: center;
-  }
+.image-gallery {
+  display: flex;
+  height: fit-content;
+  align-items: center;
+}
 
-  .image-area{
-    display: inline-block;
-    height: 35vh;
-    width: 23vw;
-    margin-left: 20vw;
-    margin-top: 8vh;
-    margin-right: 0;
-    margin-bottom: 2vh;
-    transform: rotate(10deg);
-    border-color:#0CEDC0;
-    border-style: solid;
-    border-width: 4px;
-  }
+.image-area {
+  display: inline-block;
+  height: 35vh;
+  width: 23vw;
+  margin-left: 20vw;
+  margin-top: 8vh;
+  margin-right: 0;
+  margin-bottom: 2vh;
+  transform: rotate(10deg);
+  border-color: #0cedc0;
+  border-style: solid;
+  border-width: 4px;
+}
 
-  .image-area .internal-image{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-  }
+.image-area .internal-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
 
-  .image-text-area{
-    display: inline-block;
-    background-color: rgba(0, 0, 0, 0.05);
-    height: fit-content;
-    width: 30vw;
-    border-radius: 10%;
-    margin-top: 10vh;
-    margin-left: 8vw;
+.image-text-area {
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.05);
+  height: fit-content;
+  width: 30vw;
+  border-radius: 10%;
+  margin-top: 10vh;
+  margin-left: 8vw;
+}
 
-  }
+.image-text-area h1 {
+  color: #0cedc0;
+  font-family: navbar-menu-font;
+  text-align: center;
+}
 
-  .image-text-area h1{
-    color: #0CEDC0;
-    font-family: navbar-menu-font;
-    text-align: center;
-  }
-
-  .image-text-area p{
-    color: grey;
-    font-family: 'Montserrat';
-    margin: 5% 5%;
-    margin-bottom: 7%;
-  }
-
+.image-text-area p {
+  color: grey;
+  font-family: "Montserrat";
+  margin: 5% 5%;
+  margin-bottom: 7%;
+}

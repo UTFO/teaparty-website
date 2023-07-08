@@ -1,41 +1,40 @@
-.title{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    cursor: grab;
-    background-color: #c4df9b;
-    font-size: small;
-    border-radius: 3em 3em 0 0;
-    padding-left: 5%;
-    padding-right: 5%;
-    font-family: 'Comic Neue';
-    font-size: 0.7em;
+.title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  cursor: grab;
+  background-color: #c4df9b;
+  font-size: small;
+  border-radius: 3em 3em 0 0;
+  padding-left: 5%;
+  padding-right: 5%;
+  font-family: "Comic Neue";
+  font-size: 0.7em;
 }
 
-.expand{
-    border: 2px solid rgb(156, 180, 170);
-    height: var(--heightVal);
-    font-size: small;
-    background-color: rgb(180, 232, 207);
-    overflow: var(--overflowVal);
-    transition: height 0.4s;
-    border-radius: 0 0 1em 1em;
-    padding: 10px;
-    padding-left: 2em;
-    font-size: 1em;
-    font-family:'Shantell Sans';
+.expand {
+  border: 2px solid rgb(156, 180, 170);
+  height: var(--heightVal);
+  font-size: small;
+  background-color: rgb(180, 232, 207);
+  overflow: var(--overflowVal);
+  transition: height 0.4s;
+  border-radius: 0 0 1em 1em;
+  padding: 10px;
+  padding-left: 2em;
+  font-size: 1em;
+  font-family: "Shantell Sans";
 }
 
 .expand p {
-    word-wrap: break-word;
-    width: 100%;
-    max-width: 100%;
+  word-wrap: break-word;
+  width: 100%;
+  max-width: 100%;
 }
 
-.question{
-    width: calc(var(--column-width) * 8);
-    padding-left: 90px;
-    transition: height 0.4s;
+.question {
+  width: calc(var(--column-width) * 8);
+  padding-left: 90px;
+  transition: height 0.4s;
 }
-

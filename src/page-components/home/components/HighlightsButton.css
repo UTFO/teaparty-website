@@ -1,39 +1,37 @@
-.highlights-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.highlights-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .circle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-color: rgba(196, 223, 155,0.8);
-    background-color: #000;
-    height: 10vw;
-    border-radius:50%;
-    width: 10vw;
-    clip-path: circle(10vw at center);
-    overflow: hidden;
-    background-image: url(../images/slide1.png);
-    filter: saturate(52%) brightness(74%) hue(84deg);
-    text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-color: rgba(196, 223, 155, 0.8);
+  background-color: #000;
+  height: 10vw;
+  border-radius: 50%;
+  width: 10vw;
+  clip-path: circle(10vw at center);
+  overflow: hidden;
+  background-image: url(../images/slide1.png);
+  filter: saturate(52%) brightness(74%) hue(84deg);
+  text-decoration: none;
 }
 
-
-
-.circle:hover{
-    filter: none;
-    border-color: rgba(196, 223, 155,0.8);
-    transition: 0.3s ease-in-out;
-    border: 10px solid rgba(196, 223, 155,0.8);
+.circle:hover {
+  filter: none;
+  border-color: rgba(196, 223, 155, 0.8);
+  transition: 0.3s ease-in-out;
+  border: 10px solid rgba(196, 223, 155, 0.8);
 }
 
-.highlights-text{
-    text-align: center;
-    font-size: 1.5em;
-    font-family: Comic Neue;
-    color: greenyellow;
-    background-color: transparent;
-    cursor: default;
-    text-decoration: none;
+.highlights-text {
+  text-align: center;
+  font-size: 1.5em;
+  font-family: Comic Neue;
+  color: greenyellow;
+  background-color: transparent;
+  cursor: default;
+  text-decoration: none;
 }

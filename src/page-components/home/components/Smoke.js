@@ -1,18 +1,13 @@
-import React, {memo} from 'react'
-import './Smoke.css';
+import React, { memo } from "react";
+import "./Smoke.css";
 const Smoke = () => {
-  
   const list = [];
-  for( let i = 0; i < 60; i++){
+  for (let i = 0; i < 60; i++) {
     const x = Math.random() * 25;
-    list.push(<li style={{'--i': x}}></li>)
+    list.push(<li style={{ "--i": x }}></li>);
   }
   console.log(list);
-  return (
-    <ul className="smoke-animation">
-        {list}     
-    </ul>
-  )
+  return <ul className="smoke-animation">{list}</ul>;
 };
 
-export default memo(Smoke)
+export default memo(Smoke);

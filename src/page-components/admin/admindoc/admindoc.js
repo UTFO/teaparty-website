@@ -1,10 +1,8 @@
-import React from 'react'
-import "./admindoc.css"
+import React from "react";
+import "./admindoc.css";
 
 const AdminDoc = () => {
-  return (
-    <div>admindoc</div>
-  )
-}
+  return <div>admindoc</div>;
+};
 
-export default AdminDoc
+export default AdminDoc;

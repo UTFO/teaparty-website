@@ -1,10 +1,8 @@
-import React from 'react'
-import "./adminevents.css"
+import React from "react";
+import "./adminevents.css";
 
 const AdminEvents = () => {
-  return (
-    <div>adminevents</div>
-  )
-}
+  return <div>adminevents</div>;
+};
 
-export default AdminEvents
+export default AdminEvents;
