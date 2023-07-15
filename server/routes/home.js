@@ -25,10 +25,9 @@ router.post("/", function (req, response) {
   let myobj = {
     header: req.body.header,
     text: req.body.text,
-    imageURL: req.body.imageURL
+    imageURL: req.body.imageURL,
   };
 
-  
   db_connect.collection("home").insertOne(myobj, function (err, res) {
     if (err) {
       res.sendStatus(400);
@@ -80,5 +79,3 @@ router.delete("/:id", (req, response) => {
 });
 
 module.exports = router;
-
-
