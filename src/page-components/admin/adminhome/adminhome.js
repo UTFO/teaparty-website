@@ -4,7 +4,8 @@ import "./adminhome.css";
 import AdminNavbar from "../components/navbar/nav";
 import Container from "../components/container/container";
 import SmallContainer from "../components/smallContainer/smallContainer";
-import AWS from "aws-sdk";
+
+import { uploadFile } from "../../../api/images"
 
 import {
   ScrollContainer,
@@ -54,56 +55,6 @@ const AdminHome = () => {
 
   const [file, setFile] = useState(null);
 
-  const uploadFile = async () => {
-    // S3 Bucket Name
-    const S3_BUCKET = process.env.REACT_APP_S3_BUCKET_NAME;
-
-    // S3 Region
-    const REGION = process.env.REACT_APP_S3_REGION;
-
-    // S3 Credentials
-    const creds = {
-      accessKeyId: process.env.REACT_APP_S3_KEY_ID,
-      secretAccessKey: process.env.REACT_APP_S3_SECRET_ACCESS_KEY,
-    };
-
-    const s3 = new AWS.S3({
-      params: { Bucket: S3_BUCKET },
-      region: REGION,
-      credentials: creds,
-    });
-
-    // Files Parameters
-    const params = {
-      Bucket: S3_BUCKET,
-      Key: file.name,
-      Body: file,
-    };
-
-    var upload = s3
-      .putObject(params)
-      .on("httpUploadProgress", (evt) => {
-        // File uploading progress
-        console.log(
-          "Uploading " + parseInt((evt.loaded * 100) / evt.total) + "%"
-        );
-      })
-      .promise();
-
-    await upload.then((err, data) => {
-      console.log(err);
-      alert("File uploaded successfully.");
-    });
-  };
-
-  // Function to handle file and store it to file state
-  const handleFileChange = (e) => {
-    // Uploaded file
-    const file = e.target.files[0];
-    // Changing file state
-    setFile(file);
-  };
-
   // Function to save input values
   const submitForm = async () => {
     console.log(form);
@@ -115,6 +66,14 @@ const AdminHome = () => {
     ).then((res) => {
       console.log(res);
     });
+  };
+
+  // Function to handle file and store it to file state
+  const handleFileChange = (e) => {
+    // Uploaded file
+    const file = e.target.files[0];
+    // Changing file state
+    setFile(file);
   };
 
   // Function to preload form values
@@ -158,7 +117,7 @@ const AdminHome = () => {
       <Container text="Modify Home">
         {/* To Remove, showing how to upload images. The URL produced is https://tea-party-images.s3.ca-central-1.amazonaws.com/(file_name.extension) */}
         <input type="file" onChange={handleFileChange} />
-        <button onClick={uploadFile}>Upload</button>
+        <button onClick={() => uploadFile(file)}>Upload</button>
         {/* To Remove, showing how to upload images */}
 
         <div
