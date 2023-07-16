@@ -91,7 +91,7 @@ function ScrollContainer(props) {
             borderWidth: 0,
             cursor: "pointer",
           }}
-          onClick={props.function}
+          onClick={props.handleOpen}
         >
           <img src="/plus.png" />
         </button>

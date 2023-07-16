@@ -25,7 +25,7 @@ router.post("/", function (req, response) {
   let myobj = {
     header: req.body.header,
     text: req.body.text,
-    imageURL: req.body.imageURL,
+    image: req.body.image,
   };
 
   db_connect.collection("home").insertOne(myobj, function (err, res) {
@@ -34,8 +34,8 @@ router.post("/", function (req, response) {
       console.log(err);
       return;
     }
+    console.log("new record entered")
     response.json(res);
-    w;
   });
 });
 
@@ -47,7 +47,7 @@ router.put("/:id", function (req, response) {
     $set: {
       header: req.body.header,
       text: req.body.text,
-      imageURL: req.body.imageURL,
+      image: req.body.image,
     },
   };
   db_connect

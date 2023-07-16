@@ -36,10 +36,10 @@ async function uploadFile(file) {
       })
       .promise();
 
-    await upload.then((err, data) => {
-      console.log(err);
-      alert("File uploaded successfully.");
-    });
+    const {err, data} = upload
+    if (err) console.log(err)
+    const returnUrl = `https://tea-party-images.s3.ca-central-1.amazonaws.com/${file.name} `
+    return returnUrl
   };
 
 
