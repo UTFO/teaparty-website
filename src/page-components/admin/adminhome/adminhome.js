@@ -5,7 +5,7 @@ import AdminNavbar from "../components/navbar/nav";
 import Container from "../components/container/container";
 import SmallContainer from "../components/smallContainer/smallContainer";
 
-import { uploadFile } from "../../../api/images"
+import { uploadFile } from "../../../api/images";
 
 import {
   ScrollContainer,

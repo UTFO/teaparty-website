@@ -18,6 +18,7 @@ function ListContainer(props) {
           flexDirection: "row",
           alignItems: "center",
           gap: "30px",
+          width: "100%",
         }}
       >
         {props.image && (
@@ -31,7 +32,60 @@ function ListContainer(props) {
             }}
           />
         )}
-        <p style={{ margin: 0, fontSize: "20pt" }}>{props.title}</p>
+
+        {props.name && (
+          <div>
+            <p
+              style={{
+                margin: 0,
+                fontSize: "18pt",
+                width: "100%",
+                whiteSpace: "nowrap",
+                textOverflow: "ellipsis",
+                overflow: "hidden",
+                alignSelf: props.answer ? "start" : "center",
+              }}
+            >
+              {props.name}
+            </p>
+            <p
+              style={{
+                margin: 0,
+                marginLeft: "3rem",
+                fontSize: "15pt",
+                width: "100%",
+              }}
+            >
+              {props.date}{" "}
+              <span style={{ marginLeft: "1.5rem" }}>{props.time}</span>
+            </p>
+          </div>
+        )}
+        <p
+          style={{
+            margin: 0,
+            fontSize: "18pt",
+            width: "40%",
+            whiteSpace: "nowrap",
+            textOverflow: "ellipsis",
+            overflow: "hidden",
+            alignSelf: props.answer ? "start" : "center",
+          }}
+        >
+          {props.title}
+        </p>
+        <p
+          style={{
+            margin: 0,
+            marginLeft: "3rem",
+            fontSize: "15pt",
+            maxWidth: "50%",
+            textOverflow: "ellipsis",
+            overflow: "hidden",
+          }}
+        >
+          {props.answer}
+        </p>
       </div>
       <div
         style={{
