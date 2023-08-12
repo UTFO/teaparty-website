@@ -12,9 +12,10 @@ import {
   ListContainer,
 } from "../components/scrollContainer.js/scrollContainer";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { getLinks, updateLinks } from "../../../api/links";
 import { getHome, newHome } from "../../../api/home";
+import NewModal from "../components/modal/addingModal";
 
 function InputField(props) {
   return (
@@ -54,7 +55,9 @@ const AdminHome = () => {
   const [events, setEvents] = useState([{}]);
 
   const [file, setFile] = useState(null);
-
+  const [imageUrl, setImageUrl] = useState(null)
+  //determines if the modal is open or not
+  const [open, setOpen] = useState(false)
   // Function to save input values
   const submitForm = async () => {
     console.log(form);
@@ -74,6 +77,11 @@ const AdminHome = () => {
     const file = e.target.files[0];
     // Changing file state
     setFile(file);
+    const reader = new FileReader();
+      reader.onload = () => {
+        setImageUrl(reader.result);
+      };
+      reader.readAsDataURL(file);
   };
 
   // Function to preload form values
@@ -100,7 +108,7 @@ const AdminHome = () => {
           { header: info.header, text: info.text, image: info.image },
         ];
       });
-
+      console.log(tempEvents);
       setEvents(tempEvents);
     });
   };
@@ -108,8 +116,30 @@ const AdminHome = () => {
   useEffect(() => {
     preloadForm();
     preloadEvents();
+    setImageUrl(null)
   }, []);
 
+  const eventTitleRef = useRef("")
+  const eventDescriptionRef = useRef("")
+
+  const handleClose = () => {
+    setFile(null)
+    setOpen(false)
+    console.log("closed")
+  }
+
+  const handleSubmit = useCallback(async (e) => {
+    e.preventDefault()
+    if (!file) {
+      alert("Please upload a picture!")
+      return
+    }
+    const fileUrl = await uploadFile(file)
+    console.log(fileUrl)
+    console.log("submitted")
+    newHome(eventTitleRef.current.value, eventDescriptionRef.current.value, fileUrl)
+    handleClose()
+    })
   return (
     <div>
       <AdminNavbar />
@@ -133,7 +163,7 @@ const AdminHome = () => {
             subtitle="Click on the pencil icon to edit, plus icon to add, and trash icon to delete"
             width={50}
           >
-            <ScrollContainer>
+            <ScrollContainer handleOpen={() => {setOpen(true)}}>
               {/* Insert list of event highlights here as a ListContainer */}
               {events.map((event) => {
                 return (
@@ -147,7 +177,146 @@ const AdminHome = () => {
               })}
             </ScrollContainer>
           </SmallContainer>
-
+          <form onSubmit={handleSubmit}>
+          <NewModal open={open} setOpen={setOpen} >
+              <div
+                style={{
+                  position: "absolute",
+                  width: "60vw",
+                  height: "75vh",
+                  backgroundColor: "white",
+                  borderRadius: 20,
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                  padding: 20,
+                  maxWidth: '1000px'
+                }}>
+                <div style={{
+                  flex: 1,
+                  display: "flex",
+                  flexDirection: "column",
+                  alignContent: "center",
+                }}>
+                  <p style={{
+                    marginTop: 0,
+                    marginBottom: 21,
+                    marginLeft: "2vw",
+                    fontFamily: "Oxygen, sans-serif",
+                    fontSize: 20,
+                  }}>Event Image</p>
+                  <div style={{
+                    alignSelf: "center",
+                    width: "60%",
+                    aspectRatio: "1/1",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    borderRadius: 20,
+                    backgroundColor: "#FCFCFC",
+                    border: "solid 3pt #DEDEDE",
+                  }}>
+                    <label htmlFor="imageAdding" style={{
+                      width: "100%",
+                      aspectRatio: "1/1",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      cursor: "pointer"
+                    }}>
+                      {imageUrl ? <img src={imageUrl} style={{
+                      width: "60%",
+                      height: "60%",
+                    }}/> :<img src={"/plusButton.png"} style={{
+                      width: "60%",
+                      height: "60%",
+                      opacity: 0.3,
+                    }}/>}
+                    </label>
+                    <input type="file" accept=".jpeg, .jpg, .png" onChange={handleFileChange} style={{
+                    display: "none",
+                  }} id="imageAdding"/>
+                  </div>
+                </div>
+                <div style={{
+                  flex: 2,
+                  display: "flex",
+                  flexDirection: "column",
+                  alignContent: "flex-start",
+                  height: "75%",
+                  alignSelf: "flex-start"
+                }}>
+                  <p style={{
+                    fontFamily: "Oxygen, sans-serif",
+                    fontSize: 20,
+                    marginBottom: 8,
+                  }}>Event Title</p>
+                  <div style={{
+                    width: "100%",
+                    flex: 1,
+                  }}>
+                    <input type="text" ref={eventTitleRef} style={{
+                      width: "62%",
+                      height: 33,
+                      borderRadius: 5,
+                      border: "solid 3pt #DEDEDE",
+                      paddingLeft: 5,
+                      fontSize: 16,
+                    }} /> 
+                  </div>
+                  <p style={{
+                    fontFamily: "Oxygen, sans-serif",
+                    fontSize: 20,
+                    marginBottom: 8,
+                  }}>Description</p>
+                  <div style={{
+                    width: "100%",
+                    flex: 3,
+                  }}>
+                    <textarea ref={eventDescriptionRef} style={{
+                      width: "80%",
+                      height: "100%",
+                      borderRadius: 5,
+                      border: "solid 3pt #DEDEDE",
+                      alignItem: "flex-start",
+                      padding: 5,
+                      resize: "none",
+                      fontFamily: "Roboto",
+                      fontSize: 14,
+                    }} />
+                  </div>
+                </div>
+                <button onClick={handleSubmit} className={"admin-submit-hover"} style={{
+                  position: "absolute",
+                  left: 0,
+                  right: 0,
+                  bottom: 50,
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                  width: "20vw"
+                }}>Save</button>
+                <button style={{
+                    position: "absolute",
+                    top: 20,
+                    right: 20,
+                    width: 30,
+                    height: 30,
+                    backgroundColor: "white",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    border: "none",
+                    cursor: "pointer"
+                  }} onClick={handleClose}>
+                  <img src="/closeButton.png"  style={{
+                    width: "200%",
+                    aspectRatio: "1/1",
+                    opacity: 0.25
+                  }}/>
+                </button>
+              </div> 
+          </NewModal>
+          </form>
           <SmallContainer
             title="Edit Links"
             subtitle="Change the sign-up link and instagram or email!"

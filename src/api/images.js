@@ -7,11 +7,11 @@ async function uploadFile(file) {
   // S3 Region
   const REGION = process.env.REACT_APP_S3_REGION;
 
-  // S3 Credentials
-  const creds = {
-    accessKeyId: process.env.REACT_APP_S3_KEY_ID,
-    secretAccessKey: process.env.REACT_APP_S3_SECRET_ACCESS_KEY,
-  };
+    // S3 Credentials
+    const creds = {
+      accessKeyId: process.env.REACT_APP_S3_KEY_ID,
+      secretAccessKey: process.env.REACT_APP_S3_SECRET_ACCESS_KEY,
+    };
 
   const s3 = new AWS.S3({
     params: { Bucket: S3_BUCKET },
@@ -36,10 +36,10 @@ async function uploadFile(file) {
     })
     .promise();
 
-  await upload.then((err, data) => {
-    console.log(err);
-    alert("File uploaded successfully.");
-  });
-}
+    await upload.then((err, data) => {
+      console.log(err);
+      alert("File uploaded successfully.");
+    });
+  };
 
 export { uploadFile };
