@@ -123,6 +123,7 @@ const AdminHome = () => {
   const eventDescriptionRef = useRef("")
 
   const handleClose = () => {
+    setFile(null)
     setOpen(false)
     console.log("closed")
   }
@@ -181,14 +182,15 @@ const AdminHome = () => {
               <div
                 style={{
                   position: "absolute",
-                  width: "75vw",
-                  height: "70vh",
+                  width: "60vw",
+                  height: "75vh",
                   backgroundColor: "white",
                   borderRadius: 20,
                   display: "flex",
                   flexDirection: "row",
                   alignItems: "center",
-                  padding: 20
+                  padding: 20,
+                  maxWidth: '1000px'
                 }}>
                 <div style={{
                   flex: 1,
@@ -220,6 +222,7 @@ const AdminHome = () => {
                       display: "flex",
                       justifyContent: "center",
                       alignItems: "center",
+                      cursor: "pointer"
                     }}>
                       {imageUrl ? <img src={imageUrl} style={{
                       width: "60%",
@@ -240,7 +243,7 @@ const AdminHome = () => {
                   display: "flex",
                   flexDirection: "column",
                   alignContent: "flex-start",
-                  height: "80%",
+                  height: "75%",
                   alignSelf: "flex-start"
                 }}>
                   <p style={{
@@ -256,7 +259,7 @@ const AdminHome = () => {
                       width: "62%",
                       height: 33,
                       borderRadius: 5,
-                      border: "solid 1pt #DEDEDE",
+                      border: "solid 3pt #DEDEDE",
                       paddingLeft: 5,
                       fontSize: 16,
                     }} /> 
@@ -274,7 +277,7 @@ const AdminHome = () => {
                       width: "80%",
                       height: "100%",
                       borderRadius: 5,
-                      border: "solid 1pt #DEDEDE",
+                      border: "solid 3pt #DEDEDE",
                       alignItem: "flex-start",
                       padding: 5,
                       resize: "none",
@@ -283,39 +286,35 @@ const AdminHome = () => {
                     }} />
                   </div>
                 </div>
-                <button onClick={handleSubmit} style={{
+                <button onClick={handleSubmit} className={"admin-submit-hover"} style={{
                   position: "absolute",
                   left: 0,
                   right: 0,
-                  bottom: 20,
+                  bottom: 50,
                   marginLeft: "auto",
                   marginRight: "auto",
-                  width: "20vw",
-                  height: "5vh",
-                  backgroundColor: "#85FFB6",
-                  borderRadius: "2vh",
-                  fontFamily: "Bellota, cursive",
-                  fontSize: 20,
+                  width: "20vw"
                 }}>Save</button>
                 <button style={{
                     position: "absolute",
                     top: 20,
                     right: 20,
-                    width: 20,
-                    height: 20,
+                    width: 30,
+                    height: 30,
                     backgroundColor: "white",
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
-                    border: "none"
+                    border: "none",
+                    cursor: "pointer"
                   }} onClick={handleClose}>
                   <img src="/closeButton.png"  style={{
-                    width: "300%",
+                    width: "200%",
                     aspectRatio: "1/1",
+                    opacity: 0.25
                   }}/>
                 </button>
-              </div>
-              
+              </div> 
           </NewModal>
           </form>
           <SmallContainer
