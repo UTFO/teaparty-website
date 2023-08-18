@@ -1,0 +1,29 @@
+.scrollbar{
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.button{
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: end;
+    margin-bottom: 10;
+}
+
+.add_button{
+    background-color: transparent;
+    cursor: pointer;
+    border-width: 0;
+}
+
+.scroll-area{
+    overflow-x: scroll;
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+}
