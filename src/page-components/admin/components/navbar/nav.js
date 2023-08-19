@@ -1,5 +1,6 @@
 import "./nav.css";
 import { useLocation } from "react-router-dom";
+import { useState } from 'react'
 
 function NavButton(props) {
   return (
@@ -11,31 +12,49 @@ function NavButton(props) {
 }
 
 export default function AdminNavbar() {
-  console.log(useLocation().pathname);
+  
+  const [togglePages, setTogglePages] = useState(false);
+
   return (
     <div style={{ zIndex: 20 }}>
-      <header className="admin-nav-top">
-        <img src="/adminLogo.png" />
-      </header>
       <div className="admin-nav-bottom">
-        <NavButton
-          image="/dashboard.png"
-          text="Dashboard"
-          enable={useLocation().pathname == "/admin/dashboard"}
-          link="/admin/dashboard"
-        />
-        <NavButton
-          image="/page.png"
-          text="Pages"
-          enable={useLocation().pathname.includes("/admin/page")}
-        />
-        <NavButton
-          image="/documents.png"
-          text="Documentation"
-          enable={useLocation().pathname == "/admin/doc"}
-          link="/admin/doc"
-        />
+        <div className="admin-nav-logo">
+          <img src="/adminLogo.png" />
+        </div>
+        <div className="admin-nav-container">
+          <NavButton
+            image="/dashboard.png"
+            text="Dashboard"
+            enable={useLocation().pathname == "/admin/dashboard"}
+            link="/admin/dashboard"
+          />
+          <div>
+            <button className="admin-nav-button" onClick={() => setTogglePages((prev) => !prev)}>
+              <img src="/page.png" style={{ opacity: useLocation().pathname.includes("/admin/page") ? 1 : 0.5 }} />
+              <p style={{ opacity: useLocation().pathname.includes("/admin/page") ? 1 : 0.5 }}>Pages <span style={{position: 'relative', top: togglePages ? '2px' : 0}}>{togglePages ? '▾' : '▸'}</span></p>
+            </button>
+            <div className="admin-nav-page-dropdown" style={{opacity: togglePages ? 1 : 0}}>
+              {pageLinks.map((page) => {
+                return <a href={"/admin/pages/" + page}>{page}</a>
+              })}
+            </div>
+          </div>
+          <NavButton
+            image="/documents.png"
+            text="Documentation"
+            enable={useLocation().pathname == "/admin/doc"}
+            link="/admin/doc"
+          />
+        </div>
       </div>
     </div>
   );
 }
+
+const pageLinks = [
+  "home",
+  "about",
+  "team",
+  "events",
+  "faq"
+]

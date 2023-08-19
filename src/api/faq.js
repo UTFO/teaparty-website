@@ -1,3 +1,4 @@
+
 import { API_ENDPOINT } from ".";
 export const getFaq = async () => {
   const response = await fetch(`${API_ENDPOINT}/faq`);

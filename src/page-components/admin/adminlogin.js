@@ -2,13 +2,15 @@ import { React, useRef, useState } from "react";
 import "./adminlogin.css";
 import club_logo_condensed from "./images/tealogo.png";
 import passwordLogo from "./images/passwordLogo.png";
+import { checkPasscode } from "../../api/passcode";
 
 const AdminLogin = () => {
   const passwordInput = useRef(null);
   const [message, setMessage] = useState("");
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (passwordInput.current.value == "passcode") {
+    let passcode = await checkPasscode(passwordInput.current.value)
+    if (passcode.access) {
       // setTimeout(() => {
       //   window.location.href = "/admin/home"
       // }, 500)
