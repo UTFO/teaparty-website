@@ -35,9 +35,9 @@ const AdminAbout = () => {
     <div>
       <AdminNavbar />
 
-      <Container text="Modify FAQ">
+      <Container text="Modify About">
         <SmallContainer
-          title="Manage Questions & Answers"
+          title="Manage Information About Your Club"
           subtitle="Click on the pencil icon to edit, plus icon to add, and trash icon to delete"
           width={95}
         >
