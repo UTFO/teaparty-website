@@ -1,6 +1,6 @@
 import "./teamListContainer.css"
 
-function teamListContaniner(props){
+function TeamListContaniner(props){
     <div className="container">
         <div className="header">
             <div classname = "person-intro">
@@ -25,4 +25,4 @@ function teamListContaniner(props){
     </div>
 }
 
-export default teamListContaniner
+export default TeamListContaniner

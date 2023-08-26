@@ -1,6 +1,6 @@
 import "./horizontalScrollContainer.css"
 
-function horizontalScrollContainer(props){
+function HorizontalScrollContainer(props){
     <div className="scrollbar">
         <div className="button">
             <button className="add-button" onClick={props.addfunction}>
@@ -11,4 +11,4 @@ function horizontalScrollContainer(props){
     </div>
 }
 
-export default horizontalScrollContainer;
+export default HorizontalScrollContainer;

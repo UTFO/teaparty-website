@@ -1,6 +1,6 @@
 import "./aboutListContainer.css"
 
-function aboutListContaniner(props){
+function AboutListContaniner(props){
     <div className="container">
         <div className="header">
             <div classname = "title">{props.title}</div>
@@ -19,4 +19,4 @@ function aboutListContaniner(props){
     </div>
 }
 
-export default aboutListContaniner
+export default AboutListContaniner
