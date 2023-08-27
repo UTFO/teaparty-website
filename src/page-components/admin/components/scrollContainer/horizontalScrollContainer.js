@@ -3,7 +3,7 @@ import "./horizontalScrollContainer.css"
 function HorizontalScrollContainer(props){
     return (<div className="scrollbar">
         <div className="button">
-            <button className="add-button" onClick={props.addfunction}>
+            <button className="add-button" onClick={props.handleOpen}>
                 <img src = "/plus.png"/>
             </button>
         </div>
