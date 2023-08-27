@@ -57,8 +57,8 @@ const AdminEvents = () => {
   const handleSubmit = useCallback(async (e) => {
     e.preventDefault()
     
+    newEvent(eventTitleRef.current.value, eventTypeRef.current.value, eventDateRef.current.value, eventAddressRef.current.value)
     console.log("submitted")
-    await newEvent(eventTitleRef.current.value, eventTypeRef.current.value, eventDateRef.current.value, eventAddressRef.current.value)
     handleClose()
     })
 
@@ -86,6 +86,7 @@ const AdminEvents = () => {
                   <ListContainer
                     name={event.title}
                     date={event.date}
+                    // address={event.address}
                     time=""
                     editFunction={() => {}}
                     deleteFunction={() => {}}
