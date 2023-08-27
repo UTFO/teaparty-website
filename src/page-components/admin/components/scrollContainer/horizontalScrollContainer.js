@@ -1,14 +1,14 @@
 import "./horizontalScrollContainer.css"
 
 function HorizontalScrollContainer(props){
-    <div className="scrollbar">
+    return (<div className="scrollbar">
         <div className="button">
             <button className="add-button" onClick={props.addfunction}>
                 <img src = "/plus.png"/>
             </button>
         </div>
-        <div className="scroll-area">{props.elements}</div>
-    </div>
+        <div className="scroll-area">{props.children}</div>
+    </div>)
 }
 
 export default HorizontalScrollContainer;

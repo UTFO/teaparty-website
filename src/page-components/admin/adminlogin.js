@@ -17,8 +17,7 @@ const AdminLogin = () => {
       window.location.href = "/admin/dashboard";
     } else {
       setMessage("Incorrect Password, Try Again!");
-      document.getElementsByClassName("passwordEntry")[0].className =
-        "passwordEntryWrong";
+      document.getElementsByClassName("passwordEntry")[0] && (document.getElementsByClassName("passwordEntry")[0].className = "passwordEntryWrong");
     }
   };
   const handleFocus = (e) => {

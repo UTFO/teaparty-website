@@ -1,7 +1,7 @@
 import "./teamListContainer.css"
 
 function TeamListContaniner(props){
-    <div className="container">
+    return (<div className="container">
         <div className="header">
             <div classname = "person-intro">
                 <div classname = "image">
@@ -22,7 +22,7 @@ function TeamListContaniner(props){
         <div className="text">
             {props.text}
         </div>
-    </div>
+    </div>)
 }
 
 export default TeamListContaniner

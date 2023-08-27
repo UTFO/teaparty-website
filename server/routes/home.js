@@ -66,7 +66,7 @@ router.put("/:id", function (req, response) {
 //delete a record
 router.delete("/:id", (req, response) => {
   let db_connect = dbo.getDb();
-  let myquery = { _id: ObjectId(req.params.id) };
+  let myquery = { _id: new ObjectId(req.params.id) };
   db_connect.collection("home").deleteOne(myquery, function (err, obj) {
     if (err) {
       res.sendStatus(400);

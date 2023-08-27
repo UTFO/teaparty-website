@@ -9,7 +9,7 @@ import { getFaq } from "../../../api/faq";
 import {
   ScrollContainer,
   ListContainer,
-} from "../components/scrollContainer.js/scrollContainer";
+} from "../components/scrollContainer/scrollContainer.js";
 
 const AdminFaq = () => {
   const [FAQs, setFAQs] = useState([]);

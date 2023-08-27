@@ -3,12 +3,12 @@ import "./adminteam.css";
 import AdminNavbar from "../components/navbar/nav";
 import Container from "../components/container/container";
 import SmallContainer from "../components/smallContainer/smallContainer";
-import { getTeam } from "../../../api/about";
+import { getTeam } from "../../../api/team";
 
 import HorizontalScrollContainer from "../components/scrollContainer/horizontalScrollContainer";
 import TeamListContainer from "../components/scrollContainer/teamListContainer";
 
-const AdminAbout = () => {
+const AdminTeam = () => {
   const [Teams, setTeams] = useState([]);
 
   const preloadTeam = () => {
@@ -35,7 +35,7 @@ const AdminAbout = () => {
     <div>
       <AdminNavbar />
 
-      <Container text="Modify FAQ">
+      <Container text="Modify Team">
         <SmallContainer
           title="Manage Questions & Answers"
           subtitle="Click on the pencil icon to edit, plus icon to add, and trash icon to delete"
@@ -43,7 +43,7 @@ const AdminAbout = () => {
         >
           <HorizontalScrollContainer>
             {/* Insert list of event highlights here as a ListContainer */}
-            {Teams.map((team) => {
+            {dummyTeam.map((team) => {
               return (
                 <TeamListContainer
                   image = {team.image}
@@ -62,4 +62,20 @@ const AdminAbout = () => {
 
 };
 
-export default AdminAbout;
+var dummyTeam = [
+  {
+    image: "",
+    name: "Test",
+    text: "Test",
+  },{
+    image: "",
+    name: "Test",
+    text: "Test",
+  },{
+    image: "",
+    name: "Test",
+    text: "Test",
+  }
+]
+
+export default AdminTeam;
