@@ -1,0 +1,45 @@
+.container{
+    background-color: #ECECEC;
+    display: flex;
+    flex-direction: column;
+    border-radius: 19pt;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.title{
+    align-self: flex-start;
+    padding-left: 10px;
+}
+
+
+.buttons{
+    align-self: flex-end;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding-right: 10px;
+}
+
+
+.edit-button{
+    cursor: pointer;
+    background-color: transparent;
+    border-width: 0;
+}
+
+
+.delete-button{
+    cursor: pointer;
+    background-color: transparent;
+    border-width: 0;
+}
+
+
+.text{
+    text-align: left;
+}

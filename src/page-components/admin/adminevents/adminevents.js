@@ -9,7 +9,7 @@ import { getEvent, newEvent } from "../../../api/event";
 import {
   ScrollContainer,
   ListContainer,
-} from "../components/scrollContainer.js/scrollContainer";
+} from "../components/scrollContainer/scrollContainer.js";
 
 import NewModal from "../components/modal/addingModal";
 import { SettingsPowerRounded } from "@mui/icons-material";

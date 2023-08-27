@@ -10,11 +10,11 @@ import { uploadFile } from "../../../api/images";
 import {
   ScrollContainer,
   ListContainer,
-} from "../components/scrollContainer.js/scrollContainer";
+} from "../components/scrollContainer/scrollContainer.js";
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import { getLinks, updateLinks } from "../../../api/links";
-import { getHome, newHome } from "../../../api/home";
+import { getHome, newHome, deleteHome } from "../../../api/home";
 import NewModal from "../components/modal/addingModal";
 
 function InputField(props) {
@@ -105,7 +105,7 @@ const AdminHome = () => {
         // Convert the binary data to a Base64-encoded string
         tempEvents = [
           ...tempEvents,
-          { header: info.header, text: info.text, image: info.image },
+          { header: info.header, text: info.text, image: info.image, id: info._id},
         ];
       });
       console.log(tempEvents);
@@ -140,16 +140,25 @@ const AdminHome = () => {
     newHome(eventTitleRef.current.value, eventDescriptionRef.current.value, fileUrl)
     handleClose()
     })
+
+  const removeEvent = (index) => {
+    deleteHome(events[index].id)
+    console.log(index)
+    setEvents((prev) => {
+      const updatedEvents = [...prev];
+      updatedEvents.splice(index, 1);
+      return updatedEvents
+    })
+  }
+
+  useEffect(() => {
+    console.log(events)
+  }, [events])
   return (
     <div>
       <AdminNavbar />
 
       <Container text="Modify Home">
-        {/* To Remove, showing how to upload images. The URL produced is https://tea-party-images.s3.ca-central-1.amazonaws.com/(file_name.extension) */}
-        <input type="file" onChange={handleFileChange} />
-        <button onClick={() => uploadFile(file)}>Upload</button>
-        {/* To Remove, showing how to upload images */}
-
         <div
           style={{
             display: "flex",
@@ -165,13 +174,13 @@ const AdminHome = () => {
           >
             <ScrollContainer handleOpen={() => {setOpen(true)}}>
               {/* Insert list of event highlights here as a ListContainer */}
-              {events.map((event) => {
+              {events.map((event, index) => {
                 return (
                   <ListContainer
                     image={event.image}
                     title={event.header}
                     editFunction={() => {}}
-                    deleteFunction={() => {}}
+                    deleteFunction={() => {removeEvent(index)}}
                   />
                 );
               })}

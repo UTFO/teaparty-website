@@ -36,10 +36,10 @@ async function uploadFile(file) {
     })
     .promise();
 
-    await upload.then((err, data) => {
-      console.log(err);
-      alert("File uploaded successfully.");
-    });
-  };
+  await upload.then((err, data) => {
+    console.log(err);
+    alert("File uploaded successfully.");
+  });
+};
 
 export { uploadFile };
