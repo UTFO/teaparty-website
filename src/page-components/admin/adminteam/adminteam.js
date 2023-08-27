@@ -37,7 +37,7 @@ const AdminTeam = () => {
 
       <Container text="Modify Team">
         <SmallContainer
-          title="Manage Questions & Answers"
+          title="Manage Your Team Members"
           subtitle="Click on the pencil icon to edit, plus icon to add, and trash icon to delete"
           width={95}
         >
