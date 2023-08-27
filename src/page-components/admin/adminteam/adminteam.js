@@ -18,10 +18,10 @@ const AdminTeam = () => {
         // Convert the binary data to a Base64-encoded string
         tempTeams = [
           ...tempTeams,
-          { name: info.name, message: info.message, image: info.image},
+          { name: info.name, message: info.message, image: info.image, role: info.role, linkedin: info.linkedin, instagram: info.instagram },
         ];
       });
-
+      console.log(tempTeams)
       setTeams(tempTeams);
     });
   };

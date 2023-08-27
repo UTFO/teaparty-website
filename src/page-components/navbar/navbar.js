@@ -7,6 +7,10 @@ import {
   instagram_path,
 } from "./images/import.js";
 
+
+import { getLinks } from '../../api/links.js'
+import { useEffect, useState } from 'react'
+
 function MenuButton(props) {
   return (
     <a className="navbarText" href={props.path}>
@@ -54,15 +58,32 @@ export function Navbar() {
 }
 
 export const ContactBar = () => {
-  var email = require("../../data/texts/Links.json").email;
+
+  const [form, setForm] = useState({})
+
+  const preloadForm = () => {
+    getLinks().then((data) => {
+      console.log(data[0]);
+      setForm({
+        formLink: data[0]["signup"],
+        instaLink: data[0]["instagram"],
+        email: data[0]["email"],
+        id: data[0]["_id"],
+      });
+    });
+  };
+
+  useEffect(() => {
+    preloadForm();
+  }, [])
 
   return (
     <div className="navbar-contact">
-      <ContactButton image={email_logo} text="Email" path={"mailto:" + email} />
+      <ContactButton image={email_logo} text="Email" path={"mailto:" + form.email} />
       <ContactButton
         image={instagram_logo}
         text="Instagram"
-        path={instagram_path}
+        path={form.instaLink}
       />
     </div>
   );

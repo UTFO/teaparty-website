@@ -7,7 +7,7 @@ import Arrow_Icon from "./images/icons/Arrow.png";
 import Rope from "./images/objects/Rope.png";
 import Teabag from "./images/objects/Teabag.png";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import "./teamPage.css";
 import React from "react";
@@ -16,6 +16,7 @@ import PageIntro from "../page-introductions/PageIntro.js";
 
 import { TeamText } from "../page-introductions/imports.js";
 import { Navbar, Footer } from "../imports.js";
+import { useTeamData } from "./teamContext";
 
 var borderActiveColor = "#b3ffc3";
 var cardActiveColor = "#e1ffda";
@@ -25,17 +26,24 @@ var cardInactiveColor = "rgba(0, 0, 0, 0.05)";
 
 var sizeScale = 0.9;
 let displaySide = 2 + 2;
-let memberArray = [];
+// let memberArray = [];
 
 let prev = 0;
 let currentRotate = 0;
 
-var Members = require("../../data/texts/Team.json");
+// var Members = require("../../data/texts/Team.json");
 
-while (memberArray.length < 3 * (displaySide * 2 + 1))
-  memberArray = [...memberArray, ...Members];
+// while (memberArray.length < 3 * (displaySide * 2 + 1))
+//   memberArray = [...memberArray, ...Members];
 
 function TeamCard(props) {
+  const memberArray = useTeamData();
+
+  // Check if memberArray is empty or null to determine if data is loading
+  if (!memberArray || memberArray.length === 0) {
+    // Data is loading, render a loading indicator
+    return <div>Loading...</div>;
+  }
   var cardColor = props.current ? cardActiveColor : cardInactiveColor;
   var borderColor = props.current ? borderActiveColor : borderInactiveColor;
 
@@ -112,7 +120,7 @@ function TeamCard(props) {
           className="page-team-card-second-container"
           onClick={
             props.hide || props.preventClick
-              ? ""
+              ? () => {}
               : () => {
                   getClickedCard();
                 }
@@ -122,8 +130,8 @@ function TeamCard(props) {
           <h2 style={{ opacity: 0.5 + props.active }}>{props.member.role}</h2>
           <img
             style={{ "--borderColor": borderColor }}
-            src={require("../../data/" + props.member.image)}
-            alt={props.name + "'s Picture"}
+            src={"https://tea-party-images.s3.ca-central-1.amazonaws.com/" + props.member.image}
+            alt={props.member.name + "'s Picture"}
           />
           {console.log(props.member.image)}
         </div>
@@ -179,6 +187,13 @@ function TeamCard(props) {
 
 function TeaCard(props) {
   let current = props.index;
+  const memberArray = useTeamData();
+
+  // Check if memberArray is empty or null to determine if data is loading
+  if (!memberArray || memberArray.length === 0) {
+    // Data is loading, render a loading indicator
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className="page-team-teabag">
@@ -203,6 +218,13 @@ function TeaCard(props) {
 }
 
 function Arrow(props) {
+  const memberArray = useTeamData();
+
+  // Check if memberArray is empty or null to determine if data is loading
+  if (!memberArray || memberArray.length === 0) {
+    // Data is loading, render a loading indicator
+    return <div>Loading...</div>;
+  }
   const waitFor = (delay) =>
     new Promise((resolve) => setTimeout(resolve, delay));
 
@@ -269,10 +291,22 @@ function Arrow(props) {
 
 function Team() {
   //Number of displayed people above or below center;
-  const [active, setActive] = useState(
-    Math.round((memberArray.length - 1) / 2)
-  );
+  const [active, setActive] = useState(0);
   const [preventClick, setPreventClick] = useState(false);
+
+  const memberArray = useTeamData();
+
+  useEffect(() => {
+    setActive(Math.round((memberArray.length - 1) / 2))
+  }, [memberArray])
+
+  // Check if memberArray is empty or null to determine if data is loading
+  if (!memberArray || memberArray.length === 0) {
+    // Data is loading, render a loading indicator
+    return <div>Loading...</div>;
+  }
+
+  
 
   var TeamCards = [
     <Arrow
