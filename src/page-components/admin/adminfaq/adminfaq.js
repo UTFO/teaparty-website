@@ -86,7 +86,7 @@ const AdminFaq = () => {
               padding: 20,
               maxWidth: '1000px',
               justifyContent: "flex-start",
-              gap: 10
+              gap: 5
             }}>
               <div style={{
                 display: "flex",
@@ -148,7 +148,7 @@ const AdminFaq = () => {
                   position: "absolute",
                   left: 0,
                   right: 0,
-                  bottom: 40,
+                  bottom: 50,
                   marginLeft: "auto",
                   marginRight: "auto",
                   width: "20vw"
