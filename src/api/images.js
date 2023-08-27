@@ -40,6 +40,8 @@ async function uploadFile(file) {
     console.log(err);
     alert("File uploaded successfully.");
   });
+
+  return `https://${S3_BUCKET}.s3.${REGION}.amazonaws.com/${file.name}`;
 };
 
 export { uploadFile };
