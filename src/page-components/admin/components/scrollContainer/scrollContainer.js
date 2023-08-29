@@ -1,6 +1,12 @@
+import { fileNameToSrc } from "../../../../helper";
 import "./scrollContainer.css";
 
 function ListContainer(props) {
+  // S3 Bucket Name
+  const S3_BUCKET = process.env.REACT_APP_S3_BUCKET_NAME;
+
+  // S3 Region
+  const REGION = process.env.REACT_APP_S3_REGION;
   return (
     <div
       style={{
@@ -23,7 +29,7 @@ function ListContainer(props) {
       >
         {props.image && (
           <img
-            src={props.image}
+            src={fileNameToSrc(props.image)}
             style={{
               width: "50px",
               height: "50px",

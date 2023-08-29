@@ -92,16 +92,25 @@ const NewTeamModal = (props) => {
       alert("Please upload a picture!")
       return
     }
-    const fileUrl = await uploadFile(file)
-    console.log(fileUrl)
+    const fileName = await uploadFile(file)
+    console.log(fileName)
     console.log("submitted")
-    newTeam(memberNameRef.current.value, memberPositionRef.current.value, fileUrl, memberAboutRef.current.value)
+    newTeam(
+      memberNameRef.current.value, 
+      memberPositionRef.current.value, 
+      fileName, 
+      memberAboutRef.current.value, 
+      memberLinkedinRef.current.value, 
+      memberInstagramRef.current.value)
     handleClose()
   })
 
   const memberAboutRef = useRef("")
   const memberNameRef = useRef("")
   const memberPositionRef = useRef("")
+  const memberLinkedinRef = useRef("")
+  const memberInstagramRef = useRef("")
+
   const [file, setFile] = useState(null)
   const [imageUrl, setImageUrl] = useState(null)
   
@@ -179,7 +188,7 @@ const NewTeamModal = (props) => {
               aspectRatio: "1/1",
               marginRight: 5,
             }}/>
-            <input type="text" ref={memberNameRef} style={{
+            <input type="text" ref={memberLinkedinRef} style={{
               width: "62%",
               height: 20,
               borderRadius: 5,
@@ -203,7 +212,7 @@ const NewTeamModal = (props) => {
               aspectRatio: "1/1",
               marginRight: 5,
             }}/>
-            <input type="text" ref={memberNameRef} style={{
+            <input type="text" ref={memberInstagramRef} style={{
               width: "62%",
               height: 20,
               borderRadius: 5,

@@ -11,7 +11,6 @@ export const newTeam = async (
   image,
   message,
   linkedin="",
-  twitter="",
   instagram="",
   
 ) => {
@@ -24,7 +23,6 @@ export const newTeam = async (
       name: name,
       role: role,
       linkedin: linkedin,
-      twitter: twitter,
       instagram: instagram,
       image: image,
       message: message,
@@ -41,7 +39,6 @@ export const updateTeam = async (
   image,
   message,
   linkedin="",
-  twitter="",
   instagram="",
 ) => {
   const response = await fetch(`${API_ENDPOINT}/team/${id}`, {
@@ -53,7 +50,6 @@ export const updateTeam = async (
       name: name,
       role: role,
       linkedin: linkedin,
-      twitter: twitter,
       instagram: instagram,
       image: image,
       message: message,
