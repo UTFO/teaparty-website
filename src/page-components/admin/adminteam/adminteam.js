@@ -116,7 +116,6 @@ const NewTeamModal = (props) => {
           borderRadius: 20,
           display: "flex",
           flexDirection: "row",
-          alignItems: "center",
           padding: 20,
           maxWidth: '1000px'
         }}>
@@ -124,11 +123,12 @@ const NewTeamModal = (props) => {
           flex: 1,
           display: "flex",
           flexDirection: "column",
-          alignContent: "center",
+          justifyContent: "space-between",
+          height: "80%"
         }}>
           <p style={{
-            marginTop: 0,
-            marginBottom: 21,
+            marginTop: 20,
+            marginBottom: 0,
             marginLeft: "2vw",
             fontFamily: "Oxygen, sans-serif",
             fontSize: 20,
@@ -164,6 +164,53 @@ const NewTeamModal = (props) => {
             <input type="file" accept=".jpeg, .jpg, .png" onChange={handleFileChange} style={{
             display: "none",
           }} id="imageAdding"/>
+          </div>
+          <div style={{
+            alignSelf: "center",
+            height: 40,
+            width: "80%",
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "center",
+            alignItems: "center",
+          }}>
+            <img src={"/linkedin.png"} style={{
+              height: "80%",
+              aspectRatio: "1/1",
+              marginRight: 5,
+            }}/>
+            <input type="text" ref={memberNameRef} style={{
+              width: "62%",
+              height: 20,
+              borderRadius: 5,
+              border: "solid 3pt #DEDEDE",
+              paddingLeft: 5,
+              fontSize: 16,
+            }} /> 
+
+          </div>
+          <div style={{
+            alignSelf: "center",
+            height: 40,
+            width: "80%",
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "center",
+            alignItems: "center",
+          }}>
+            <img src={"/instagram.png"} style={{
+              height: "80%",
+              aspectRatio: "1/1",
+              marginRight: 5,
+            }}/>
+            <input type="text" ref={memberNameRef} style={{
+              width: "62%",
+              height: 20,
+              borderRadius: 5,
+              border: "solid 3pt #DEDEDE",
+              paddingLeft: 5,
+              fontSize: 16,
+            }} /> 
           </div>
         </div>
         <div style={{
