@@ -3,12 +3,17 @@
     display: flex;
     flex-direction: column;
     border-radius: 19px;
+    width: max-content;
+    gap: 20px;
 }
 
 .header{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding: 15px 20px 15px 15px;
+    gap: 50px;
+    width: inherit;
 }
 
 .person-intro{
@@ -30,25 +35,26 @@
     align-self: flex-end;
     display: flex;
     flex-direction: row;
-    gap: 10px;
-    padding-right: 10px;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
 }
 
 
 .edit-button{
     cursor: pointer;
     background-color: transparent;
-    border-width: 0;
+    border-width: 0px; 
 }
 
 
 .delete-button{
     cursor: pointer;
     background-color: transparent;
-    border-width: 0;
+    border-width: 0px;
 }
-
 
 .text{
     text-align: left;
+    padding: 10px 10px 10px 10px;
 }

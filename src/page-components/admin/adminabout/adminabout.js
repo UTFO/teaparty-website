@@ -50,7 +50,7 @@ const AdminAbout = () => {
             {Abouts.map((about) => {
               return (
                 <AboutListContainer
-                  title={about.name}
+                  name={about.name}
                   text={about.text}
                   editFunction={() => {}}
                   deleteFunction={() => {}}
@@ -181,4 +181,6 @@ const AboutTabModal = (props) => {
     </div>
   </NewModal>)
 }
+
+
 export default AdminAbout;
