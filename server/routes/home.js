@@ -25,7 +25,7 @@ router.post("/", function (req, response) {
   let myobj = {
     header: req.body.header,
     text: req.body.text,
-    image: req.body.image,
+    image: req.body.image.replaceAll(" ", "+"),
   };
 
   db_connect.collection("home").insertOne(myobj, function (err, res) {
@@ -47,7 +47,7 @@ router.put("/:id", function (req, response) {
     $set: {
       header: req.body.header,
       text: req.body.text,
-      image: req.body.image,
+      image: req.body.image.replaceAll(" ", "+"),
     },
   };
   db_connect
