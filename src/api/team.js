@@ -8,11 +8,11 @@ export const getTeam = async () => {
 export const newTeam = async (
   name,
   role,
-  linkedin,
-  twitter,
-  instagram,
   image,
-  message
+  message,
+  linkedin="",
+  instagram="",
+  
 ) => {
   const response = await fetch(`${API_ENDPOINT}/team`, {
     method: "POST",
@@ -23,7 +23,6 @@ export const newTeam = async (
       name: name,
       role: role,
       linkedin: linkedin,
-      twitter: twitter,
       instagram: instagram,
       image: image,
       message: message,
@@ -37,11 +36,10 @@ export const updateTeam = async (
   id,
   name,
   role,
-  linkedin,
-  twitter,
-  instagram,
   image,
-  message
+  message,
+  linkedin="",
+  instagram="",
 ) => {
   const response = await fetch(`${API_ENDPOINT}/team/${id}`, {
     method: "PUT",
@@ -52,7 +50,6 @@ export const updateTeam = async (
       name: name,
       role: role,
       linkedin: linkedin,
-      twitter: twitter,
       instagram: instagram,
       image: image,
       message: message,
