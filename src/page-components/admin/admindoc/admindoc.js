@@ -3,7 +3,7 @@ import "./admindoc.css";
 import AdminNavbar from "../components/navbar/nav";
 import Container from "../components/container/container";
 
-import { useState } from "react";
+import { useState , useEffect } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
@@ -27,6 +27,12 @@ const AdminDoc = () => {
     setActiveHeading(mainIndex);
     setActiveSubheading(index);
   };
+
+  useEffect( () => {
+    if (sessionStorage.getItem("accessToken") !== "true") {
+      window.location.href = "/admin";
+    }
+  }, [])
 
   return (
     <div>
