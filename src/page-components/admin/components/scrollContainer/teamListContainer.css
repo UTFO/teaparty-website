@@ -12,16 +12,16 @@
     flex-direction: row;
     justify-content: space-between;
     padding: 15px 20px 15px 15px;
-    gap: 50px;
-    width: inherit;
+    position: relative;
+    width: 20vw;
 }
+
 
 .person-intro{
     align-self: flex-start;
     display: flex;
     flex-direction: row;
     gap: 10px;
-    padding-left: 10px;
 }
 
 .image{
@@ -38,6 +38,7 @@
     justify-content: space-between;
     gap: 20px;
     width: 100%;
+    margin-right: 20px;
 }
 
 
@@ -45,6 +46,7 @@
     cursor: pointer;
     background-color: transparent;
     border-width: 0px; 
+    margin-right: 15px;
 }
 
 
@@ -52,6 +54,7 @@
     cursor: pointer;
     background-color: transparent;
     border-width: 0px;
+    margin-left: 15px;
 }
 
 .text{
