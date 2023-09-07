@@ -1,11 +1,12 @@
 import "./teamListContainer.css"
+import { fileNameToSrc } from "../../../../helper";
 
 function TeamListContaniner(props){
     return (<div className="container">
         <div className="header">
             <div classname = "person-intro">
                 <div classname = "image">
-                    <img src={props.image}></img>
+                    <img src={fileNameToSrc(props.image)}></img>
                 </div>
                 <div classname = "name">{props.name}</div>
             </div>
