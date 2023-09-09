@@ -1,4 +1,5 @@
 import "./teamListContainer.css"
+import { fileNameToSrc } from "../../../../helper";
 
 function TeamListContaniner(props){
     return (<div className="container">
@@ -8,7 +9,7 @@ function TeamListContaniner(props){
                     {props.name}
                 </div>
                 <div classname = "image">
-                    <img src={props.image}></img>
+                    <img src={fileNameToSrc(props.image)}></img>
                 </div>
             </div>
             

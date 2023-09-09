@@ -32,6 +32,9 @@ const AdminFaq = () => {
   };
 
   useEffect(() => {
+    if (sessionStorage.getItem("accessToken") !== "true") {
+      window.location.href = "/admin";
+    }
     preloadFAQ();
   }, []);
 

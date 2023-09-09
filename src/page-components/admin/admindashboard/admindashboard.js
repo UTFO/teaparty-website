@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "./admindashboard.css";
 
 import AdminNavbar from "../components/navbar/nav";
@@ -17,6 +17,12 @@ function AdminDashboardButton(props) {
 }
 
 const AdminDashboard = () => {
+  useEffect( () => {
+    if (sessionStorage.getItem("accessToken") !== "true") {
+      console.log("GG LMAO")
+      window.location.href = "/admin";
+    }
+  }, [])
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
       <AdminNavbar />
