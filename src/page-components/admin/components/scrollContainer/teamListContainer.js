@@ -1,20 +1,22 @@
 import "./teamListContainer.css"
+import { fileNameToSrc } from "../../../../helper";
 
 function TeamListContaniner(props){
     return (<div className="container">
         <div className="header">
-            <div classname = "person-intro">
-                <div classname = "image">
-                    <img src={props.image}></img>
-                </div>
-                <div classname = "name">{props.name}</div>
+            <div className = "person-intro">
+                <img className="image" src={fileNameToSrc(props.image)}/>
+                <p className="name">
+                    {props.name}
+                </p>
+                
             </div>
             
-            <div classname = "buttons">
-                <button classname="edit-button" onClick={props.editFunction}>
+            <div className="buttons">
+                <button className="edit-button" onClick={props.editFunction}>
                     <img src="/pencil.png"></img>
                 </button>
-                <button className="trash-button" onClick={props.deleteFunction}>
+                <button className="delete-button" onClick={props.deleteFunction}>
                     <img src="/trash.png"></img>
                 </button>
             </div>

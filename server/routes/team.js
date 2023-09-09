@@ -26,9 +26,8 @@ router.post("/", function (req, response) {
     name: req.body.name,
     role: req.body.role,
     linkedin: req.body.linkedin,
-    twitter: req.body.twitter,
     instagram: req.body.instagram,
-    image: req.body.image,
+    image: req.body.image.replaceAll(" ", "+"),
     message: req.body.message,
   };
   db_connect.collection("people").insertOne(myobj, function (err, res) {
@@ -50,9 +49,8 @@ router.put("/:id", function (req, response) {
       name: req.body.name,
       role: req.body.role,
       linkedin: req.body.linkedin,
-      twitter: req.body.twitter,
       instagram: req.body.instagram,
-      image: req.body.image,
+      image: req.body.image.replaceAll(" ", "+"),
       message: req.body.message,
     },
   };

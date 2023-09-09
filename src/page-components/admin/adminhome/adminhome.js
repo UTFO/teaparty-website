@@ -114,6 +114,9 @@ const AdminHome = () => {
   };
 
   useEffect(() => {
+    if (sessionStorage.getItem("accessToken") !== "true") {
+      window.location.href = "/admin";
+    }
     preloadForm();
     preloadEvents();
     setImageUrl(null)
@@ -134,10 +137,10 @@ const AdminHome = () => {
       alert("Please upload a picture!")
       return
     }
-    const fileUrl = await uploadFile(file)
-    console.log(fileUrl)
+    const fileName = await uploadFile(file)
+    console.log(fileName)
     console.log("submitted")
-    newHome(eventTitleRef.current.value, eventDescriptionRef.current.value, fileUrl)
+    newHome(eventTitleRef.current.value, eventDescriptionRef.current.value, fileName)
     handleClose()
     })
 

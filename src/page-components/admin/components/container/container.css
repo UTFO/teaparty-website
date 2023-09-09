@@ -1,11 +1,13 @@
 .admin-container {
   width: screen;
   padding: 40px 90px;
-  flex-grow: 1;
   background-color: #f4f4f4;
   font-family: "Oxygen", sans-serif;
+  flex-direction: column;
+  flex-grow: 1;
+  min-height: fit-content;
 }
 
-.admin-container p {
+.admin-container-p {
   font-size: 40px;
 }
