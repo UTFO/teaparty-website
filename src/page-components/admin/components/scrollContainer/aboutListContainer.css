@@ -1,19 +1,25 @@
-.container{
+.admin-about-container{
     background-color: #ECECEC;
     display: flex;
     flex-direction: column;
     border-radius: 19pt;
+    padding-bottom: 10px;
+    width: 400px;
+    margin: 0 auto;
+    margin-bottom: 20px;
 }
 
 .header{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding: 15px 20px 15px 15px
 }
 
-.title{
+.admin-about-title{
     align-self: flex-start;
-    padding-left: 10px;
+    font-family: 'Oxygen', sans-serif;
+    font-size: 1.5em;
 }
 
 
@@ -21,25 +27,31 @@
     align-self: flex-end;
     display: flex;
     flex-direction: row;
-    gap: 10px;
-    padding-right: 10px;
+    gap: 20px;
 }
 
 
 .edit-button{
     cursor: pointer;
     background-color: transparent;
-    border-width: 0;
+    border-width: 0px;
 }
 
 
 .delete-button{
     cursor: pointer;
     background-color: transparent;
-    border-width: 0;
+    border-width: 0px;
 }
 
 
-.text{
+.admin-about-text{
     text-align: left;
+    padding: 20px;
+    padding-top: 0px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 100px;
+    display: inline-block;
+    white-space: nowrap;
 }

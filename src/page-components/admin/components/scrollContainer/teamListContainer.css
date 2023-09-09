@@ -3,20 +3,25 @@
     display: flex;
     flex-direction: column;
     border-radius: 19px;
+    width: 400px;
+    padding: 5px;
+    margin: 0 auto;
+    margin-bottom: 20px;
 }
 
 .header{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    position: relative;
 }
 
-.person-intro{
+
+.person-intro {
     align-self: flex-start;
     display: flex;
     flex-direction: row;
     gap: 10px;
-    padding-left: 10px;
 }
 
 .image{
@@ -27,28 +32,36 @@
 }
 
 .buttons{
-    align-self: flex-end;
+    align-self: center;
     display: flex;
     flex-direction: row;
+    justify-content: end;
     gap: 10px;
-    padding-right: 10px;
+    margin-left: 10px;
 }
 
 
 .edit-button{
     cursor: pointer;
     background-color: transparent;
-    border-width: 0;
+    border-width: 0px; 
 }
 
 
 .delete-button{
     cursor: pointer;
     background-color: transparent;
-    border-width: 0;
+    border-width: 0px;
 }
-
 
 .text{
     text-align: left;
+    padding: 10px 10px 10px 10px;
+}
+
+.name {
+    font-family: 'Oxygen', sans-serif;
+    padding: 0;
+    margin: 0;
+    font-size: 1.5em;
 }

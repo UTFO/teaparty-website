@@ -24,7 +24,7 @@ const AdminTeam = () => {
         ];
       });
 
-      setTeams(tempTeams);
+      setTeams([...tempTeams]);
     });
   };
 
@@ -49,7 +49,7 @@ const AdminTeam = () => {
         >
           <HorizontalScrollContainer handleOpen={() => {setOpen(true)}}>
             {/* Insert list of event highlights here as a ListContainer */}
-            {dummyTeam.map((team) => {
+            {Teams.map((team) => {
               return (
                 <TeamListContainer
                   image = {team.image}
