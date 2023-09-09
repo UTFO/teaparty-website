@@ -114,6 +114,9 @@ const AdminHome = () => {
   };
 
   useEffect(() => {
+    if (sessionStorage.getItem("accessToken") !== "true") {
+      window.location.href = "/admin";
+    }
     preloadForm();
     preloadEvents();
     setImageUrl(null)
