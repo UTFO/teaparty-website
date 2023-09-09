@@ -24,7 +24,7 @@ const AdminTeam = () => {
         ];
       });
 
-      setTeams(tempTeams);
+      setTeams([...tempTeams]);
     });
   };
 

@@ -3,21 +3,21 @@
     display: flex;
     flex-direction: column;
     border-radius: 19px;
-    width: max-content;
-    gap: 20px;
+    width: 400px;
+    padding: 5px;
+    margin: 0 auto;
+    margin-bottom: 20px;
 }
 
 .header{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 15px 20px 15px 15px;
     position: relative;
-    width: 20vw;
 }
 
 
-.person-intro{
+.person-intro {
     align-self: flex-start;
     display: flex;
     flex-direction: row;
@@ -32,13 +32,12 @@
 }
 
 .buttons{
-    align-self: flex-end;
+    align-self: center;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    gap: 20px;
-    width: 100%;
-    margin-right: 20px;
+    justify-content: end;
+    gap: 10px;
+    margin-left: 10px;
 }
 
 
@@ -46,7 +45,6 @@
     cursor: pointer;
     background-color: transparent;
     border-width: 0px; 
-    margin-right: 15px;
 }
 
 
@@ -54,10 +52,16 @@
     cursor: pointer;
     background-color: transparent;
     border-width: 0px;
-    margin-left: 15px;
 }
 
 .text{
     text-align: left;
     padding: 10px 10px 10px 10px;
+}
+
+.name {
+    font-family: 'Oxygen', sans-serif;
+    padding: 0;
+    margin: 0;
+    font-size: 1.5em;
 }
