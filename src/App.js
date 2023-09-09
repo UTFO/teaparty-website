@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import React from "react";
 import ReactDOM from "react-dom";
+import { TeamDataProvider } from "./page-components/team/teamContext.js";
 import "./App.css";
 
 import {
@@ -28,7 +29,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/team" element={<Team />} />
+          <Route path="/team" element={<TeamDataProvider><Team /></TeamDataProvider>} />
           <Route path="/events" element={<Events />} />
           <Route path="/faq" element={<FAQ />} />
         </Routes>

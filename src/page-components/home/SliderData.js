@@ -1,3 +1,4 @@
+
 export const SliderData = [
   {
     image: require("./images/slide1.png"),

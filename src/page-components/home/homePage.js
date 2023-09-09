@@ -5,17 +5,53 @@ import Cup2 from "./images/cup (1).png";
 import Email from "./images/email.png";
 import Insta from "./images/instagram.png";
 import ImageSlider from "./ImageSlider";
-import slide2 from "./images/slide1.png";
-import { SliderData } from "./SliderData";
 import Carousel from "react-material-ui-carousel";
 import Arrow_Icon from "./images/Arrow.png";
 import { ContactBar, TopBar } from "../navbar/navbar";
 import WelcomeMessage from "./components/WelcomeMessage";
 import HighlightsButton from "./components/HighlightsButton";
 import { Navbar, Footer } from "../imports.js";
+import { getHome } from '../../api/home.js'
+import { getLinks } from '../../api/links.js'
+import { useEffect } from 'react'
+
 function Home() {
-  var email = require("../../data/texts/Links.json").email;
-  var instagram = require("../../data/texts/Links.json").instagram;
+
+  const [events, setEvents] = useState([]);
+  const [form, setForm] = useState({})
+
+  const preloadForm = () => {
+    getLinks().then((data) => {
+      console.log(data[0]);
+      setForm({
+        formLink: data[0]["signup"],
+        instaLink: data[0]["instagram"],
+        email: data[0]["email"],
+        id: data[0]["_id"],
+      });
+    });
+  };
+
+
+  const preloadEvents = () => {
+    getHome().then((data) => {
+      var tempEvents = [];
+      data.map((info) => {
+        // Convert the binary data to a Base64-encoded string
+        tempEvents = [
+          ...tempEvents,
+          { header: info.header, text: info.text, image: info.image, id: info._id},
+        ];
+      });
+      console.log(tempEvents);
+      setEvents(tempEvents);
+    });
+  };
+
+  useEffect(() => {
+    preloadEvents();
+    preloadForm();
+  }, [])
 
   return (
     <>
@@ -48,7 +84,7 @@ function Home() {
             NextIcon={<img src={Arrow_Icon} className="next" />}
             PrevIcon={<img src={Arrow_Icon} className="prev" />}
           >
-            {SliderData.map((item, index) => (
+            {events.map((item, index) => (
               <ImageSlider data={item} />
             ))}
           </Carousel>
@@ -76,7 +112,7 @@ function Home() {
           </h2>
           <p>
             Fill out the google form{" "}
-            <a href="https://forms.gle/StZ1cLbSVPw7hsT67">here</a>
+            <a href={form.formLink}>here</a>
           </p>
         </div>
         <div className="page-home-sponsor">
@@ -85,11 +121,11 @@ function Home() {
           </h2>
           <p>
             Send us an email &nbsp;{" "}
-            <a href={"mailto:" + email} target="_blank" rel="noreferrer">
+            <a href={"mailto:" + form.email} target="_blank" rel="noreferrer">
               <img src={Email} height={20}></img>
             </a>{" "}
             &nbsp; or message us on instagram! &nbsp;
-            <a href={instagram} target="_blank" rel="noreferrer">
+            <a href={form.instaLink} target="_blank" rel="noreferrer">
               <img src={Insta} height={20}></img>
             </a>
           </p>
