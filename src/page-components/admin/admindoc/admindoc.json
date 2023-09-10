@@ -4,25 +4,56 @@
       "heading": "Introduction",
       "subheadings": [
         {
-          "subheading": "Subheading 1",
-          "text": "~~TestA~~"
-        },
-        {
-          "subheading": "Subheading 2",
-          "text": "# TestB"
+          "subheading": "Welcome",
+          "text": [
+              "# Introduction to the Admin Page",
+              "The documentation serves to inform users what the website is built with.",
+              "It also provides instructions on **how to manipulate the website data** in various levels.",
+              "Throughout the documentation, you may find information on...",
+              "- The Tech Stack of the Website",
+              "- Accessing Code via GitHub Repo",
+              "- Adding Components via Admin Page",
+              "- Accessing the Back-end Server",
+              "- Accessing the WebHost",
+              "\nYou can get started by clicking on the **Headings** on the left.",
+              "\nAs a side note, you can contact the **University of Toronto Freelancer's Organization** (Creators) for necessary technical support!",
+              "However, it would be best to have the club's developers to fix or modify code if needed."
+          ]
         }
       ]
     },
     {
-      "heading": "Page Content",
+      "heading": "Tech Stack",
       "subheadings": [
         {
-          "subheading": "Subheading 1",
-          "text": "## TestC"
+          "subheading": "React.js",
+          "text": [
+            "# What is React?",
+            "React.js is a JavaScript framework for **Front-End development**.",
+            "We extensively used it along with vanilla CSS to structure and style the club's website.",
+            "\nOne note to take of is that the website is built solely for monitor display aspects. **It is not built reactively for smaller displays.**"
+          ]
         },
         {
-          "subheading": "Subheading 2",
-          "text": "[] TestD"
+          "subheading": "Express.js",
+          "text": [
+            "# What is Express?",
+            "Express.js is a JavaScript framework for **Back-End development**.",
+            "We used it to create a RestAPI that facilitates data transfer between the cloud database and the website",
+            "Data Security was also considered upon creating the admin page and data retrievals.",
+            "\nThere are ultimately **security flaws**, though our security implementations is justifiably enough for the club websites.",
+            "If there are ever security concerns, do not hesitate to contact **University of Toronto Freelancer's Organization** or have your club developers modify the code!"
+        ]
+        },
+        {
+          "subheading": "MongoDB",
+          "text": [
+            "# What is MongoDB?",
+            "MongoDB is a **NoSQL Cloud Database** to store JSON data.",
+            "We used it to store textual information, which includes image links.",
+            "The images are stored in Amazon S3, a separate database for storing files.",
+            "To get direct access to these database, contact your **Credentials Manager**."
+        ]
         }
       ]
     },
@@ -31,11 +62,31 @@
       "subheadings": [
         {
           "subheading": "Subheading 1",
-          "text": "TestE"
+          "text": [
+            "# Introduction to the Admin Page",
+            "The documentation serves to inform users what the website is built with.",
+            "It also provides instructions on how to manipulate the website data in various levels.",
+            "Throughout the documentation, you may find information on...",
+            "- The Tech Stack of the Website",
+            "- Accessing Code via GitHub Repo",
+            "- Adding Components via Admin Page",
+            "- Accessing the Back-end Server",
+            "- Accessing the WebHost"
+        ]
         },
         {
           "subheading": "Subheading 2",
-          "text": "TestF"
+          "text": [
+            "# Introduction to the Admin Page",
+            "The documentation serves to inform users what the website is built with.",
+            "It also provides instructions on how to manipulate the website data in various levels.",
+            "Throughout the documentation, you may find information on...",
+            "- The Tech Stack of the Website",
+            "- Accessing Code via GitHub Repo",
+            "- Adding Components via Admin Page",
+            "- Accessing the Back-end Server",
+            "- Accessing the WebHost"
+        ]
         }
       ]
     },
@@ -44,11 +95,31 @@
       "subheadings": [
         {
           "subheading": "Subheading 1",
-          "text": "TestG"
+          "text": [
+            "# Introduction to the Admin Page",
+            "The documentation serves to inform users what the website is built with.",
+            "It also provides instructions on how to manipulate the website data in various levels.",
+            "Throughout the documentation, you may find information on...",
+            "- The Tech Stack of the Website",
+            "- Accessing Code via GitHub Repo",
+            "- Adding Components via Admin Page",
+            "- Accessing the Back-end Server",
+            "- Accessing the WebHost"
+        ]
         },
         {
           "subheading": "Subheading 2",
-          "text": "TestH"
+          "text": [
+            "# Introduction to the Admin Page",
+            "The documentation serves to inform users what the website is built with.",
+            "It also provides instructions on how to manipulate the website data in various levels.",
+            "Throughout the documentation, you may find information on...",
+            "- The Tech Stack of the Website",
+            "- Accessing Code via GitHub Repo",
+            "- Adding Components via Admin Page",
+            "- Accessing the Back-end Server",
+            "- Accessing the WebHost"
+        ]
         }
       ]
     }
