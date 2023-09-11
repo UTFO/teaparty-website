@@ -6,8 +6,22 @@ const dbo = require("../db/conn");
 const ObjectId = require("mongodb").ObjectId;
 
 // This section will help you get a list of all the records.
-router.get("/", function (req, res) {
+router.get("/", async function (req, res) {
+  const header = req.headers["authorization"]
+  if (!header) {
+    res.sendStatus(403)
+    console.log("no auth")
+    return;
+  }
+  const token = header.split(" ")[1]
+  
   let db_connect = dbo.getDb();
+  const tokenResults = await db_connect.collection("passcode").find({token: token}).toArray()
+  if (tokenResults.length != 1) {
+    res.sendStatus(403)
+    console.log("invalid token")
+    return;
+  }
 
   db_connect
     .collection("faq")
@@ -20,8 +34,22 @@ router.get("/", function (req, res) {
 });
 
 //post a new record
-router.post("/", function (req, response) {
+router.post("/", async function (req, response) {
+  const header = req.headers["authorization"]
+  if (!header) {
+    res.sendStatus(403)
+    console.log("no auth")
+    return;
+  }
+  const token = header.split(" ")[1]
+  
   let db_connect = dbo.getDb();
+  const tokenResults = await db_connect.collection("passcode").find({token: token}).toArray()
+  if (tokenResults.length != 1) {
+    res.sendStatus(403)
+    console.log("invalid token")
+    return;
+  }
   let myobj = {
     question: req.body.question,
     answer: req.body.answer,
@@ -37,8 +65,22 @@ router.post("/", function (req, response) {
 });
 
 //update a record
-router.put("/:id", function (req, response) {
+router.put("/:id", async function (req, response) {
+  const header = req.headers["authorization"]
+  if (!header) {
+    res.sendStatus(403)
+    console.log("no auth")
+    return;
+  }
+  const token = header.split(" ")[1]
+  
   let db_connect = dbo.getDb();
+  const tokenResults = await db_connect.collection("passcode").find({token: token}).toArray()
+  if (tokenResults.length != 1) {
+    res.sendStatus(403)
+    console.log("invalid token")
+    return;
+  }
   let myquery = { _id: ObjectId(req.params.id) };
   let newvalues = {
     $set: {
@@ -60,8 +102,22 @@ router.put("/:id", function (req, response) {
 });
 
 //delete a record
-router.delete("/:id", (req, response) => {
+router.delete("/:id", async (req, response) => {
+  const header = req.headers["authorization"]
+  if (!header) {
+    res.sendStatus(403)
+    console.log("no auth")
+    return;
+  }
+  const token = header.split(" ")[1]
+  
   let db_connect = dbo.getDb();
+  const tokenResults = await db_connect.collection("passcode").find({token: token}).toArray()
+  if (tokenResults.length != 1) {
+    res.sendStatus(403)
+    console.log("invalid token")
+    return;
+  }
   let myquery = { _id: ObjectId(req.params.id) };
   db_connect.collection("faq").deleteOne(myquery, function (err, obj) {
     if (err) {
