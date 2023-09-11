@@ -95,7 +95,10 @@
             "- Team members (people)",
             "\n### Server.js",
             "This JavaScript file contains the routing of API URLs to functions based on the URL path.",
-            "For instance, using \"api.teaparty.ca/faq/${id}\" with a DELETE requests tells the code to redirect to the FAQ Delete function for the given ID"
+            "For instance, using \"api.teaparty.ca/faq/${id}\" with a DELETE requests tells the code to redirect to the FAQ Delete function for the given ID",
+            "\n### Security",
+            "To prevent API usage, we secured the PUT, UPDATE, and DELETE requests with tokens.",
+            "These tokens are generated and obtained after logging into the admin page."
         ]
         }
       ]
@@ -104,17 +107,11 @@
       "heading": "Web Host",
       "subheadings": [
         {
-          "subheading": "TO-DO",
+          "subheading": "Vercel Web Provider",
           "text": [
-            "# Introduction to the Admin Page",
-            "The documentation serves to inform users what the website is built with.",
-            "It also provides instructions on how to manipulate the website data in various levels.",
-            "Throughout the documentation, you may find information on...",
-            "- The Tech Stack of the Website",
-            "- Accessing Code via GitHub Repo",
-            "- Adding Components via Admin Page",
-            "- Accessing the Back-end Server",
-            "- Accessing the WebHost"
+            "# Intro to Vercel Web Provider",
+            "To host the front-end, we use [Vercel](https://vercel.com/dashboard). It simply deploys and runs the front-end code.",
+            "To access the web provider directly, please contact your Credentials Manager."
         ]
         }
       ]
@@ -123,17 +120,11 @@
       "heading": "Server Host",
       "subheadings": [
         {
-          "subheading": "TO-DO",
+          "subheading": "Render Server Host",
           "text": [
-            "# Introduction to the Admin Page",
-            "The documentation serves to inform users what the website is built with.",
-            "It also provides instructions on how to manipulate the website data in various levels.",
-            "Throughout the documentation, you may find information on...",
-            "- The Tech Stack of the Website",
-            "- Accessing Code via GitHub Repo",
-            "- Adding Components via Admin Page",
-            "- Accessing the Back-end Server",
-            "- Accessing the WebHost"
+            "# Intro to Render Server Host",
+            "To host the server, we use [Render](https://dashboard.render.com).",
+            "To access the server directly, please contact your Credentials Manager."
         ]
         }
       ]

@@ -40,7 +40,7 @@ const AdminDoc = () => {
 
       <Container text="Documentation">
         <div
-          style={{ width: `95%`, height: "60vh", display: "flex" }}
+          style={{ width: `95%`, minHeight: "60vh", display: "flex" }}
           className="admin-small-container"
         >
           <div style={{ width: "25%", marginTop: "3em", height: "100%" }}>
