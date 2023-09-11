@@ -12,7 +12,6 @@
               "Throughout the documentation, you may find information on...",
               "- The Tech Stack of the Website",
               "- Accessing Code via GitHub Repo",
-              "- Adding Components via Admin Page",
               "- Accessing the Back-end Server",
               "- Accessing the WebHost",
               "\nYou can get started by clicking on the **Headings** on the left.",
@@ -61,21 +60,51 @@
       "heading": "Code Base",
       "subheadings": [
         {
-          "subheading": "Subheading 1",
+          "subheading": "Club Website",
           "text": [
-            "# Introduction to the Admin Page",
-            "The documentation serves to inform users what the website is built with.",
-            "It also provides instructions on how to manipulate the website data in various levels.",
-            "Throughout the documentation, you may find information on...",
-            "- The Tech Stack of the Website",
-            "- Accessing Code via GitHub Repo",
-            "- Adding Components via Admin Page",
-            "- Accessing the Back-end Server",
-            "- Accessing the WebHost"
+            "# Intro to Front-End Code Framework",
+            "The front-end is built in React.js with several JavaScript and CSS files.",
+            "There are two main folders:",
+            "1. src/api",
+            "2. src/page-component",
+            "3. src/data/texts",
+            "\n ### API Folder",
+            "The API Folder contains functions that communicate directly with the server. It follows the RestAPI Framework, using PUT, DELETE, UPDATE, and GET requests.",
+            "There should be no need to change this as it simply passes and retrieves necessary information to and from the server",
+            "### Page Components Folder",
+            "The Page Compoments Folder contains all the pages: Home, About, Team, Events, FAQ, and Admin",
+            "It also contains Navbar, Footer, and Page Introductions which are elements that are added to the pages.",
+            "The pages' CSS files are all within their respective folders.",
+            "### Data Text Folder",
+            "The Data Text Folder contains only Page Introduction texts in JSON format. This may be freely edited."
         ]
         },
         {
-          "subheading": "Subheading 2",
+          "subheading": "Server",
+          "text": [
+            "# Intro to Back-End Code Framework",
+            "The back-end is built in Express.js with MongoDB",
+            "There is one main folder and file, which is server/routes and server.js",
+            "\n### Server Routes Folder",
+            "The server routes folder contain REST API route functions for every MongoDB Collection. There are the following collections:",
+            "- About Texts (about)",
+            "- Upcoming Events (event)",
+            "- FAQs (faq)",
+            "- Highlight Events (home)",
+            "- Links (links)",
+            "- Team members (people)",
+            "\n### Server.js",
+            "This JavaScript file contains the routing of API URLs to functions based on the URL path.",
+            "For instance, using \"api.teaparty.ca/faq/${id}\" with a DELETE requests tells the code to redirect to the FAQ Delete function for the given ID"
+        ]
+        }
+      ]
+    },
+    {
+      "heading": "Web Host",
+      "subheadings": [
+        {
+          "subheading": "TO-DO",
           "text": [
             "# Introduction to the Admin Page",
             "The documentation serves to inform users what the website is built with.",
@@ -91,24 +120,10 @@
       ]
     },
     {
-      "heading": "Web Host",
+      "heading": "Server Host",
       "subheadings": [
         {
-          "subheading": "Subheading 1",
-          "text": [
-            "# Introduction to the Admin Page",
-            "The documentation serves to inform users what the website is built with.",
-            "It also provides instructions on how to manipulate the website data in various levels.",
-            "Throughout the documentation, you may find information on...",
-            "- The Tech Stack of the Website",
-            "- Accessing Code via GitHub Repo",
-            "- Adding Components via Admin Page",
-            "- Accessing the Back-end Server",
-            "- Accessing the WebHost"
-        ]
-        },
-        {
-          "subheading": "Subheading 2",
+          "subheading": "TO-DO",
           "text": [
             "# Introduction to the Admin Page",
             "The documentation serves to inform users what the website is built with.",

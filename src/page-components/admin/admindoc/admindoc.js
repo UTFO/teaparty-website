@@ -115,13 +115,13 @@ const AdminDoc = () => {
                   <h1 style={{ fontSize: "1.6em", fontWeight: "bold" }} {...props} />
                 ),
                 h2: ({ node, ...props }) => (
-                  <h2 style={{ fontSize: "1.5em", fontWeight: "bold" }} {...props} />
+                  <h2 style={{ fontSize: "1.4em", fontWeight: "bold" }} {...props} />
                 ),
                 h3: ({ node, ...props }) => (
-                  <h3 style={{ fontSize: "1.4em", fontWeight: "bold" }} {...props} />
+                  <h3 style={{ fontSize: "1.3em", fontWeight: "bold" }} {...props} />
                 ),
                 h4: ({ node, ...props }) => (
-                  <h4 style={{ fontSize: "1.3em", fontWeight: "bold" }} {...props} />
+                  <h4 style={{ fontSize: "1.2em", fontWeight: "bold" }} {...props} />
                 ),
                 p: ({ node, ...props }) => (
                   <p style={{ fontSize: "1.2em"}} {...props} />
